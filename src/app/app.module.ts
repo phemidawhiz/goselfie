@@ -19,6 +19,9 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { LoginAuthGuard } from './services/login-guard.service';
+import { LogoComponent } from './components/logo/logo.component';
+import { LinkButtonComponent } from './components/link-button/link-button.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -28,10 +31,13 @@ import { LoginAuthGuard } from './services/login-guard.service';
     AdminComponent,
     HomeComponent,
     NotFoundComponent,
-    NoAccessComponent
+    NoAccessComponent,
+    LogoComponent,
+    LinkButtonComponent
   ],
   imports: [
     BrowserModule,
+    LazyLoadImageModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([

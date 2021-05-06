@@ -1,0 +1,17 @@
+@import '../../common/variables';
+
+%commonFont {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+span {
+  @extend %commonFont;
+  background: $color-red;
+  border-radius: 4px;
+  padding: 13px 24px;
+  font-size: 16px;
+  color: $color-white;
+}

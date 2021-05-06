@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  link = {
+    description: "Get Started",
+    linkUrl: "/login"
+  }
+
   constructor(private authService: AuthService) { }
 }
