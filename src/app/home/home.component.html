@@ -9,5 +9,6 @@
   <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>
 </ul>
 
-<logo></logo>
-<linkbutton [linkUrl]="link.description" [description]="link.description"></linkbutton>
+<logo [isBlack]="false"></logo>
+<linkbutton [linkUrl]="link.linkUrl" [description]="link.description"></linkbutton>
+

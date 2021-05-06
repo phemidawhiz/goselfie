@@ -21,7 +21,6 @@ import { NoAccessComponent } from './no-access/no-access.component';
 import { LoginAuthGuard } from './services/login-guard.service';
 import { LogoComponent } from './components/logo/logo.component';
 import { LinkButtonComponent } from './components/link-button/link-button.component';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   ],
   imports: [
     BrowserModule,
-    LazyLoadImageModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([

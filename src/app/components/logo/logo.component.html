@@ -1,1 +1,2 @@
-<img src='../../../assets/images/logo.png'/>
+<img *ngIf="!isBlack" src='../../../assets/images/logo.png'/>
+<img *ngIf="isBlack" src='../../../assets/images/blacklogo.png'/>
