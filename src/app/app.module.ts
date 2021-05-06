@@ -23,6 +23,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { LinkButtonComponent } from './components/link-button/link-button.component';
 import { HeaderComponent } from './header/header.component';
 import { SeasonTwoComponent } from './season-two/season-two.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SeasonTwoComponent } from './season-two/season-two.component';
     LogoComponent,
     LinkButtonComponent,
     HeaderComponent,
-    SeasonTwoComponent
+    SeasonTwoComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

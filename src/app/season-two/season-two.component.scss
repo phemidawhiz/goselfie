@@ -1,16 +1,7 @@
 @import '../common/variables';
 @import '../common/extends';
 
-@font-face {
-  font-family: "CustomFont";
-  src: url("../../assets/fonts/aileron/Aileron-Regular.otf");
-}
 
-%AileronFont {
-  font-family: 'CustomFont';
-  font-style: normal;
-  line-height: 72px;
-}
 
 section {
   display: grid;

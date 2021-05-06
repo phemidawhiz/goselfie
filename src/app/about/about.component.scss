@@ -1,0 +1,31 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 70px;
+  width: 100%;
+  background: $light-grey;
+  margin: 0;
+  overflow: hidden;
+
+  img {
+    max-width: 688px;
+    height: auto;
+    text-align: right;
+  }
+
+  h2 {
+    padding-top: 10px;
+    @extend %AileronFont;
+    @include fontSize(bold, 51.88px);
+  }
+
+  p {
+    @extend %commonFont;
+    @include fontSize(normal, 17px);
+    padding-right: 20%;
+  }
+}
+
