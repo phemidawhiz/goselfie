@@ -8,8 +8,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 import { RouterModule } from '@angular/router';
-//import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt';
+//import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +21,8 @@ import { NoAccessComponent } from './no-access/no-access.component';
 import { LoginAuthGuard } from './services/login-guard.service';
 import { LogoComponent } from './components/logo/logo.component';
 import { LinkButtonComponent } from './components/link-button/link-button.component';
+import { HeaderComponent } from './header/header.component';
+import { SeasonTwoComponent } from './season-two/season-two.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { LinkButtonComponent } from './components/link-button/link-button.compon
     NotFoundComponent,
     NoAccessComponent,
     LogoComponent,
-    LinkButtonComponent
+    LinkButtonComponent,
+    HeaderComponent,
+    SeasonTwoComponent
   ],
   imports: [
     BrowserModule,

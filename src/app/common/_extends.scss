@@ -1,1 +1,17 @@
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+%commonFont {
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 16px;
+}
+
+%alignmentPadding {
+  padding: 0px 70px;
+}
+
+@mixin fontSize($weight, $size) {
+  font-weight: $weight;
+  font-size: $size;
+}
