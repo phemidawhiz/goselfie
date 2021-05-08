@@ -5,7 +5,7 @@
 header {
   display: grid;
   grid-template-columns: 35% 30% 35%;
-  margin-top: 20px;
+  padding-top: 30px;
   @extend %alignmentPadding;
   ul {
     text-align: left;
@@ -17,11 +17,11 @@ header {
   li {
     @extend %commonFont;
     display: inline;
-    text-decoration: none;
     padding-right: 30px;
     a {
       color: $color-black;
       line-height: 34px;
+      text-decoration: none;
     }
 
     a:hover {
