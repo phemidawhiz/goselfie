@@ -3,29 +3,38 @@
 
 section {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 50% 40%;
+  grid-column-gap: 10px;
+  @media #{$mobile-only} {
+    display: block;
+    padding: 20px;
+    width: auto;
+  }
   padding: 70px;
-  width: auto;
   background: $light-grey;
   margin: 0;
-  overflow: hidden;
 
   img {
-    max-width: 688px;
+    max-width: 90%;
     height: auto;
-    text-align: right;
+    text-align: center;
   }
 
   h2 {
-    padding-top: 10px;
     @extend %AileronFont;
     @include fontSize(bold, 51.88px);
+    padding: 0% 10%;
+    margin: 4% 0% 0%;
   }
 
   p {
     @extend %commonFont;
     @include fontSize(normal, 17px);
-    padding-right: 20%;
+    padding: 0% 10%;
+
+    @media #{$mobile-only} {
+      padding: 1%;
+    }
   }
 }
 

@@ -24,6 +24,7 @@ import { LinkButtonComponent } from './components/link-button/link-button.compon
 import { HeaderComponent } from './header/header.component';
 import { SeasonTwoComponent } from './season-two/season-two.component';
 import { AboutComponent } from './about/about.component';
+import { HomevideoComponent } from './homevideo/homevideo.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AboutComponent } from './about/about.component';
     LinkButtonComponent,
     HeaderComponent,
     SeasonTwoComponent,
-    AboutComponent
+    AboutComponent,
+    HomevideoComponent
   ],
   imports: [
     BrowserModule,
