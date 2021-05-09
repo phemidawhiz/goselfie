@@ -1,0 +1,20 @@
+@import '../common/variables';
+@import '../common/extends';
+
+.container {
+  max-width: 1440px;
+  margin: 0;
+  height: 586px;
+  background-image: url("../../assets/images/girlselfie.png");
+
+}
+
+.overlay {
+  //background: rgba(9, 22, 56, 0.5);
+
+  opacity: 0.85;
+  /*transition: .5s ease;*/
+  background: rgba(9, 22, 56, 0.5);
+  padding: 17.85% 49%;
+
+}

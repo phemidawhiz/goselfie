@@ -1,0 +1,62 @@
+@import '../common/variables';
+@import '../common/extends';
+
+
+
+section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  @extend %alignmentPadding;
+  margin: 4% 0% 7%;
+  @media #{$mobile-only} {
+    display: block;
+  }
+  h1 {
+    @extend %AileronFont;
+    color: $color-red;
+    font-weight: bold;
+    font-size: 34.85px;
+    margin-bottom: 0;
+    margin-top: 60px;
+  }
+
+  h2 {
+    @extend %AileronFont;
+    @include fontSize(900, 64.85px);
+    color: $color-black-2;
+    margin-top: 0;
+  }
+
+  p {
+    @extend %AileronFont;
+    @include fontSize(bold, 41.504px);
+    line-height: 55px !important;
+  }
+}
+
+.hashTag {
+  @extend %AileronFont;
+  background-color: $light-grey;
+  border-radius: 4px;
+  width: 392px;
+  max-height: 104px;
+  margin-top: 35px;
+  padding: 15px 20px;
+  span {
+    @include fontSize(bold, 21.248px);
+    line-height: 28px;
+    padding-right: 50px;
+  }
+}
+
+.dotsBg {
+  background-image: url("../../assets/images/dotsbg2.png");
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: right;
+  img {
+    max-width: 700px;
+    height: auto;
+    vertical-align: top;
+  }
+}

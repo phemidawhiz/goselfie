@@ -1,0 +1,28 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("../../assets/fonts/aileron/Aileron-Regular.otf");
+}
+
+%AileronFont {
+  font-family: 'CustomFont';
+  font-style: normal;
+  line-height: 72px;
+}
+
+%commonFont {
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 16px;
+}
+
+%alignmentPadding {
+  padding: 0px 70px;
+}
+
+@mixin fontSize($weight, $size) {
+  font-weight: $weight;
+  font-size: $size;
+}

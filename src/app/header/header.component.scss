@@ -1,0 +1,44 @@
+@import '../common/variables';
+@import '../common/extends';
+
+
+header {
+  display: grid;
+  grid-template-columns: 35% 30% 35%;
+  padding-top: 30px;
+  @extend %alignmentPadding;
+  ul {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    @extend %commonFont;
+    display: inline;
+    padding-right: 30px;
+    a {
+      color: $color-black;
+      line-height: 34px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: $color-red;
+
+    }
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 40px;
+    img {
+      padding: 0px 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+

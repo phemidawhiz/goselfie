@@ -19,6 +19,12 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { LoginAuthGuard } from './services/login-guard.service';
+import { LogoComponent } from './components/logo/logo.component';
+import { LinkButtonComponent } from './components/link-button/link-button.component';
+import { HeaderComponent } from './header/header.component';
+import { SeasonTwoComponent } from './season-two/season-two.component';
+import { AboutComponent } from './about/about.component';
+import { HomevideoComponent } from './homevideo/homevideo.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { LoginAuthGuard } from './services/login-guard.service';
     AdminComponent,
     HomeComponent,
     NotFoundComponent,
-    NoAccessComponent
+    NoAccessComponent,
+    LogoComponent,
+    LinkButtonComponent,
+    HeaderComponent,
+    SeasonTwoComponent,
+    AboutComponent,
+    HomevideoComponent
   ],
   imports: [
     BrowserModule,

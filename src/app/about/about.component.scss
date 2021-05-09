@@ -1,0 +1,40 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-column-gap: 10px;
+  @media #{$mobile-only} {
+    display: block;
+    padding: 20px;
+    width: auto;
+  }
+  padding: 70px;
+  background: $light-grey;
+  margin: 0;
+
+  img {
+    max-width: 90%;
+    height: auto;
+    text-align: center;
+  }
+
+  h2 {
+    @extend %AileronFont;
+    @include fontSize(bold, 51.88px);
+    padding: 0% 10%;
+    margin: 4% 0% 0%;
+  }
+
+  p {
+    @extend %commonFont;
+    @include fontSize(normal, 17px);
+    padding: 0% 10%;
+
+    @media #{$mobile-only} {
+      padding: 1%;
+    }
+  }
+}
+
