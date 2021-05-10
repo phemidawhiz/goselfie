@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 @font-face {
-  font-family: "CustomFont";
+  font-family: "Aileron";
   src: url("../../assets/fonts/aileron/Aileron-Regular.otf");
 }
 
+@font-face {
+  font-family: "Merriweather";
+  src: url("../../assets/fonts/Merriweather/Merriweather-Black.ttf");
+}
+
 %AileronFont {
-  font-family: 'CustomFont';
+  font-family: 'Aileron';
   font-style: normal;
   line-height: 72px;
 }

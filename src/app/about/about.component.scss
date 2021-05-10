@@ -4,11 +4,10 @@
 section {
   display: grid;
   grid-template-columns: 50% 40%;
-  grid-column-gap: 10px;
+  grid-column-gap: 5%;
   @media #{$mobile-only} {
     display: block;
     padding: 20px;
-    width: auto;
   }
   padding: 70px;
   background: $light-grey;
@@ -17,7 +16,7 @@ section {
   img {
     max-width: 90%;
     height: auto;
-    text-align: center;
+    float: right
   }
 
   h2 {
@@ -37,4 +36,5 @@ section {
     }
   }
 }
+
 

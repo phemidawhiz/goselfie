@@ -1,0 +1,32 @@
+<section>
+  <div>
+    <div class="taskHighlight">
+      <br><br>
+      <h2>Task Highlight</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue morbi quisque amet id.</p>
+      <linkbutton [description]="taskHighlightDetails.description" [linkUrl]="taskHighlightDetails.linkUrl"></linkbutton>
+    </div>
+    <div class="highlightBox">
+
+    </div>
+
+  </div>
+  <div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(taskHighlightDetails.tasks[0].filename)" alt="task-image">
+      <h3>{{ taskHighlightDetails.tasks[0].title | titlecase }}</h3>
+      <h4>{{ taskHighlightDetails.tasks[0].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+    <div class="highlightBox">
+
+    </div>
+  </div>
+  <div>
+    <div class="highlightBox">
+
+    </div>
+    <div class="highlightBox">
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+@import '../common/variables';
+@import '../common/extends';
+
+%boxWidthHeight {
+  width: 370px;
+  height: 400px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 30% 30% 29%;
+  grid-column-gap: 3%;
+  padding: 70px;
+  background: rgba(243, 243, 250, 0.5);
+
+  h2 {
+    @extend %AileronFont;
+    @include fontSize(bold, 51.88px);
+    margin: 4% 0% 0%;
+  }
+
+  p {
+    @extend %commonFont;
+    @include fontSize(normal, 21.25px);
+    padding-bottom: 25px;
+  }
+
+  @media #{$mobile-only} {
+    display: block;
+  }
+}
+
+
+.taskHighlight {
+  padding: 26px 15px 0px;
+  @extend %boxWidthHeight;
+  margin-bottom: 25px;
+
+}
+
+.highlightBox {
+  @extend %boxWidthHeight;
+  background-color: $color-white;
+  border: 1px solid $light-grey;
+  border-radius: 4px;
+  margin: 10px 0px 25px;
+  padding: 5px;
+  box-shadow: rgba(88, 88, 88, 0.1) 0px 2px 8px 0px;
+
+  h3 {
+    @include fontSize(bold, 21.248px);
+    font-family: 'Merriweather';
+    text-align: center;
+    color: $dark-blue;
+  }
+
+  h4 {
+    @include fontSize(normal, 17px);
+    font-family: 'Open Sans';
+    line-height: 13px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    margin-top: 14% !important;
+    margin: auto;
+  }
+}
+
