@@ -26,6 +26,7 @@ import { SeasonTwoComponent } from './season-two/season-two.component';
 import { AboutComponent } from './about/about.component';
 import { HomevideoComponent } from './homevideo/homevideo.component';
 import { TaskHighlightComponent } from './task-highlight/task-highlight.component';
+import { AmbassadorComponent } from './ambassador/ambassador.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TaskHighlightComponent } from './task-highlight/task-highlight.componen
     SeasonTwoComponent,
     AboutComponent,
     HomevideoComponent,
-    TaskHighlightComponent
+    TaskHighlightComponent,
+    AmbassadorComponent
   ],
   imports: [
     BrowserModule,

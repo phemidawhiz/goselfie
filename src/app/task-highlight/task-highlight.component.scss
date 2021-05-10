@@ -10,7 +10,7 @@ section {
   display: grid;
   grid-template-columns: 30% 30% 29%;
   grid-column-gap: 3%;
-  padding: 70px;
+  padding: 70px 70px 0px;
   background: rgba(243, 243, 250, 0.5);
 
   h2 {
@@ -34,7 +34,7 @@ section {
 .taskHighlight {
   padding: 26px 15px 0px;
   @extend %boxWidthHeight;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 
 }
 
@@ -46,6 +46,7 @@ section {
   margin: 10px 0px 25px;
   padding: 5px;
   box-shadow: rgba(88, 88, 88, 0.1) 0px 2px 8px 0px;
+
 
   h3 {
     @include fontSize(bold, 21.248px);
@@ -63,12 +64,24 @@ section {
   }
 
   img {
-    max-width: 200px;
-    height: auto;
+    max-width: 250px !important;
+    height: 200px !important;
     display: block;
     border-radius: 50%;
     margin-top: 14% !important;
     margin: auto;
+    transition: .5s ease;
+  }
+}
+
+.dots {
+  text-align: center;
+  background: rgba(243, 243, 250, 0.5);
+  padding-bottom: 50px;
+
+  img {
+    cursor: pointer;
+    padding: 0px 5px;
   }
 }
 

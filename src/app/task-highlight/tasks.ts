@@ -133,6 +133,13 @@ const previousTasks: ITask[] = [
           datetime: "2020-12-02 09:11:29",
           title: "TASK 1",
           filename: "l34linbound5218554375454391310.jpg"
+      },
+      {
+        taskid: "43",
+        description: "TAKE A PICTURE  PREPARING ANY LOCAL DISH",
+        datetime: "2020-12-29 09:01:01",
+        title: "LOCAL DISH",
+        filename: "d68dAEADD99E-CC8B-4A6D-B00D-78F6213154AF.jpeg"
       }
   ]
 
