@@ -10,6 +10,7 @@ export class LinkButtonComponent {
 
   @Input() description: string;
   @Input() linkUrl: string;
+  @Input() bottomRadius: boolean = true;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 

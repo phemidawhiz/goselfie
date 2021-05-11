@@ -1,0 +1,64 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+
+  background: $light-grey;
+  padding: 3% 5% 5% 6%;
+
+  h2 {
+    font-family: 'Aileron';
+    line-height: 69px;
+    text-align: center;
+    @include fontSize(bold, 51.88px);
+  }
+}
+
+.prizes {
+  display: grid;
+  grid-template-columns: 29% 29% 29%;
+  grid-column-gap: 5%;
+
+  div {
+    width: 350px;
+    height: 380px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    background: $color-white;
+    padding: 15px 20px;
+
+    img {
+      z-index: 3;
+      padding-left: 25%;
+      margin-top: 30px;
+    }
+
+    p {
+      width: 100%;
+      height: 178px;
+      background: $color-grey;
+      border-radius: 10px;
+      margin-top: -80px;
+
+      text-align: center;
+
+      span {
+
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.spanHead {
+  margin-top: 19%;
+  font-family: 'Aileron';
+  @include fontSize(900, 42.85px);
+  line-height: 62px;
+}
+
+.spanBody {
+  font-family: 'Open Sans';
+  @include fontSize(bold, 23.25px);
+  line-height: 28px;
+}
