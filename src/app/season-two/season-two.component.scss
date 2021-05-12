@@ -17,20 +17,22 @@ section {
     font-weight: bold;
     font-size: 34.85px;
     margin-bottom: 0;
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   h2 {
     @extend %AileronFont;
     @include fontSize(900, 64.85px);
     color: $color-black-2;
-    margin-top: 0;
+    margin: 0;
+
   }
 
   p {
     @extend %AileronFont;
     @include fontSize(bold, 41.504px);
     line-height: 55px !important;
+    margin: 5px 0px 0px 0px;
   }
 }
 
@@ -54,9 +56,14 @@ section {
   text-align: left;
   background-repeat: no-repeat;
   background-position: right;
+  padding-right: 30px;
   img {
-    max-width: 700px;
+    display: block;
+    width: 750px;
     height: auto;
-    vertical-align: top;
+    margin-top: -150px;
+
   }
+
+
 }
