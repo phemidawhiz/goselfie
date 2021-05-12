@@ -11,7 +11,9 @@
 
 <app-header></app-header>
 <season-two></season-two>
-<app-about></app-about>
+
+<app-about [imageSource]="aboutDetails.imageSource" [content]="aboutDetails.content" [title]="aboutDetails.title" [isImageLeft]="aboutDetails.isImageLeft"></app-about>
+
 <homevideo></homevideo>
 <task-highlight></task-highlight>
 <ambassador></ambassador>

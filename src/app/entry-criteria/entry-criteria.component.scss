@@ -1,16 +1,29 @@
 @import '../common/variables';
 @import '../common/extends';
 
-section {
+%sectionalHeader {
+  font-family: 'Aileron';
+  line-height: 69px;
+  text-align: left;
+  @include fontSize(bold, 51.88px);
+  color: $dark-blue;
+}
+
+.criteriaSection {
 
   padding: 3% 5% 5% 6%;
 
   h2 {
-    font-family: 'Aileron';
-    line-height: 69px;
-    text-align: left;
-    @include fontSize(bold, 51.88px);
-    color: $dark-blue;
+    @extend %sectionalHeader;
+  }
+}
+
+.ethicsSection {
+
+  padding: 3% 5% 5% 6%;
+
+  h2 {
+    @extend %sectionalHeader;
   }
 }
 
@@ -39,6 +52,20 @@ section {
   div {
     border-right: 1px solid rgba(77, 77, 77, 0.3);
     padding: 0px 35px;
+  }
+}
+
+.ethics {
+  grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+  grid-gap: 1%;
+  background: $color-white;
+  padding: 0px 5px 50px;
+  div {
+    border-right: none !important;
+    margin-right: 20px !important;
+    background: $light-grey;
+    padding: 50px 35px;
+    border-radius: 10px;
   }
 }
 
