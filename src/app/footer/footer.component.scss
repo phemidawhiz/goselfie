@@ -1,0 +1,149 @@
+@import '../common/variables';
+@import '../common/extends';
+
+%commonText {
+  font-family: 'Open sans';
+  @include fontSize(normal, 22px);
+  line-height: 29px;
+  color: $color-white;
+}
+
+%navText {
+  font-family: 'Open sans';
+  color: $light-grey;
+  text-decoration: none;
+  @include fontSize(normal, 15px);
+  line-height: 20px;
+  letter-spacing: -0.204545px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: $footer-black;
+  padding: 4% 7%;
+}
+
+.getStarted {
+
+  hr {
+    width: 100%;
+    height: 0.5px;
+    background: $color-white;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    margin-top: 35px;
+  }
+
+  span {
+    @extend %commonText;
+    float: right;
+
+    padding: 0px 40px 4px 0px;
+  }
+
+  .getStartedLink {
+    float: right;
+  }
+
+}
+
+.linksAndEmails {
+  display: grid;
+  grid-template-columns: 34% 34% 16% 16%;
+  margin-bottom: 80px;
+
+  p {
+    @extend %commonText;
+    padding-right: 150px;
+  }
+
+  div {
+    padding-top: 30px;
+  }
+
+
+  input[type='email'] {
+    width:50%;
+    height:50px;
+    margin-top:5px;
+    margin-top:0px;
+    border:none;
+    color: $light-grey;
+    @include fontSize(normal, 15px);
+    border-bottom:1px solid rgba(225, 225, 225, 0.1);
+    background-color: $footer-black;
+
+    ::placeholder{
+      color: $placeholder-grey;
+    }
+  }
+
+  input[type='email']:active:focus,
+  input[type='email']:focus,
+  input[type='email']:hover{
+    outline : none;
+  }
+
+  ul {
+    list-style-type: none;
+    li {
+      padding: 10px 3px 10px 30px;
+    }
+    li a {
+      @extend %navText;
+    }
+
+    li a:hover {
+      color: $color-grey;
+    }
+  }
+
+  .active {
+    color: $color-orange !important;
+    font-size: 17px !important;
+    line-height: 22px;
+  }
+
+  .email {
+    font-size: 13px !important;
+    line-height: 220.1% !important;
+    letter-spacing: -0.204545px !important;
+  }
+
+}
+
+.thirdParty {
+  display: grid;
+  grid-template-columns: 35.3% 41.3% 28.3%;
+  margin-bottom: 30px;
+
+
+  a {
+    @extend %navText;
+    padding-right: 25px;
+  }
+
+  a:hover {
+    color: $color-grey;
+  }
+
+  img {
+    padding: 0 10px;
+    height: 18px;
+    width: auto;
+
+  }
+
+  img:hover {
+    opacity: 0.5;
+  }
+
+  .whiteLink {
+    color: $color-white !important;
+    font-weight: bold !important;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.204545px !important;
+  }
+
+}

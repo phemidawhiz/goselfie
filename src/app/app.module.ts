@@ -25,6 +25,11 @@ import { HeaderComponent } from './header/header.component';
 import { SeasonTwoComponent } from './season-two/season-two.component';
 import { AboutComponent } from './about/about.component';
 import { HomevideoComponent } from './homevideo/homevideo.component';
+import { TaskHighlightComponent } from './task-highlight/task-highlight.component';
+import { AmbassadorComponent } from './ambassador/ambassador.component';
+import { PrizesComponent } from './prizes/prizes.component';
+import { EntryCriteriaComponent } from './entry-criteria/entry-criteria.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,12 @@ import { HomevideoComponent } from './homevideo/homevideo.component';
     HeaderComponent,
     SeasonTwoComponent,
     AboutComponent,
-    HomevideoComponent
+    HomevideoComponent,
+    TaskHighlightComponent,
+    AmbassadorComponent,
+    PrizesComponent,
+    EntryCriteriaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

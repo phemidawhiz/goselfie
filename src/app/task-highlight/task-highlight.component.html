@@ -1,0 +1,55 @@
+<section>
+  <div>
+    <div class="taskHighlight">
+      <br><br>
+      <h2>Task Highlight</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue morbi quisque amet id.</p>
+      <linkbutton [description]="taskHighlightDetails.description" [linkUrl]="taskHighlightDetails.linkUrl"></linkbutton>
+    </div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(currentTaskPage[0]?.filename || taskHighlightDetails.tasks[0].filename)" alt="task-image">
+      <h3>{{ currentTaskPage[0]?.title || taskHighlightDetails.tasks[0].title | titlecase }}</h3>
+      <h4>{{ currentTaskPage[0]?.description.substr(0, 30) + '...' || taskHighlightDetails.tasks[0].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+
+  </div>
+  <div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(currentTaskPage[1]?.filename || taskHighlightDetails.tasks[1].filename)" alt="task-image">
+      <h3>{{ currentTaskPage[1]?.title || taskHighlightDetails.tasks[1].title | titlecase }}</h3>
+      <h4>{{ currentTaskPage[1]?.description.substr(0, 30) + '...' || taskHighlightDetails.tasks[1].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(currentTaskPage[2]?.filename || taskHighlightDetails.tasks[2].filename)" alt="task-image">
+      <h3>{{ currentTaskPage[2]?.title || taskHighlightDetails.tasks[2].title | titlecase }}</h3>
+      <h4>{{ currentTaskPage[2]?.description.substr(0, 30) + '...' || taskHighlightDetails.tasks[3].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+  </div>
+  <div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(currentTaskPage[3]?.filename || taskHighlightDetails.tasks[3].filename)" alt="task-image">
+      <h3>{{ currentTaskPage[3]?.title || taskHighlightDetails.tasks[3].title | titlecase }}</h3>
+      <h4>{{ currentTaskPage[3]?.description.substr(0, 30) + '...' || taskHighlightDetails.tasks[3].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+    <div class="highlightBox">
+      <img [src]="getTaskImageUrl(currentTaskPage[4]?.filename || taskHighlightDetails.tasks[4].filename)" alt="task-image">
+      <h3>{{ currentTaskPage[4]?.title || taskHighlightDetails.tasks[4].title | titlecase }}</h3>
+      <h4>{{ currentTaskPage[4]?.description.substr(0, 30) + '...' || taskHighlightDetails.tasks[4].description.substr(0, 30) + '...' | titlecase }}</h4>
+    </div>
+  </div>
+</section>
+
+<div class="dots">
+  <span *ngFor="let page of pages; index as i">
+
+    <span *ngIf="page.id === currentPageId; then filledEllipse  else ellipse"></span>
+    <ng-template #filledEllipse>
+      <img src="../../assets/icons/ellipse_filled.svg" (click)="getCurrentTask(i)" />
+    </ng-template>
+
+    <ng-template #ellipse>
+      <img src="../../assets/icons/ellipse.svg" (click)="getCurrentTask(i)" />
+    </ng-template>
+  </span>
+
+</div>

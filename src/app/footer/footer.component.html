@@ -1,0 +1,63 @@
+<footer>
+
+  <div class="getStarted">
+    <logo [isBlack]="true"></logo>
+    <linkbutton [linkUrl]="getStartedLink.linkUrl" [description]="getStartedLink.description" class="getStartedLink" ></linkbutton>
+    <span>Ready to get started?</span>
+    <hr>
+  </div>
+
+  <div class="linksAndEmails">
+    <div>
+      <p>Subscribe to our newsletter</p>
+      <div><input type="email" placeholder="Email Address" /> <linkbutton [linkUrl]="emailSubLink.linkUrl" [description]="emailSubLink.description" [bottomRadius]="false" ></linkbutton></div>
+    </div>
+    <div>
+      <ul>
+        <li ><a class="active" >Email Us</a></li>
+        <li><a class="email">info@goselfie.com.ng</a></li>
+        <li><a class="email" >support@goselfie.com.ng</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li ><a class="active" routerLink="/about">About</a></li>
+        <li><a routerLink="/story">Story</a></li>
+        <li><a routerLink="/benefits">Benefits</a></li>
+        <li><a routerLink="/team">Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li ><a class="active" routerLink="/help">Help</a></li>
+        <li><a routerLink="/faq">FAQs</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="thirdParty">
+    <div>
+      <p>
+        <a routerLink="/terms">Terms &amp; Conditions</a> <a routerLink="/privacy">Privacy Policy</a>
+      </p>
+    </div>
+    <div>
+      <br>
+      <a class="whiteLink" href="mailto:info@goselfie.com.ng">Email Us</a>
+      <img src="../../assets/icons/pepsi.svg" alt="pepsi">
+      <img src="../../assets/icons/airtel.svg" alt="airtel">
+      <img src="../../assets/icons/tecno.svg" alt="tecno">
+
+    </div>
+    <div>
+      <br>
+      <a href="https://facebook.com/Goselfie-111038373820782/" target="_blank"><img src="../../assets/icons/facebook.svg" alt="facebook"></a>
+      <a href="https://mobile.twitter.com/selfieofficial5" target="_blank"><img src="../../assets/icons/twitter.svg" alt="twitter"></a>
+      <a href="https://www.instagram.com/goselfieofficial/" target="_blank"><img src="../../assets/icons/instagram.svg" alt="instagram"></a>
+      <a href="https://api.whatsapp.com/send?phone=2348148284576" target="_blank"><img src="../../assets/icons/whatsapp.svg" alt="whatsapp"></a>
+      <a href="https://www.youtube.com/channel/UCxJJYYK1ia6TNG2ZqQiZocg" target="_blank"><img src="../../assets/icons/youtube.svg" alt="youtube"></a>
+    </div>
+  </div>
+
+</footer>
