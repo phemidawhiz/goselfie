@@ -31,3 +31,14 @@
   font-weight: $weight;
   font-size: $size;
 }
+
+@mixin fontDetails($family, $lineHeight, $color) {
+  color: $color;
+  font-family: $family;
+  line-height: $lineHeight;
+}
+
+@mixin fontColorLineHeight($lineHeight, $color) {
+  color: $color;
+  line-height: $lineHeight;
+}

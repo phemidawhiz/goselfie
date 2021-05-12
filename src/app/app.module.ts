@@ -30,6 +30,8 @@ import { AmbassadorComponent } from './ambassador/ambassador.component';
 import { PrizesComponent } from './prizes/prizes.component';
 import { EntryCriteriaComponent } from './entry-criteria/entry-criteria.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { PageHeadersComponent } from './page-headers/page-headers.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { FooterComponent } from './footer/footer.component';
     AmbassadorComponent,
     PrizesComponent,
     EntryCriteriaComponent,
-    FooterComponent
+    FooterComponent,
+    AboutPageComponent,
+    PageHeadersComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'about', component: AboutPageComponent },
       {
         path: 'admin',
         component: AdminComponent,
