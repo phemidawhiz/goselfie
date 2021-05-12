@@ -3,8 +3,8 @@
 
 section {
   display: grid;
-  grid-template-columns: 50% 40%;
-  grid-column-gap: 5%;
+  grid-template-columns: 55% 40%;
+  grid-column-gap: 2%;
   @media #{$mobile-only} {
     display: block;
     padding: 20px;
@@ -35,6 +35,14 @@ section {
       padding: 1%;
     }
   }
+}
+
+.isWhiteBackground {
+  background-color: $color-white !important;
+}
+
+.imageRight {
+  grid-template-columns: 40% 55% !important;
 }
 
 

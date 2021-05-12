@@ -11,6 +11,7 @@ export class AboutComponent implements OnInit {
   @Input() isImageLeft: boolean;
   @Input() content: Array<string>;
   @Input() imageSource: string;
+  @Input() isGreyBackground?: boolean = true;
 
   constructor() { }
 

@@ -7,7 +7,7 @@ section {
 
   h2 {
 
-    @include fontDetails('Aileron', 69px, $dark-blue);
+    @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
   }
 
