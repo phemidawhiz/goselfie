@@ -32,6 +32,7 @@ import { EntryCriteriaComponent } from './entry-criteria/entry-criteria.componen
 import { FooterComponent } from './footer/footer.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { PageHeadersComponent } from './page-headers/page-headers.component';
+import { PageInfoComponent } from './page-info/page-info.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PageHeadersComponent } from './page-headers/page-headers.component';
     EntryCriteriaComponent,
     FooterComponent,
     AboutPageComponent,
-    PageHeadersComponent
+    PageHeadersComponent,
+    PageInfoComponent
   ],
   imports: [
     BrowserModule,
