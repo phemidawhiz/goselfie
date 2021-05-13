@@ -9,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
+  faq = {
+    title: "1. euirl ektjnket k",
+    content: ["Goselfie is on a mission of rewarding people and making them a star with their selfies. As the internet has been part of our lives, different social medias have emerge to keep us connected together but less people get recognize on these platforms because they are either not a celebrity or a social media influencer this where Goselfie comes in. Goselfie is trying to celebrate everybody for being part of this global village called the internet through their selfies or pictures."]
+  }
+
   aboutDetails = {
     title: "Our Mission",
     content: ["Goselfie is on a mission of rewarding people and making them a star with their selfies. As the internet has been part of our lives, different social medias have emerge to keep us connected together but less people get recognize on these platforms because they are either not a celebrity or a social media influencer this where Goselfie comes in. Goselfie is trying to celebrate everybody for being part of this global village called the internet through their selfies or pictures."],

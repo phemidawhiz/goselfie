@@ -33,6 +33,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { PageHeadersComponent } from './page-headers/page-headers.component';
 import { PageInfoComponent } from './page-info/page-info.component';
+import { FaqItemComponent } from './faq-item/faq-item.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PageInfoComponent } from './page-info/page-info.component';
     FooterComponent,
     AboutPageComponent,
     PageHeadersComponent,
-    PageInfoComponent
+    PageInfoComponent,
+    FaqItemComponent
   ],
   imports: [
     BrowserModule,

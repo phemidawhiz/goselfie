@@ -43,3 +43,16 @@
   color: $color;
   line-height: $lineHeight;
 }
+
+
+%noticeBox {
+  background: $color-white;
+  border: 1px solid $color-orange;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px;
+
+  p {
+    @include fontDetails('Open sans', 25px, $dark-blue, center )
+  }
+}
