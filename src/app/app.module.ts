@@ -34,6 +34,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { PageHeadersComponent } from './page-headers/page-headers.component';
 import { PageInfoComponent } from './page-info/page-info.component';
 import { FaqItemComponent } from './faq-item/faq-item.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { FaqItemComponent } from './faq-item/faq-item.component';
     AboutPageComponent,
     PageHeadersComponent,
     PageInfoComponent,
-    FaqItemComponent
+    FaqItemComponent,
+    FaqPageComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ import { FaqItemComponent } from './faq-item/faq-item.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutPageComponent },
+      { path: 'faq', component: FaqPageComponent },
       {
         path: 'admin',
         component: AdminComponent,
