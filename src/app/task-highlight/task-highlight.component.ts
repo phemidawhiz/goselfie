@@ -1,6 +1,5 @@
 
 import { Component } from '@angular/core';
-import { ITask } from 'app/common/types';
 import { environment } from 'environments/environment';
 import previousTasks from './tasks';
 
@@ -13,7 +12,7 @@ export class TaskHighlightComponent {
 
   taskHighlightDetails: any = {
     description: "View Task Highlight",
-    linkUrl: "/register",
+    linkUrl: "/tasks",
     tasks: previousTasks
   }
 
@@ -35,7 +34,6 @@ export class TaskHighlightComponent {
   getCurrentTask(id) {
     this.currentTaskPage = this.pages[id].page;
     this.currentPageId = this.pages[id].id;
-    console.log("Current Task: ", this.pages[id].page);
   }
 
   constructor() { }

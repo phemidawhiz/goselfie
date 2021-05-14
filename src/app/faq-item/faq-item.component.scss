@@ -28,6 +28,7 @@
     @include fontDetails('Open Sans', 25px, $dark-blue);
     @include fontSize(normal, 17px);
     margin-top: 0px;
+    padding-right: 55px;
   }
 }
 

@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  baseAPIDomain: 'http://localhost:3000',
+  baseAPIDomain: 'http://localhost',
   baseDomain: 'https://goselfie.com.ng/'
 };

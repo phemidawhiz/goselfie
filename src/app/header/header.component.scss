@@ -6,6 +6,7 @@ header {
   display: grid;
   grid-template-columns: 35% 30% 35%;
   padding-top: 45px;
+  margin-bottom: 30px;
   @extend %alignmentPadding;
   ul {
     text-align: left;
