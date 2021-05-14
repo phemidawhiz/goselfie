@@ -1,18 +1,29 @@
-<section>
+<section *ngIf="isImageLeft" [class]="isGreyBackground ? '' : 'isWhiteBackground'" >
   <div>
-    <img src="../../assets/images/woman_laptop.png" alt="Goselfie" />
+    <img [src]="imageSource" alt="About Goselfie" />
   </div>
   <div>
-    <h2>About Us</h2>
+    <h2>{{ title }}</h2>
 
-    <p>
-      Goselfie is a selfie contest platform where participants can register and partake in the Goselfie tasks with their phones and stand a chance of becoming a star.
-    </p>
-    <p>
-      Since selfies is another thing that connects everyone besides music, our priority is to connect everyone together with the sole purpose of bringing out their talent, building their confidence, improve the way they look at themselves and positioning them for future global opportunities.
+    <p *ngFor="let body of content">
+     {{ body }}
     </p>
 
+  </div>
+</section>
 
+<section *ngIf="!isImageLeft" [class]="isGreyBackground ? '' : 'isWhiteBackground'" [class]="!isImageLeft ? 'imageRight' : ''">
+  <div>
+    <h2>{{ title }}</h2>
+
+    <p *ngFor="let body of content">
+     {{ body }}
+    </p>
+
+  </div>
+
+  <div>
+    <img [src]="imageSource" alt="Goselfie Mission" />
   </div>
 </section>
 

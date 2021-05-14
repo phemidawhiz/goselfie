@@ -1,0 +1,21 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+  max-width: 1440px;
+  height: 397px;
+  background-image: url('../../assets/images/page_header_background.png');
+
+  div {
+    max-width: 1440px;
+    height: 397px;
+    margin: 0;
+    background: rgba(9, 22, 56, 0.5);
+    padding: 130px 0px 20px 130px;
+  }
+
+  h1 {
+    @include fontSize(900, 64.85px);
+    @include fontDetails('Aileron', 72px, $color-white);
+  }
+}

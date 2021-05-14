@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ambassador',
@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmbassadorComponent implements OnInit {
 
+  @Input() isBrandPage: boolean;
+
   readMoreLink = {
-    linkUrl: "/",
+    linkUrl: "/ambassador",
     description: "Read More"
   }
 

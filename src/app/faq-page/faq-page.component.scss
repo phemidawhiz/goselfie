@@ -1,0 +1,18 @@
+@import '../common/extends';
+@import '../common/variables';
+
+section  {
+  background-color: $color-white;
+  margin-right: 0px;
+  padding: 50px 30px 80px 220px;
+
+  p {
+    @include fontDetails('Open Sans', 25px, $dark-blue);
+    @include fontSize(normal, 17px);
+    padding-top: 30px;
+  }
+
+  div {
+    margin: 20px 0px;
+  }
+}

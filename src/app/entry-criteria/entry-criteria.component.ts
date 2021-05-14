@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'entry-criteria',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entry-criteria.component.scss']
 })
 export class EntryCriteriaComponent implements OnInit {
+
+  @Input() isCriteria: boolean = true;
 
   constructor() { }
 

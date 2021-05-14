@@ -1,0 +1,12 @@
+
+<app-header></app-header>
+  <app-page-headers [title]="'Frequently\<br> Asked Questions'"></app-page-headers>
+  <section>
+
+    <div *ngFor="let faq of faqs">
+      <app-faq-item [title]="faq.question" [content]="faq.answer"></app-faq-item>
+    </div>
+
+    <p>Start a chat with us if you have any other questions and concerns.</p>
+  </section>
+<app-footer></app-footer>

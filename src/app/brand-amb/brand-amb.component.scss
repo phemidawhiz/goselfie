@@ -1,0 +1,47 @@
+@import '../common/extends';
+@import '../common/variables';
+
+$achievement-pane-width: 955px;
+
+section {
+  h3 {
+    @include fontDetails('Aileron', 49px, $dark-blue, center);
+    @include fontSize(bold, 51.88px);
+
+
+  }
+
+  p {
+    @include fontDetails('Open Sans', 26px, $dark-blue, center);
+    @include fontSize(normal, 17px);
+    max-width: $achievement-pane-width;
+    margin: 0 auto 3%;
+  }
+
+  .ambassadorImages {
+    display: grid;
+    grid-template-columns: 48% 50%;
+    grid-gap: 2%;
+    max-width: $achievement-pane-width;
+    margin: 5% auto 10%;
+  }
+
+}
+
+
+.bigImage {
+  display: block;
+  max-width: 488px;
+  height: auto;
+}
+
+.smallImages {
+  display: inline-block;
+  max-width: 226px;
+  height: auto;
+  margin: 5px;
+}
+
+.relateImage {
+
+}

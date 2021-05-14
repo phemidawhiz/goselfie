@@ -1,0 +1,11 @@
+<div [class]="clicked ? 'faq' : 'faq unclicked'" (click)="expandCollapse()">
+  <span><img [src]="clicked ? '../../assets/icons/uparrow.svg' : '../../assets/icons/downicon.svg'" alt="Goselfie FAQ arrows" /></span>
+  <h3>{{ title }}</h3>
+
+  <div *ngIf="clicked">
+    <p *ngFor="let body of content">
+      {{ body }}
+    </p>
+  </div>
+
+</div>

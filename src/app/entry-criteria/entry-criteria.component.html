@@ -1,6 +1,5 @@
-<section>
+<section *ngIf="isCriteria" class="criteriaSection">
   <h2>Criteria for entry</h2>
-
   <div class="criteria">
     <div>
       <h3>01</h3>
@@ -25,5 +24,28 @@
     </div>
   </div>
 
+</section>
+
+<section *ngIf="!isCriteria" class="ethicsSection">
+  <h2 >Goselfie ethics</h2>
+  <div class="criteria ethics">
+    <div>
+      <h3>01</h3>
+      <p>You don't need to be photogenic to participate in Goselfie tasks.</p>
+    </div>
+    <div>
+      <h3>02</h3>
+      <p>You don't need a high end smart phone to participate in Goselfie tasks.</p>
+    </div>
+    <div>
+      <h3>03</h3>
+      <p>You don't need an hour glass shape to participate in the Goselfie task.</p>
+
+    </div>
+    <div>
+      <h3>04</h3>
+      <p>You don't need to be a social media influencer to participate in the Goselfie tasks.</p>
+    </div>
+  </div>
 </section>
 

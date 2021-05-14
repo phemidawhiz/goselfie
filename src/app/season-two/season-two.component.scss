@@ -7,7 +7,7 @@ section {
   display: grid;
   grid-template-columns: 40% 60%;
   @extend %alignmentPadding;
-  margin: 4% 0% 7%;
+  margin: 2% 0% 7%;
   @media #{$mobile-only} {
     display: block;
   }

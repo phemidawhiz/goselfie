@@ -30,6 +30,16 @@ import { AmbassadorComponent } from './ambassador/ambassador.component';
 import { PrizesComponent } from './prizes/prizes.component';
 import { EntryCriteriaComponent } from './entry-criteria/entry-criteria.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { PageHeadersComponent } from './page-headers/page-headers.component';
+import { PageInfoComponent } from './page-info/page-info.component';
+import { FaqItemComponent } from './faq-item/faq-item.component';
+import { FaqPageComponent } from './faq-page/faq-page.component';
+import { TaskHighlightsComponent } from './task-highlights/task-highlights.component';
+import { TaskService } from './services/usage/tasks.services';
+import { GeneralService } from './services/general.service';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { BrandAmbComponent } from './brand-amb/brand-amb.component';
 
 @NgModule({
   declarations: [
@@ -50,14 +60,27 @@ import { FooterComponent } from './footer/footer.component';
     AmbassadorComponent,
     PrizesComponent,
     EntryCriteriaComponent,
-    FooterComponent
+    FooterComponent,
+    AboutPageComponent,
+    PageHeadersComponent,
+    PageInfoComponent,
+    FaqItemComponent,
+    FaqPageComponent,
+    TaskHighlightsComponent,
+    BrandAmbComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'about', component: AboutPageComponent },
+      { path: 'faq', component: FaqPageComponent },
+      { path: 'tasks', component: TaskHighlightsComponent },
+      { path: 'ambassador', component: BrandAmbComponent },
       {
         path: 'admin',
         component: AdminComponent,
@@ -78,6 +101,8 @@ import { FooterComponent } from './footer/footer.component';
     AdminAuthGuard,
     LoginAuthGuard,
     AuthService,
+    TaskService,
+    GeneralService,
 
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions

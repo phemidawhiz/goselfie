@@ -1,0 +1,18 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+  background-color: $light-grey;
+  padding: 70px 370px;
+
+  h2 {
+
+    @include fontDetails('Aileron', 69px, $dark-blue, center);
+    @include fontSize(bold, 51.88px);
+  }
+
+  p {
+    @include fontSize(normal, 16px);
+    @include fontDetails('Open Sans', 25px, $dark-blue, center);
+  }
+}

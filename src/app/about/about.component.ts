@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+
+  @Input() title: string;
+  @Input() isImageLeft: boolean;
+  @Input() content: Array<string>;
+  @Input() imageSource: string;
+  @Input() isGreyBackground?: boolean = true;
 
   constructor() { }
 
