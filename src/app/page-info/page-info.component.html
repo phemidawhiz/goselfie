@@ -2,7 +2,5 @@
   <h2 *ngIf="title !== ''">
     {{ title }}
   </h2>
-  <p *ngFor="let info of content">
-    {{ info }}
-  </p>
+  <p *ngFor="let info of content" [innerHTML]="info"></p>
 </section>

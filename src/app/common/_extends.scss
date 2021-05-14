@@ -11,6 +11,21 @@
   src: url("../../assets/fonts/Merriweather/Merriweather-Black.ttf");
 }
 
+%buttonStyle {
+  background: $color-red;
+  border-radius: 4px;
+  padding: 12px 24px ;
+  font-size: 16px;
+  color: $color-white;
+  cursor: pointer;
+  font-weight: bold;
+  width: auto;
+  height: 48px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 16px;
+}
+
 %AileronFont {
   font-family: 'Aileron';
   font-style: normal;
@@ -25,6 +40,14 @@
 
 %alignmentPadding {
   padding: 0px 70px;
+}
+
+%noticeBox {
+  background: $color-white;
+  border: 1px solid $color-orange;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px 65px;
 }
 
 @mixin fontSize($weight, $size) {
@@ -53,6 +76,56 @@
   padding: 30px;
 
   p {
-    @include fontDetails('Open sans', 25px, $dark-blue, center )
+    @include fontDetails('Open sans', 25px, $dark-blue, center );
   }
 }
+
+/* Form Styles */
+
+form {
+  max-width: 950px;
+  margin: 10px auto;
+
+  p {
+    @include fontDetails('Open Sans', 25px, $dark-blue);
+    @include fontSize(normal, 17px);
+    margin-bottom: 100px;
+  }
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  background: $color-white;
+  border: 1px solid $color-grey;
+  box-sizing: border-box;
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 5px 15px;
+  height: 48px;
+  margin: 15px 0px 35px;
+
+  ::placeholder{
+    color: $light-grey;
+  }
+}
+
+textarea {
+  height: 143px !important;
+}
+
+label {
+  color: $black-label;
+  @include fontDetails('Open Sans', 24px, $black-label);
+  @include fontSize(600, 16px);
+}
+
+button {
+  @extend %buttonStyle;
+}
+
+input[type='submit'] {
+  @extend %buttonStyle;
+}
+
+

@@ -1,0 +1,42 @@
+@import '../common//extends';
+@import '../common/variables';
+
+
+section {
+  display: grid;
+  grid-template-columns: 56% 41%;
+  grid-gap: 3%;
+  padding: 5% 10%;
+
+  div {
+    @extend %noticeBox;
+
+    h4, p {
+      @include fontDetails('Open Sans', 25px, $dark-blue);
+      @include fontSize(normal, 17px);
+    }
+
+    h4 {
+      color: $color-red !important;
+    }
+
+
+  }
+}
+
+.alignText {
+  h4, p {
+    text-align: center !important;
+  }
+
+}
+
+.doubleInput {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 4%;
+}
+
+.singleInput {
+  display: block;
+}

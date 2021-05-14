@@ -40,6 +40,7 @@ import { TaskService } from './services/usage/tasks.services';
 import { GeneralService } from './services/general.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { BrandAmbComponent } from './brand-amb/brand-amb.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
     FaqPageComponent,
     TaskHighlightsComponent,
     BrandAmbComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -81,6 +83,7 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
       { path: 'faq', component: FaqPageComponent },
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
+      { path: 'register', component: RegisterComponent },
       {
         path: 'admin',
         component: AdminComponent,
