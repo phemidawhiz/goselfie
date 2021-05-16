@@ -85,6 +85,7 @@
 form {
   max-width: 950px;
   margin: 10px auto;
+  padding: 0% 2%;
 
   p {
     @include fontDetails('Open Sans', 25px, $dark-blue);
@@ -93,7 +94,7 @@ form {
   }
 }
 
-input, textarea {
+input, textarea, select {
   display: block;
   width: 100%;
   background: $color-white;
@@ -114,8 +115,12 @@ textarea {
   height: 143px !important;
 }
 
+.option {
+  height: 48px;
+  padding: 5px 15px;
+}
+
 label {
-  color: $black-label;
   @include fontDetails('Open Sans', 24px, $black-label);
   @include fontSize(600, 16px);
 }
@@ -126,6 +131,27 @@ button {
 
 input[type='submit'] {
   @extend %buttonStyle;
+}
+
+.displayItem {
+  display: block;
+}
+
+
+.hideItem {
+  display: none;
+}
+
+.errors {
+  padding: 20px;
+  background-color: $light-grey;
+  p {
+    @include fontDetails('Open Sans', 20px, $color-red);
+    @include fontSize(normal, 16px);
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 

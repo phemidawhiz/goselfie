@@ -40,3 +40,22 @@ section {
 .singleInput {
   display: block;
 }
+
+.registrationSuccessful {
+  @extend %noticeBox;
+  padding: 100px;
+  max-width: 782px;
+  margin: 15px auto 100px;
+  text-align: center;
+  h3 {
+    @include fontDetails('Aileron', 69px, $dark-blue, center);
+    @include fontSize(bold, 51.88px);
+    margin: 0;
+  }
+
+  p {
+    @include fontDetails('Open Sans', 25px, $dark-blue, center);
+    @include fontSize(normal, 17px);
+    margin-bottom: 50px;
+  }
+}

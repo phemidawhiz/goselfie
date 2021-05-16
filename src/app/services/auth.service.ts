@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService extends DataService {
   constructor(authHttp: AuthHttp, http: Http) {
-    super(environment.baseAPIDomain + '/api/users/login', authHttp, http);
+    super(environment.baseAPIDomain + '/login', authHttp, http);
   }
 
   logout() {

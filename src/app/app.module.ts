@@ -1,3 +1,5 @@
+import { RegService } from './services/usage/reg.service';
+import { environment } from 'environments/environment';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -106,7 +108,7 @@ import { RegisterComponent } from './register/register.component';
     AuthService,
     TaskService,
     GeneralService,
-
+    RegService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],
