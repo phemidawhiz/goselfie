@@ -1,0 +1,19 @@
+<section  >
+  <div>
+    <img [src]="imageSource || '../../assets/images/profileimage.png'" [alt]="username" />
+  </div>
+  <div>
+    <h2>{{ username }}</h2>
+
+    <p >
+     {{ about }}
+    </p>
+
+    <p>
+      <a [href]="instagramUrl"><img src="../../assets/icons/instagramblack.svg" [alt]="username + ' instagram page'"></a>
+      <a [href]="twitterUrl"><img src="../../assets/icons/twitterblack.svg" [alt]="username + ' twitter page'"></a>
+      <a [href]="facebookUrl"><img src="../../assets/icons/facebookblack.svg" [alt]="username + ' facebook page'"></a>
+    </p>
+
+  </div>
+</section>

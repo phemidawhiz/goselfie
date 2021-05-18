@@ -99,6 +99,15 @@
       <label for="about">Few words about you</label>
       <textarea rows="3" name="about" id="about" ngModel #name="ngModel" required></textarea>
 
+      <label for="twitter">Twitter Url</label>
+      <input type="text" ngModel name="twitter" #twitter = "ngModel" placeholder="e.g. https://twitter.com/phemidawhiz" required>
+
+      <label for="instagram">Instagram Url</label>
+      <input type="text" ngModel name="instagram" #instagram = "ngModel" placeholder="e.g. https://www.instagram.com/phemidawhiz/" required>
+
+      <label for="facebook">Facebook Url</label>
+      <input type="text" ngModel name="facebook" #facebook = "ngModel" placeholder="e.g. https://web.facebook.com/Pheminiscence/" required>
+
       <div *ngIf="errors.length > 0" class="errors">
         <p *ngFor="let error of errors">
           {{ error }}

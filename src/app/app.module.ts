@@ -1,3 +1,4 @@
+import { ProfileInfoService } from './services/usage/profile.service';
 import { ProfileImageUploadService } from './services/usage/pim.service';
 import { UploadAuthGuardService } from './services/upload-auth-guard.service';
 import { RegService } from './services/usage/reg.service';
@@ -47,6 +48,10 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
 import { RegisterComponent } from './register/register.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { UploadPageComponent } from './upload-page/upload-page.component';
+import { ProfileInfoComponent } from './profile-info/profile-info.component';
+import { SelfiesComponent } from './selfies/selfies.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileGuardService } from './services/profile-guard';
 
 @NgModule({
   declarations: [
@@ -78,6 +83,9 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
     RegisterComponent,
     ImageUploadComponent,
     UploadPageComponent,
+    ProfileInfoComponent,
+    SelfiesComponent,
+    ProfilePageComponent,
 
   ],
   imports: [
@@ -92,6 +100,11 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
       { path: 'register', component: RegisterComponent },
+      {
+        path: 'profile',
+        component: ProfilePageComponent,
+        canActivate: [AuthGuard, ProfileGuardService]
+      },
       {
         path: 'admin',
         component: AdminComponent,
@@ -122,6 +135,8 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
     RegService,
     UploadAuthGuardService,
     ProfileImageUploadService,
+    ProfileGuardService,
+    ProfileInfoService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

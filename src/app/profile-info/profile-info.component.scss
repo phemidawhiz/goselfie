@@ -1,0 +1,31 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+
+  display: grid;
+  grid-template-columns: 43% 42%;
+  grid-gap: 5%;
+  background: rgba(243, 243, 250, 0.5);
+
+  a {
+    cursor: pointer;
+
+  }
+
+  img {
+    float: right;
+  }
+
+
+  h1 {
+    @include fontDetails('Aileron', 28px, $dark-blue);
+    @include fontSize(bold, 41.25px);
+  }
+
+  p {
+    @include fontDetails('Open Sans', 23px, $dark-blue);
+    @include fontSize(normal, 17px);
+
+  }
+}
