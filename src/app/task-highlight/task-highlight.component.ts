@@ -28,7 +28,7 @@ export class TaskHighlightComponent {
 
 
   getTaskImageUrl = (imageName: string): string => {
-    return `${environment.baseDomain}/api/selfies/${imageName}`;
+    return `${environment.baseAPIDomain}/selfies/${imageName}`;
   }
 
   getCurrentTask(id) {

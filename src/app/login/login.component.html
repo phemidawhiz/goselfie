@@ -4,18 +4,22 @@
   <div class="loginForm">
     <h1>Login</h1>
     <form #f="ngForm" (ngSubmit)="signIn(f)">
-      <p>Note that username and password are case sensitive</p>
-      <div *ngIf="invalidLogin" class="errors"><p>{{ loginError }}</p></div>
+      <p >Note that username and password are case sensitive</p>
+      <div *ngIf="invalidLogin" class="errors"><p style="color: red; margin-bottom: 0;">{{ loginError }}</p></div><br>
       <label for="username" >Email / username</label>
       <input type="text" id="username" ngModel name="username" #email = "ngModel" placeholder="e.g. ciroma@gmail.com" required autofocus>
       <label for="password" >Password</label>
       <input type="password" id="password" name="password" ngModel placeholder="Password" required>
-      <input type="submit" value="Submit">
+      <input type="submit" [value]="submitValue">
     </form>
   </div>
+
+  <div class="cantLogin">
+    <p>Why can't I login?</p>
+    <p>Only registered members can login. You can <a routerLink="/register">get started here</a></p>
+    <p>check for wrong spelling in your password and <br> username/email as they are CASE-SENSITIVE</p>
+  </div>
 </section>
-
-
 
 
 <app-footer></app-footer>

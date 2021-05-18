@@ -1,3 +1,5 @@
+import { ProfileImageUploadService } from './services/usage/pim.service';
+import { UploadAuthGuardService } from './services/upload-auth-guard.service';
 import { RegService } from './services/usage/reg.service';
 import { environment } from 'environments/environment';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
@@ -43,6 +45,8 @@ import { GeneralService } from './services/general.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { BrandAmbComponent } from './brand-amb/brand-amb.component';
 import { RegisterComponent } from './register/register.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { UploadPageComponent } from './upload-page/upload-page.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +76,8 @@ import { RegisterComponent } from './register/register.component';
     TaskHighlightsComponent,
     BrandAmbComponent,
     RegisterComponent,
+    ImageUploadComponent,
+    UploadPageComponent,
 
   ],
   imports: [
@@ -92,6 +98,11 @@ import { RegisterComponent } from './register/register.component';
         canActivate: [AuthGuard, AdminAuthGuard]
       },
       {
+        path: 'upload',
+        component: UploadPageComponent,
+        canActivate: [AuthGuard, UploadAuthGuardService]
+      },
+      {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginAuthGuard]
@@ -109,6 +120,8 @@ import { RegisterComponent } from './register/register.component';
     TaskService,
     GeneralService,
     RegService,
+    UploadAuthGuardService,
+    ProfileImageUploadService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

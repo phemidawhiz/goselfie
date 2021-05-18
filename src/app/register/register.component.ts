@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   submitting: boolean = false;
   regFailed: boolean = true;
   buttonText: string = "Register";
+  submitValue: string = "Submit";
 
   errors: Array<string> = [];
 
@@ -67,6 +68,7 @@ export class RegisterComponent implements OnInit {
       else
         f.value.mop = "paystack";
       console.log("Form fields: ", f.value);
+      this.submitValue = "Processing...";
       this.regService.register(f.value)
       .subscribe(response => {
         const result = response;
@@ -78,6 +80,7 @@ export class RegisterComponent implements OnInit {
           this.errors.push(result.message);
         }
         this.submitting = false;
+        this.submitValue = "Submit";
       });
     }
   }

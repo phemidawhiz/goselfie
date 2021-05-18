@@ -1,0 +1,19 @@
+
+<section>
+  <h1>{{ title }}</h1>
+    <p>{{ notice }}</p>
+  <div>
+
+    <div class="uploadOutline">
+      <img [src]="imgURL" alt="upload image">
+      <input type="file" accept=".jpeg,.jpg,.png" #file type="file" (change)="preview(file.files)" />
+
+    </div>
+    <div *ngIf="message !== ''" class="errors"><p>{{message}}</p></div>
+    <button *ngIf="!processing" (click)="uploadProfileImage()">Upload</button>
+
+    <small *ngIf="processing">Processing...</small>
+  </div>
+</section>
+
+

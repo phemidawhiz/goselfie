@@ -4,15 +4,18 @@ import { JwtHelper, tokenNotExpired, AuthHttp } from 'angular2-jwt';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService extends DataService {
-  constructor(authHttp: AuthHttp, http: Http) {
+  [x: string]: any;
+  constructor(private router: Router, authHttp: AuthHttp, http: Http) {
     super(environment.baseAPIDomain + '/login', authHttp, http);
   }
 
   logout() {
     localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
   isLoggedIn() {
@@ -36,8 +39,8 @@ export class AuthService extends DataService {
       return null;
     }
 
-    const userData = new JwtHelper().decodeToken(token).result;
-
+    const userData = new JwtHelper().decodeToken(token);
+    console.log("userData: ", userData);
     return userData;
   }
 }

@@ -62,3 +62,15 @@ export const faqs: any = [
 export const getAge = (dob: Date) => {
   return new Date().getFullYear() - new Date(dob).getFullYear();
 };
+
+export const dragOver = (e: DragEvent) => {
+  e.preventDefault();
+}
+
+export const dragEnter = (e: DragEvent) => {
+  e.preventDefault();
+}
+
+export const dragLeave = (e: DragEvent) => {
+  e.preventDefault();
+}

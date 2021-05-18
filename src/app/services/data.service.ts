@@ -1,6 +1,6 @@
 import { BadRequestError } from './../common/bad-request-error';
 import { NotFoundError } from './../common/not-found-error';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptionsArgs } from '@angular/http';
 import { AuthHttp } from 'angular2-jwt';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -37,6 +37,14 @@ export class DataService {
 
   login(resource) {
     return this.http.post(this.url, resource)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  uploadProfileImage(resource) {
+
+    return this.authHttp.post(this.url, resource)
     .pipe(retry(1),
       catchError(this.handleError)
     );

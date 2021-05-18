@@ -8,8 +8,7 @@ section {
     @extend %noticeBox;
     padding: 70px 90px;
     max-width: 671px;
-    margin: 15px auto 100px;
-    text-align: center;
+    margin: 100px auto ;
     h1 {
       @include fontDetails('Aileron', 69px, $dark-blue, center);
       @include fontSize(bold, 31.88px);
@@ -21,9 +20,22 @@ section {
       @include fontSize(normal, 17px);
       margin-bottom: 50px;
     }
+  }
 
-    label {
-      text-align: left !important;
+  .cantLogin {
+    margin: 0 0 70px;
+    p {
+      @include fontDetails('Open Sans', 18px, $dark-blue, center);
+      @include fontSize(normal, 16px);
+      opacity: 0.7;
+
+      a {
+        text-decoration: none;
+
+      }
+      a:hover {
+        font-weight: bold;
+      }
     }
   }
 }
