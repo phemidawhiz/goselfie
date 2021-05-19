@@ -1,4 +1,5 @@
 import { environment } from "environments/environment";
+import { MINIMUM_SIZE_FOR_IMAGE } from "./constants";
 
 export const pageTitles = {
   aboutPage: "About us",
@@ -58,6 +59,47 @@ export const faqs: any = [
     ]
   }
 ];
+
+//Converts file to base64
+export const fileToBase64 = async (file: File) => {
+  let selectedFile = file;
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext("2d");
+  return await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    if (selectedFile.size >= MINIMUM_SIZE_FOR_IMAGE) {
+      reject('Image file is larger than 1mb, please reduce the size!');
+    }
+    reader.readAsDataURL(selectedFile);
+    reader.onload = () => {
+      const img = new Image();
+      if (reader.result) { img.src = reader.result.toString() }
+      //This function uses html5 canvas to scale down the image size smoothly, see: https://stackoverflow.com/questions/19262141/resize-image-with-javascript-canvas-smoothly
+      img.onload = () => {
+
+        // set size proportional to image
+        canvas.height = canvas.width * (img.height / img.width);
+
+        // step 1 - resize to 50%
+        const cvs = document.createElement('canvas');
+        const ctx = cvs.getContext('2d');
+
+        cvs.width = img.width * 0.4;
+        cvs.height = img.height * 0.4;
+        ctx && ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
+
+        // step 2, resize to final size
+        context && context.drawImage(cvs, 0, 0, cvs.width * 0.5, cvs.height * 0.5,
+          0, 0, canvas.width, canvas.height);
+
+        const data = ctx && ctx.canvas.toDataURL('image/jpeg', 1);
+        //@ts-ignore
+        resolve(data && data.toString().replace(/^data:(.*,)?/, ''))
+      }
+    };
+    reader.onerror = error => reject(error);
+  });
+}
 
 export const getAge = (dob: Date) => {
   return new Date().getFullYear() - new Date(dob).getFullYear();

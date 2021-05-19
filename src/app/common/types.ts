@@ -1,10 +1,16 @@
 
+
 export interface ITask {
     taskid: string;
     description: string;
     datetime: string;
     title: string;
     filename: string;
+}
+
+export interface ITaskPage {
+  page: ITask[];
+  id: number;
 }
 
 export interface IProfileInfo {

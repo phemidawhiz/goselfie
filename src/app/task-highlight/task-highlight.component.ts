@@ -1,5 +1,6 @@
+import { ITaskPage } from './../common/types';
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'environments/environment';
 import previousTasks from './tasks';
 
@@ -8,7 +9,7 @@ import previousTasks from './tasks';
   templateUrl: './task-highlight.component.html',
   styleUrls: ['./task-highlight.component.scss']
 })
-export class TaskHighlightComponent {
+export class TaskHighlightComponent implements OnInit {
 
   taskHighlightDetails: any = {
     description: "View Task Highlight",
@@ -16,12 +17,12 @@ export class TaskHighlightComponent {
     tasks: previousTasks
   }
 
-  pages = [
+  pages: Array<ITaskPage> = [
     {page: previousTasks.slice(0, 5), id: 1},
     {page: previousTasks.slice(5, 10), id: 2},
     {page: previousTasks.slice(10, 15), id: 3},
     {page: previousTasks.slice(15, 20), id: 4}
-  ]
+  ];
 
   currentTaskPage: any = this.pages[0];
   currentPageId: number = 1;
@@ -38,5 +39,8 @@ export class TaskHighlightComponent {
 
   constructor() { }
 
+  ngOnInit() {
+    this.currentTaskPage = this.pages[0].page;
+  }
 
 }
