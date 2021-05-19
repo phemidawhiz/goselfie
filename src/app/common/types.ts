@@ -22,4 +22,15 @@ export interface IProfileInfo {
   about: string;
   age: string;
   profileimage: string;
+  twitter: string;
+  instagram: string;
+  facebook: string;
+}
+
+export interface ISelfie {
+  filename: string;
+  datetime: string;
+  taskid: string;
+  taskdesc: string;
+  tasktitle: string;
 }

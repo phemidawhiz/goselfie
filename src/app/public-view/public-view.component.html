@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+  <app-page-info [title]="'Task Highlight'" [content]="['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue morbi quisque amet id.']"></app-page-info>
+
+  <app-profile-info [username]="profileInfo && profileInfo?.username" [about]="profileInfo && profileInfo?.about" [imageSource]="profileInfo && profileInfo?.profileimage" [twitterUrl]="profileInfo && profileInfo?.twitter" [facebookUrl]="profileInfo && profileInfo?.facebook" [instagramUrl]="profileInfo && profileInfo?.instagram" [isLoggedIn]="false"></app-profile-info>
+
+  <app-selfies [images]="selfies"></app-selfies>
+
+<app-footer></app-footer>

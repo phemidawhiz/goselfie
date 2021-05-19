@@ -25,6 +25,20 @@ export class GeneralService {
     );
   }
 
+  getMemberInfoFromUsername(username) {
+    return this.http.get(`${this.url}?type=info&username=${username}`)
+    .pipe(retry(1),
+    catchError(this.handleError)
+    );
+  }
+
+  getMemberSelfiesFromUsername(username) {
+    return this.http.get(`${this.url}?type=selfies&username=${username}`)
+    .pipe(retry(1),
+    catchError(this.handleError)
+    );
+  }
+
   private handleError(error: Response) {
     if (error.status === 400)
       return Observable.throw(new BadRequestError(error.json()));

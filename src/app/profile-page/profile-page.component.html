@@ -2,5 +2,8 @@
 
   <app-page-info [title]="'Profile'" [content]="['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue morbi quisque amet id.']"></app-page-info>
 
+  <app-profile-info [username]="profileInfo.username" [about]="profileInfo.about" [imageSource]="profileInfo.profileimage" [twitterUrl]="profileInfo.twitter" [facebookUrl]="profileInfo.facebook" [instagramUrl]="profileInfo.instagram" [isLoggedIn]="authService.isLoggedIn()"></app-profile-info>
+
+  <app-selfies [images]="selfies"></app-selfies>
 
 <app-footer></app-footer>

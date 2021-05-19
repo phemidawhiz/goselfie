@@ -1,3 +1,4 @@
+import { AuthService } from 'app/services/auth.service';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
@@ -9,7 +10,7 @@ import { AuthHttp } from 'angular2-jwt';
 @Injectable()
 export class ProfileInfoService extends DataService {
 
-  constructor(authHttp: AuthHttp ) {
-    super(`${environment.baseAPIDomain}/user?reqtype=info`, authHttp);
+  constructor(authHttp: AuthHttp, authService: AuthService) {
+    super(`${environment.baseAPIDomain}/user?reqtype=info&username=${authService.currentUser.data.username}`, authHttp);
   }
 }

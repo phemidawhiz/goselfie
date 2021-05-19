@@ -1,4 +1,6 @@
+import { ISelfie } from './../common/types';
 import { Component, Input } from '@angular/core';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-selfies',
@@ -7,7 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class SelfiesComponent {
 
-  @Input() images: Array<string>;
+  baseDomain: string = `${environment.baseAPIDomain}/`;
+
+  @Input() images: Array<ISelfie>;
 
   constructor() { }
 

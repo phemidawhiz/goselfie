@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-profile-info',
@@ -7,7 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ProfileInfoComponent  {
 
-  @Input() isLoggedIn: boolean;
+  baseDomain: string = environment.baseAPIDomain;
+  @Input() isLoggedIn: boolean = false;
   @Input() username: string;
   @Input() about: string;
   @Input() twitterUrl: string;

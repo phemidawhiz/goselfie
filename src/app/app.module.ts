@@ -1,3 +1,4 @@
+import { PublicViewService } from './services/usage/meminfo';
 import { ProfileInfoService } from './services/usage/profile.service';
 import { ProfileImageUploadService } from './services/usage/pim.service';
 import { UploadAuthGuardService } from './services/upload-auth-guard.service';
@@ -52,6 +53,8 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { SelfiesComponent } from './selfies/selfies.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileGuardService } from './services/profile-guard';
+import { PublicViewComponent } from './public-view/public-view.component';
+import { PublicSelfieService } from './services/usage/selfies';
 
 @NgModule({
   declarations: [
@@ -86,6 +89,7 @@ import { ProfileGuardService } from './services/profile-guard';
     ProfileInfoComponent,
     SelfiesComponent,
     ProfilePageComponent,
+    PublicViewComponent,
 
   ],
   imports: [
@@ -100,6 +104,7 @@ import { ProfileGuardService } from './services/profile-guard';
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'public/:username', component: PublicViewComponent },
       {
         path: 'profile',
         component: ProfilePageComponent,
@@ -137,6 +142,8 @@ import { ProfileGuardService } from './services/profile-guard';
     ProfileImageUploadService,
     ProfileGuardService,
     ProfileInfoService,
+    PublicViewService,
+    PublicSelfieService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

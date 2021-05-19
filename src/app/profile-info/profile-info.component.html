@@ -1,19 +1,21 @@
 <section  >
-  <div>
-    <img [src]="imageSource || '../../assets/images/profileimage.png'" [alt]="username" />
+  <div class="profileImage">
+    <img [src]="baseDomain + '/' + imageSource || '../../assets/images/profileimage.png'" [alt]="username" />
   </div>
-  <div>
-    <h2>{{ username }}</h2>
+  <div class="memberDetails">
+    <h1>{{ username }}</h1>
 
     <p >
      {{ about }}
     </p>
 
     <p>
-      <a [href]="instagramUrl"><img src="../../assets/icons/instagramblack.svg" [alt]="username + ' instagram page'"></a>
-      <a [href]="twitterUrl"><img src="../../assets/icons/twitterblack.svg" [alt]="username + ' twitter page'"></a>
-      <a [href]="facebookUrl"><img src="../../assets/icons/facebookblack.svg" [alt]="username + ' facebook page'"></a>
-    </p>
+      <a [href]="instagramUrl || 'https://facebook.com'" target="_blank"><img src="../../assets/icons/instagramblack.svg" [alt]="username + ' instagram page'"></a>&nbsp;&nbsp;
+      <a [href]="twitterUrl || 'https://twitter.com'" target="_blank"><img src="../../assets/icons/twitterblack.svg" [alt]="username + ' twitter handle'"></a>&nbsp;&nbsp;
+      <a [href]="facebookUrl || 'https://instagram.com'" target="_blank"><img src="../../assets/icons/facebookblack.svg" [alt]="username + ' facebook page'"></a>&nbsp;&nbsp;
+    </p><br >
+
+    <linkbutton *ngIf="isLoggedIn" [description]="'Upload New Task'" [linkUrl]="'/upload'"></linkbutton>
 
   </div>
 </section>
