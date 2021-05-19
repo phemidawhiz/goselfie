@@ -14,7 +14,7 @@
     <linkbutton [linkUrl]="contactLink.linkUrl" [description]="contactLink.description"></linkbutton>
     <span>
       <img src="../../assets/icons/search.svg" alt="search" />
-      <img src="../../assets/icons/user.svg" alt="user" />
+      <a (click)="authService.logout()"><img src="../../assets/icons/user.svg" alt="user" /></a>
     </span>
 
   </div>

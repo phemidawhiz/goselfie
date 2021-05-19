@@ -1,3 +1,9 @@
+import { PublicViewService } from './services/usage/meminfo';
+import { ProfileInfoService } from './services/usage/profile.service';
+import { ProfileImageUploadService } from './services/usage/pim.service';
+import { UploadAuthGuardService } from './services/upload-auth-guard.service';
+import { RegService } from './services/usage/reg.service';
+import { environment } from 'environments/environment';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -40,6 +46,15 @@ import { TaskService } from './services/usage/tasks.services';
 import { GeneralService } from './services/general.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { BrandAmbComponent } from './brand-amb/brand-amb.component';
+import { RegisterComponent } from './register/register.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { UploadPageComponent } from './upload-page/upload-page.component';
+import { ProfileInfoComponent } from './profile-info/profile-info.component';
+import { SelfiesComponent } from './selfies/selfies.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfileGuardService } from './services/profile-guard';
+import { PublicViewComponent } from './public-view/public-view.component';
+import { PublicSelfieService } from './services/usage/selfies';
 
 @NgModule({
   declarations: [
@@ -68,6 +83,13 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
     FaqPageComponent,
     TaskHighlightsComponent,
     BrandAmbComponent,
+    RegisterComponent,
+    ImageUploadComponent,
+    UploadPageComponent,
+    ProfileInfoComponent,
+    SelfiesComponent,
+    ProfilePageComponent,
+    PublicViewComponent,
 
   ],
   imports: [
@@ -81,10 +103,22 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
       { path: 'faq', component: FaqPageComponent },
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'public/:username', component: PublicViewComponent },
+      {
+        path: 'profile',
+        component: ProfilePageComponent,
+        canActivate: [AuthGuard, ProfileGuardService]
+      },
       {
         path: 'admin',
         component: AdminComponent,
         canActivate: [AuthGuard, AdminAuthGuard]
+      },
+      {
+        path: 'upload',
+        component: UploadPageComponent,
+        canActivate: [AuthGuard, UploadAuthGuardService]
       },
       {
         path: 'login',
@@ -103,7 +137,13 @@ import { BrandAmbComponent } from './brand-amb/brand-amb.component';
     AuthService,
     TaskService,
     GeneralService,
-
+    RegService,
+    UploadAuthGuardService,
+    ProfileImageUploadService,
+    ProfileGuardService,
+    ProfileInfoService,
+    PublicViewService,
+    PublicSelfieService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

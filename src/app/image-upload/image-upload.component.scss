@@ -1,0 +1,58 @@
+@import '../common/variables';
+@import '../common/extends';
+
+
+section {
+  text-align: center;
+
+  div {
+    @extend %noticeBox;
+    margin: 50px auto;
+    padding: 0px 120px;
+    max-width: 646px;
+
+    button {
+      margin-bottom: 30px;
+    }
+  }
+
+  h1 {
+
+    @include fontDetails('Aileron', 69px, $dark-blue, center);
+    @include fontSize(bold, 51.88px);
+
+  }
+
+  p, small {
+    @include fontDetails('Open Sans', 25px, $dark-blue, center);
+    @include fontSize(normal, 17px);
+    margin-bottom: 25px;
+  }
+
+  .uploadOutline {
+    background: $light-grey-2;
+    border: 1px dashed $color-orange;
+    border-radius: 10px;
+    padding: 25% 5%;
+    margin-bottom: 20px;
+
+    img {
+      margin: auto;
+      max-width: 100%;
+      cursor: pointer;
+    }
+
+    input[type=file] {
+      opacity: 0;
+      max-width: 299px;
+      height: 300px;
+      position: absolute;
+      margin: -15% auto;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+  }
+}

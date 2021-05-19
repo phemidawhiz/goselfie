@@ -1,0 +1,138 @@
+
+<app-header></app-header>
+
+<app-page-headers [title]="'Registration'"></app-page-headers>
+<app-page-info [title]="'Get Started'" [content]="['Please read the procedure carefully before\<br > proceeding with registration']"></app-page-info>
+
+<section>
+  <div>
+    <h4>Note: Registration costs N3,000 only</h4>
+    <p>
+
+      The registration process is seamless with online payment integrated. If you pay online, you're guaranteed instance access to the registration form. <br>If you choose to pay offline through bank deposit or other means: Make payment to the account details and whatsapp proof of payment to 7738738. Once payment is confirmed, you'll get pin with which you can access the registration form.
+
+    </p>
+  </div>
+  <div class="alignText">
+
+    <p>
+      <br>
+      Name: GO-SELFIE ENTERPRISE<br>
+      Account number: 1210883294<br>
+      Bank: ZENITH BANK
+
+    </p>
+
+    <h4>See frequestly asked questions for more info.</h4>
+  </div>
+</section>
+
+<!-- Payment Option -->
+<div [class]="paymentIsMade ? 'hideItem' : 'displayItem'">
+  <form #optionForm="ngForm" (ngSubmit)="submitForm(optionForm)">
+    <div class="singleInput">
+      <label for="paymentMethods">Choose Payment Method</label>
+      <select ngModel name="paymentMethods" id="paymentMethods"
+      #mySelect
+      (change)='onOptionsSelected(mySelect.value)' value="1">
+      >
+        <option value="1" [selected]="true">Pay online with card</option>
+        <option value="2">Deposit or transfer</option>
+      </select>
+      <div [class]="isOffline ? 'displayItem' : 'hideItem'">
+        <label>Enter Access Pin</label>
+        <input type="text" placeholder="confirmation pin given to you">
+      </div>
+
+      <div [class]="isOffline ? 'hideItem' : 'displayItem'">
+        <label for="fullName">Enter Full Name</label>
+        <input type="text" placeholder="This is just for payment documentation" ngModel name="fullName" #fullName = "ngModel" required>
+        <label for="emailAddress">Enter Email Address</label>
+        <input placeholder="This is just for payment documentation" ngModel name="emailAddress" #emailAddress = "ngModel" type="email" required>
+      </div>
+
+      <button >
+        Proceed
+      </button>
+
+    </div>
+  </form>
+</div><br><br><br>
+
+
+<!-- Registration Form -->
+<div [class]="(paymentIsMade && regFailed) ? 'displayItem' : 'hideItem'">
+  <form #regForm="ngForm" (ngSubmit)="submitRegForm(regForm)">
+    <div class="doubleInput">
+      <div>
+        <label for="firstname">First Name</label>
+        <input type="text" placeholder="First Name" ngModel name="firstname" #firstname = "ngModel" required>
+
+        <label for="gender">Gender</label>
+        <select ngModel name="gender" id="gender" required>
+            <option value="male" class="option" selected>Male</option>
+            <option value="female">Female</option>
+          </select>
+
+        <label for="username">Username</label>
+        <input type="text" ngModel name="username" #username = "ngModel" required>
+      </div>
+
+      <div>
+        <label for="lastname">Last Name</label>
+        <input type="text" ngModel name="lastname" #lastname = "ngModel" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" ngModel name="dob" #dob = "ngModel" required>
+
+        <label for="phonenumber">Phone Number</label>
+        <input type="text" ngModel name="phonenumber" #phonenumber = "ngModel" required>
+      </div>
+    </div>
+    <div class="singleInput">
+      <label for="password">Password</label>
+      <input type="password" ngModel name="password" #password = "ngModel" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" ngModel name="email" #email = "ngModel" [email]="true" placeholder="e.g. ciroma@gmail.com" required>
+
+      <label for="about">Few words about you</label>
+      <textarea rows="3" name="about" id="about" ngModel #name="ngModel" required></textarea>
+
+      <label for="twitter">Twitter Url</label>
+      <input type="text" ngModel name="twitter" #twitter = "ngModel" placeholder="e.g. https://twitter.com/phemidawhiz" required>
+
+      <label for="instagram">Instagram Url</label>
+      <input type="text" ngModel name="instagram" #instagram = "ngModel" placeholder="e.g. https://www.instagram.com/phemidawhiz/" required>
+
+      <label for="facebook">Facebook Url</label>
+      <input type="text" ngModel name="facebook" #facebook = "ngModel" placeholder="e.g. https://web.facebook.com/Pheminiscence/" required>
+
+      <div *ngIf="errors.length > 0" class="errors">
+        <p *ngFor="let error of errors">
+          {{ error }}
+        </p>
+      </div>
+
+      <input name="register" type="submit" [value]="submitValue" [disabled]="submitting">
+
+    </div>
+
+    <p>
+      If online payment fails or is cancelled. You need to make payment to the account details above and whatsapp proof of payment to xxxxxxx to get confirmation pin for offine payment.
+    </p>
+  </form>
+</div>
+
+<!-- Registration Successful -->
+<div [class]="!regFailed ? 'displayItem' : 'hideItem'">
+  <div class="registrationSuccessful">
+    <img src="../../assets/icons/success.svg" alt="registration Successful"/>
+
+    <h3>Registration successful</h3>
+    <p>Congratulations! Your Registration is successful, please click continue to login and upload your profile image. You shall be notified when selfie tasks are created. Check your profile from time to time when the competition starts. Best of luck!</p>
+
+    <linkbutton [description]="'Continue'" [linkUrl]="'/login'"></linkbutton>
+  </div>
+</div>
+<app-footer></app-footer>

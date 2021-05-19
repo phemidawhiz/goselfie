@@ -9,6 +9,6 @@ import { GeneralService } from '../general.service';
 export class TaskService extends GeneralService {
 
   constructor(http: HttpClient, ) {
-    super(`${environment.baseAPIDomain}/selfie/backend/alltasks`, http);
+    super(`${environment.baseAPIDomain}/alltasks`, http);
   }
 }

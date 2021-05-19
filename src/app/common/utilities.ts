@@ -57,4 +57,20 @@ export const faqs: any = [
       'You stand a chance to win amazing prizes stated on our home page as well as lots of consolation prizes. As participant, the contest boosts your profile and increase opportunity to get such deals as modelling, entertainment deals and so on.'
     ]
   }
-]
+];
+
+export const getAge = (dob: Date) => {
+  return new Date().getFullYear() - new Date(dob).getFullYear();
+};
+
+export const dragOver = (e: DragEvent) => {
+  e.preventDefault();
+}
+
+export const dragEnter = (e: DragEvent) => {
+  e.preventDefault();
+}
+
+export const dragLeave = (e: DragEvent) => {
+  e.preventDefault();
+}

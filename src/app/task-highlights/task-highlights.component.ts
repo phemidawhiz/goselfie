@@ -1,3 +1,4 @@
+import { ITask } from './../common/types';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskService } from 'app/services/usage/tasks.services';
@@ -8,7 +9,7 @@ import { TaskService } from 'app/services/usage/tasks.services';
   styleUrls: ['./task-highlights.component.scss']
 })
 export class TaskHighlightsComponent implements OnInit {
-  tasks: any;
+  tasks: Array<ITask>;
 
   constructor(private service: TaskService, private route: ActivatedRoute) { }
 

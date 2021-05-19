@@ -1,0 +1,53 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 10%;
+  background: rgba(243, 243, 250, 0.5);
+  padding: 5% 10%;
+  a {
+    cursor: pointer;
+
+  }
+
+  .profileImage {
+    img {
+      float: right;
+      max-width: 368px !important;
+      max-height: 400px !important;
+    }
+
+    .memberDetails {
+      img {
+        display: inline-block;
+        width: 16px !important;
+        height: 16px !important;
+
+      }
+      p {
+        a {
+          cursor: pointer;
+          padding-right: 20px;
+        }
+      }
+
+    }
+  }
+
+
+
+
+  h1 {
+    @include fontDetails('Aileron', 28px, $dark-blue);
+    @include fontSize(bold, 41.25px);
+  }
+
+  p {
+    @include fontDetails('Open Sans', 23px, $dark-blue);
+    @include fontSize(normal, 17px);
+
+  }
+}

@@ -6,3 +6,31 @@ export interface ITask {
     title: string;
     filename: string;
 }
+
+export interface IProfileInfo {
+  firstname: string;
+  lastname: string;
+  phonenumber: string;
+  email: string;
+  activated: string;
+  datetime: string;
+  votecount: string;
+  screened: string;
+  mop: string;
+  username: string;
+  gender: string;
+  about: string;
+  age: string;
+  profileimage: string;
+  twitter: string;
+  instagram: string;
+  facebook: string;
+}
+
+export interface ISelfie {
+  filename: string;
+  datetime: string;
+  taskid: string;
+  taskdesc: string;
+  tasktitle: string;
+}

@@ -1,0 +1,22 @@
+@import "../common/variables";
+@import "../common/extends";
+
+$width: 210.68px;
+$height: 229px;
+
+section {
+  padding: 5% 10%;
+
+  div {
+    display: inline-block;
+    max-width: $width;
+    max-height: $height;
+    margin: 4px 4px;
+    padding: 0;
+
+    img {
+      width: $width !important;
+      height: $height !important;
+    }
+  }
+}
