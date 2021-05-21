@@ -18,6 +18,20 @@ export class GeneralService {
     );
   }
 
+  getSelfiesByTaskID = (id: string) => {
+    return this.http.get(`${this.url}?taskid=${id}`)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  getTaskInfo = (id: string) => {
+    return this.http.get(`${this.url}?taskid=${id}`)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
   register(resource) {
     return this.http.post(this.url, resource)
     .pipe(retry(1),

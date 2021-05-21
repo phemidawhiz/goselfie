@@ -24,13 +24,12 @@ export class TaskHighlightComponent implements OnInit {
     {page: previousTasks.slice(15, 20), id: 4}
   ];
 
-  currentTaskPage: any = this.pages[0];
-  currentPageId: number = 1;
-
-
   getTaskImageUrl = (imageName: string): string => {
     return `${environment.baseAPIDomain}/selfies/${imageName}`;
   }
+
+  currentTaskPage: any = this.pages[0];
+  currentPageId: number = 1;
 
   getCurrentTask(id) {
     this.currentTaskPage = this.pages[id].page;

@@ -1,1 +1,1 @@
-export const MINIMUM_SIZE_FOR_IMAGE = 1020000; // 1MegaBytes
+export const MINIMUM_SIZE_FOR_IMAGE = 2020000; // about 2MegaBytes

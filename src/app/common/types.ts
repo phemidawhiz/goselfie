@@ -1,5 +1,4 @@
 
-
 export interface ITask {
     taskid: string;
     description: string;
@@ -11,6 +10,12 @@ export interface ITask {
 export interface ITaskPage {
   page: ITask[];
   id: number;
+}
+
+export interface ITaskSekfies {
+  filename: string;
+  username: string;
+  datetime: string;
 }
 
 export interface IProfileInfo {

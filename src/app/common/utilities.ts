@@ -1,5 +1,34 @@
+//import imageCompression from 'browser-image-compression';
+//import imageCompression = require("browser-image-compression");
 import { environment } from "environments/environment";
 import { MINIMUM_SIZE_FOR_IMAGE } from "./constants";
+
+/* export const handleImageUpload = async (files: File) => {
+
+  const imageFile = files[0];
+  console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+  console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+
+  const options = {
+    maxSizeMB: 1,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true
+  }
+  try {
+    const compressedFile = await imageCompression(imageFile, options);
+    console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+
+    //await uploadToServer(compressedFile); // write your own logic
+  } catch (error) {
+    console.log(error);
+  }
+
+} */
+
+export const fetchTaskImageUrl = (imageName: string): string => {
+  return `${environment.baseAPIDomain}/selfies/${imageName}`;
+}
 
 export const pageTitles = {
   aboutPage: "About us",
@@ -93,10 +122,12 @@ export const fileToBase64 = async (file: File) => {
           0, 0, canvas.width, canvas.height);
 
         const data = ctx && ctx.canvas.toDataURL('image/jpeg', 1);
+        console.log("Reader.result: ", reader.result);
         //@ts-ignore
         resolve(data && data.toString().replace(/^data:(.*,)?/, ''))
       }
     };
+
     reader.onerror = error => reject(error);
   });
 }
@@ -116,3 +147,5 @@ export const dragEnter = (e: DragEvent) => {
 export const dragLeave = (e: DragEvent) => {
   e.preventDefault();
 }
+
+
