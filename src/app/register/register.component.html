@@ -2,14 +2,16 @@
 <app-header></app-header>
 
 <app-page-headers [title]="'Registration'"></app-page-headers>
-<app-page-info [title]="'Get Started'" [content]="['Please read the procedure carefully before\<br > proceeding with registration']"></app-page-info>
+<div *ngIf="regFailed" >
+  <app-page-info [title]="regFormTitle" [content]="[pageMessage]"></app-page-info>
+</div>
 
-<section>
+<section [class]="(!paymentIsMade && regFailed) ? 'displayGridItem' : 'hideItem'">
   <div>
     <h4>Note: Registration costs N3,000 only</h4>
     <p>
 
-      The registration process is seamless with online payment integrated. If you pay online, you're guaranteed instance access to the registration form. <br>If you choose to pay offline through bank deposit or other means: Make payment to the account details and whatsapp proof of payment to 7738738. Once payment is confirmed, you'll get pin with which you can access the registration form.
+      The registration process is seamless with both offline and online payment integrated. If you pay online, you're guaranteed instance access to the registration form. <br>If you choose to pay offline through bank deposit or other means: Make payment to the account details and whatsapp proof of payment to 7738738. Once payment is confirmed, you'll get a pin with which you can access the registration form.
 
     </p>
   </div>
@@ -23,12 +25,19 @@
 
     </p>
 
-    <h4>See frequestly asked questions for more info.</h4>
+    <h4>See frequestly asked questions pay for more info.</h4>
   </div>
 </section>
 
+<div *ngIf="errors.length > 0" class="errors">
+  <p *ngFor="let error of errors">
+    {{ error }}
+  </p>
+</div>
+
 <!-- Payment Option -->
-<div [class]="paymentIsMade ? 'hideItem' : 'displayItem'">
+<div [class]="(paymentIsMade) ? 'hideItem' : 'displayItem'">
+
   <form #optionForm="ngForm" (ngSubmit)="submitForm(optionForm)">
     <div class="singleInput">
       <label for="paymentMethods">Choose Payment Method</label>
@@ -40,8 +49,8 @@
         <option value="2">Deposit or transfer</option>
       </select>
       <div [class]="isOffline ? 'displayItem' : 'hideItem'">
-        <label>Enter Access Pin</label>
-        <input type="text" placeholder="confirmation pin given to you">
+        <label for="accessPin">Enter Access Pin</label>
+        <input type="text"  placeholder="confirmation pin given to you. This is a one time pin and becomes invalid when you complete the form" ngModel name="accessPin" #accessPin = "ngModel">
       </div>
 
       <div [class]="isOffline ? 'hideItem' : 'displayItem'">
@@ -51,14 +60,11 @@
         <input placeholder="This is just for payment documentation" ngModel name="emailAddress" #emailAddress = "ngModel" type="email" required>
       </div>
 
-      <button >
-        Proceed
-      </button>
+      <input name="register" type="submit" [value]="methodButtonText" [disabled]="submittingMethod">
 
     </div>
   </form>
 </div><br><br><br>
-
 
 <!-- Registration Form -->
 <div [class]="(paymentIsMade && regFailed) ? 'displayItem' : 'hideItem'">
@@ -108,12 +114,6 @@
       <label for="facebook">Facebook Url</label>
       <input type="text" ngModel name="facebook" #facebook = "ngModel" placeholder="e.g. https://web.facebook.com/Pheminiscence/" required>
 
-      <div *ngIf="errors.length > 0" class="errors">
-        <p *ngFor="let error of errors">
-          {{ error }}
-        </p>
-      </div>
-
       <input name="register" type="submit" [value]="submitValue" [disabled]="submitting">
 
     </div>
@@ -125,7 +125,7 @@
 </div>
 
 <!-- Registration Successful -->
-<div [class]="!regFailed ? 'displayItem' : 'hideItem'">
+<div *ngIf="!regFailed" class="seperated">
   <div class="registrationSuccessful">
     <img src="../../assets/icons/success.svg" alt="registration Successful"/>
 

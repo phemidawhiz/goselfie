@@ -2,6 +2,7 @@ import { PublicViewService } from './../services/usage/meminfo';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProfileInfo, ISelfie } from 'app/common/types';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-public-view',
@@ -9,7 +10,7 @@ import { IProfileInfo, ISelfie } from 'app/common/types';
   styleUrls: ['./public-view.component.scss']
 })
 export class PublicViewComponent implements OnInit {
-
+  defaultProfileImage: string = `profileimages/person_7.jpg`;
   profileInfo: IProfileInfo;
 
   selfies: Array<ISelfie>;
@@ -24,6 +25,8 @@ export class PublicViewComponent implements OnInit {
       .subscribe(info => {
         __this.profileInfo = info.data;
         console.log("MemberInfo: ", __this.profileInfo);
+        if(__this.profileInfo.profileimage === 'none')
+          __this.profileInfo.profileimage = __this.defaultProfileImage;
       });
 
     this.service.getMemberSelfiesFromUsername(username)
@@ -31,6 +34,8 @@ export class PublicViewComponent implements OnInit {
       __this.selfies = selfies.data;
       console.log("Selfies: ", __this.selfies);
     });
+
+
 
   }
 

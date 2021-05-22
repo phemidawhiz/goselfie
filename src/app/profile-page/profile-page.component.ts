@@ -1,3 +1,4 @@
+import { environment } from 'environments/environment';
 import { IProfileInfo, ISelfie } from './../common/types';
 import { ProfileInfoService } from './../services/usage/profile.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,6 +14,8 @@ import { AuthService } from 'app/services/auth.service';
 
 
 export class ProfilePageComponent implements OnInit {
+
+  defaultProfileImage: string = `profileimages/person_7.jpg`;
 
   profileInfo: IProfileInfo = {
     firstname: "ENIADE",

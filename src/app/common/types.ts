@@ -7,6 +7,17 @@ export interface ITask {
     filename: string;
 }
 
+export interface ITaskPage {
+  page: ITask[];
+  id: number;
+}
+
+export interface ITaskSekfies {
+  filename: string;
+  username: string;
+  datetime: string;
+}
+
 export interface IProfileInfo {
   firstname: string;
   lastname: string;

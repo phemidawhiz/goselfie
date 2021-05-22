@@ -2,7 +2,7 @@
 @import '../common/variables';
 
 
-section {
+.wrapper {
   background: rgba(243, 243, 250, 0.5);
   padding: 30px 100px 25px 140px;
 
@@ -15,7 +15,23 @@ section {
   p {
     @include fontDetails('Open Sans', 28px, $dark-blue, center);
     @include fontSize(normal, 21.25px);
-    padding: 0% 26% 5%;
+    padding: 0% 26% 2%;
+
+    &.smallPadding {
+      padding: 0% 10% 5%;
+      display: grid;
+      grid-template-columns: 36% 22% 42%;
+
+      input, select {
+        width: 323px;
+      }
+
+      input[type="button"] {
+        @extend %buttonStyle;
+        float: left;
+        max-width: 160px;
+      }
+    }
   }
 
   div {
@@ -27,6 +43,21 @@ section {
     background: $color-white;
     box-shadow: rgba(88, 88, 88, 0.1) 0px 2px 8px 0px;
     margin: 0px 25px 25px 0px;
+
+    h3 {
+      @include fontSize(bold, 21.248px);
+      @include fontDetails('Merriweather', 28px, $dark-blue, center);
+    }
+
+    h4 {
+      @include fontSize(normal, 17px);
+      @include fontDetails('Open Sans', 13px, $dark-blue, center);
+      padding: 0 10px;
+    }
+
+    img {
+      @extend %taskHighLightImage;
+    }
   }
 }
 

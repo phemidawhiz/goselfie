@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { RequestOptions } from '@angular/http';
+//import { fileToBase64, handleImageUpload } from 'app/common/utilities';
 
 @Component({
   selector: 'app-image-upload',
@@ -25,6 +26,8 @@ export class ImageUploadComponent implements OnInit {
     private imageUploadService: ProfileImageUploadService) { }
 
   preview(files) {
+    //handleImageUpload(files);
+    //console.log(fileToBase64(files[0]));
     if (files.length === 0)
       return;
 
@@ -39,7 +42,7 @@ export class ImageUploadComponent implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       this.imgURL = reader.result;
-      console.log(this.imgURL.substr(23));
+      //console.log(this.imgURL.substr(23));
       console.log("user: ", this.authService.currentUser.data.username)
     }
   }

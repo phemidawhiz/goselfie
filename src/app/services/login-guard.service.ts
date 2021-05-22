@@ -14,7 +14,7 @@ constructor(
         return true;
     }
 
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
         return false;
     }
 }

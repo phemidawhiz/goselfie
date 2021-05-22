@@ -50,27 +50,17 @@ section {
 
   h3 {
     @include fontSize(bold, 21.248px);
-    font-family: 'Merriweather';
-    text-align: center;
-    color: $dark-blue;
+    @include fontDetails('Merriweather', 28px, $dark-blue, center);
   }
 
   h4 {
     @include fontSize(normal, 17px);
-    font-family: 'Open Sans';
-    line-height: 13px;
-    text-align: center;
+    @include fontDetails('Open Sans', 13px, $dark-blue, center);
     padding: 0 10px;
   }
 
   img {
-    max-width: 250px !important;
-    height: 200px !important;
-    display: block;
-    border-radius: 50%;
-    margin-top: 14% !important;
-    margin: auto;
-    transition: .5s ease;
+    @extend %taskHighLightImage;
   }
 }
 

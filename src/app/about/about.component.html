@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<section *ngIf="!isImageLeft" [class]="isGreyBackground ? '' : 'isWhiteBackground'" [class]="!isImageLeft ? 'imageRight' : ''">
+<section *ngIf="!isImageLeft" [class]="!isImageLeft ? 'imageRight' : ''">
   <div>
     <h2>{{ title }}</h2>
 

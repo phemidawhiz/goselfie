@@ -1,3 +1,8 @@
+import { PaymentVerificationService } from './services/usage/verify.payment';
+import { PinVerificationService } from './services/usage/verify.pin';
+import { PinUsageService } from './services/usage/use.pin';
+import { TaskInfoService } from './services/usage/task.info';
+import { TaskSelfiesService } from './services/usage/task.selfies';
 import { PublicViewService } from './services/usage/meminfo';
 import { ProfileInfoService } from './services/usage/profile.service';
 import { ProfileImageUploadService } from './services/usage/pim.service';
@@ -55,6 +60,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileGuardService } from './services/profile-guard';
 import { PublicViewComponent } from './public-view/public-view.component';
 import { PublicSelfieService } from './services/usage/selfies';
+import { NoDataComponent } from './components/no-data/no-data.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +96,7 @@ import { PublicSelfieService } from './services/usage/selfies';
     SelfiesComponent,
     ProfilePageComponent,
     PublicViewComponent,
+    NoDataComponent,
 
   ],
   imports: [
@@ -104,7 +111,9 @@ import { PublicSelfieService } from './services/usage/selfies';
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'register/:reference', component: RegisterComponent },
       { path: 'public/:username', component: PublicViewComponent },
+      { path: 'tasks/:id', component: TaskHighlightsComponent },
       {
         path: 'profile',
         component: ProfilePageComponent,
@@ -144,6 +153,11 @@ import { PublicSelfieService } from './services/usage/selfies';
     ProfileInfoService,
     PublicViewService,
     PublicSelfieService,
+    TaskSelfiesService,
+    TaskInfoService,
+    PinUsageService,
+    PinVerificationService,
+    PaymentVerificationService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],
