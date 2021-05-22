@@ -15,9 +15,11 @@ export class RegisterComponent implements OnInit {
   paymentIsMade: boolean;
   isOffline: boolean;
   submitting: boolean = false;
+  submittingMethod: boolean;
   regFailed: boolean = true;
   buttonText: string = "Register";
   submitValue: string = "Submit";
+  methodButtonText: string = "Submit";
 
   errors: Array<string> = [];
 
@@ -47,6 +49,8 @@ export class RegisterComponent implements OnInit {
 
   submitForm(f) {
     this.errors = [];
+    this.methodButtonText = "Processing";
+    this.submittingMethod = true;
     if(f.value.paymentMethods === "2") {
       const __this = this;
       this.isOffline = true;
@@ -57,10 +61,19 @@ export class RegisterComponent implements OnInit {
         } else {
           __this.errors.push(response.message);
         }
+        this.submittingMethod = false;
+        this.methodButtonText = "Submit";
       });
     } else {
       this.isOffline = false;
-      this.payWithPaystack(f.value.fullName, f.value.emailAddress);
+      if(f.invalid) {
+        this.errors.push("Please provide full name and email");
+        this.submittingMethod = false;
+        this.methodButtonText = "Submit";
+      } else {
+        this.payWithPaystack(f.value.fullName, f.value.emailAddress);
+      }
+
     }
 
   }

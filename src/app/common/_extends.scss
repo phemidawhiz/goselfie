@@ -156,8 +156,8 @@ input[type='submit'] {
   padding: 20px;
   background-color: $light-grey;
   p {
-    @include fontDetails('Open Sans', 20px, $color-red);
-    @include fontSize(normal, 16px);
+    @include fontDetails('Open Sans', 20px, $color-red, center);
+    @include fontSize(bold, 16px);
     font-style: italic;
     margin: 0;
     padding: 0;

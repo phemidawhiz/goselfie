@@ -23,9 +23,15 @@
 
     </p>
 
-    <h4>See frequestly asked questions for more info.</h4>
+    <h4>See frequestly asked questions pay for more info.</h4>
   </div>
 </section>
+
+<div *ngIf="errors.length > 0" class="errors">
+  <p *ngFor="let error of errors">
+    {{ error }}
+  </p>
+</div>
 
 <!-- Payment Option -->
 <div [class]="paymentIsMade ? 'hideItem' : 'displayItem'">
@@ -51,17 +57,14 @@
         <input placeholder="This is just for payment documentation" ngModel name="emailAddress" #emailAddress = "ngModel" type="email" required>
       </div>
 
-      <button >
-        Proceed
-      </button>
+      <input name="register" type="submit" [value]="methodButtonText" [disabled]="submittingMethod">
 
     </div>
   </form>
 </div><br><br><br>
 
-
 <!-- Registration Form -->
-<div [class]="(paymentIsMade && !regFailed) ? 'displayItem' : 'hideItem'">
+<div [class]="(paymentIsMade && regFailed) ? 'displayItem' : 'hideItem'">
   <form #regForm="ngForm" (ngSubmit)="submitRegForm(regForm)">
     <div class="doubleInput">
       <div>
@@ -107,12 +110,6 @@
 
       <label for="facebook">Facebook Url</label>
       <input type="text" ngModel name="facebook" #facebook = "ngModel" placeholder="e.g. https://web.facebook.com/Pheminiscence/" required>
-
-      <div *ngIf="errors.length > 0" class="errors">
-        <p *ngFor="let error of errors">
-          {{ error }}
-        </p>
-      </div>
 
       <input name="register" type="submit" [value]="submitValue" [disabled]="submitting">
 
