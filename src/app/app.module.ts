@@ -1,3 +1,4 @@
+import { PinUsageService } from './services/usage/use.pin';
 import { TaskInfoService } from './services/usage/task.info';
 import { TaskSelfiesService } from './services/usage/task.selfies';
 import { PublicViewService } from './services/usage/meminfo';
@@ -108,6 +109,7 @@ import { NoDataComponent } from './components/no-data/no-data.component';
       { path: 'tasks', component: TaskHighlightsComponent },
       { path: 'ambassador', component: BrandAmbComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'register/:reference', component: RegisterComponent },
       { path: 'public/:username', component: PublicViewComponent },
       { path: 'tasks/:id', component: TaskHighlightsComponent },
       {
@@ -151,6 +153,7 @@ import { NoDataComponent } from './components/no-data/no-data.component';
     PublicSelfieService,
     TaskSelfiesService,
     TaskInfoService,
+    PinUsageService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

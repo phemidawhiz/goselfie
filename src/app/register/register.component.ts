@@ -1,3 +1,4 @@
+import { PinUsageService } from './../services/usage/use.pin';
 import { getAge } from './../common/utilities';
 import { RegService } from './../services/usage/reg.service';
 import { environment } from 'environments/environment';
@@ -11,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   isSelected: boolean = true;
-  paymentIsMade: boolean = true;
+  paymentIsMade: boolean;
   isOffline: boolean;
   submitting: boolean = false;
   regFailed: boolean = true;
@@ -28,6 +29,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private usePin: PinUsageService,
     private regService: RegService) { }
 
   payWithPaystack(name: string, email: string) {
@@ -40,21 +42,32 @@ export class RegisterComponent implements OnInit {
       this.isOffline = true;
     else
       this.isOffline = false;
-      //this.payWithPaystack();
+
   }
 
   submitForm(f) {
-    if(f.value.paymentMethods === "2")
+    this.errors = [];
+    if(f.value.paymentMethods === "2") {
+      const __this = this;
       this.isOffline = true;
-    else
+      this.usePin.useAccessPin(f.value.accessPin)
+      .subscribe(response => {
+        if(response.status) {
+          __this.paymentIsMade = true;
+        } else {
+          __this.errors.push(response.message);
+        }
+      });
+    } else {
       this.isOffline = false;
       this.payWithPaystack(f.value.fullName, f.value.emailAddress);
+    }
+
   }
 
   submitRegForm(f) {
     console.log(f);
     this.errors = [];
-
     if(f.invalid) {
       this.errors.push("Please fill all fields and make sure email is in correct format");
     }
@@ -87,6 +100,13 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
+
+    if(this.route.snapshot.paramMap.get('reference')) {
+
+      console.log("Params ID: ", this.route.snapshot.paramMap.get('reference'));
+    }
+
+
   }
 
 }

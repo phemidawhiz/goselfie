@@ -25,6 +25,13 @@ export class GeneralService {
     );
   }
 
+  useAccessPin = (pin: number) => {
+    return this.http.get(`${this.url}?reqtype=usepin&pin=${pin}`)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
   getTaskInfo = (id: string) => {
     return this.http.get(`${this.url}?taskid=${id}`)
     .pipe(retry(1),

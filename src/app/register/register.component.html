@@ -40,8 +40,8 @@
         <option value="2">Deposit or transfer</option>
       </select>
       <div [class]="isOffline ? 'displayItem' : 'hideItem'">
-        <label>Enter Access Pin</label>
-        <input type="text" placeholder="confirmation pin given to you">
+        <label for="accessPin">Enter Access Pin</label>
+        <input type="text"  placeholder="confirmation pin given to you" ngModel name="accessPin" #accessPin = "ngModel">
       </div>
 
       <div [class]="isOffline ? 'hideItem' : 'displayItem'">
@@ -61,7 +61,7 @@
 
 
 <!-- Registration Form -->
-<div [class]="(paymentIsMade && regFailed) ? 'displayItem' : 'hideItem'">
+<div [class]="(paymentIsMade && !regFailed) ? 'displayItem' : 'hideItem'">
   <form #regForm="ngForm" (ngSubmit)="submitRegForm(regForm)">
     <div class="doubleInput">
       <div>
