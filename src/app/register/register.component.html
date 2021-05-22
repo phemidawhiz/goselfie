@@ -2,9 +2,11 @@
 <app-header></app-header>
 
 <app-page-headers [title]="'Registration'"></app-page-headers>
-<app-page-info [title]="'Get Started'" [content]="['Please read the procedure carefully before\<br > proceeding with registration']"></app-page-info>
+<div *ngIf="regFailed" >
+  <app-page-info [title]="regFormTitle" [content]="[pageMessage]"></app-page-info>
+</div>
 
-<section>
+<section [class]="(!paymentIsMade && regFailed) ? 'displayGridItem' : 'hideItem'">
   <div>
     <h4>Note: Registration costs N3,000 only</h4>
     <p>
@@ -34,7 +36,8 @@
 </div>
 
 <!-- Payment Option -->
-<div [class]="paymentIsMade ? 'hideItem' : 'displayItem'">
+<div [class]="(paymentIsMade) ? 'hideItem' : 'displayItem'">
+
   <form #optionForm="ngForm" (ngSubmit)="submitForm(optionForm)">
     <div class="singleInput">
       <label for="paymentMethods">Choose Payment Method</label>
@@ -122,7 +125,7 @@
 </div>
 
 <!-- Registration Successful -->
-<div [class]="!regFailed ? 'displayItem' : 'hideItem'">
+<div *ngIf="!regFailed" class="seperated">
   <div class="registrationSuccessful">
     <img src="../../assets/icons/success.svg" alt="registration Successful"/>
 
