@@ -9,7 +9,7 @@
     <h4>Note: Registration costs N3,000 only</h4>
     <p>
 
-      The registration process is seamless with online payment integrated. If you pay online, you're guaranteed instance access to the registration form. <br>If you choose to pay offline through bank deposit or other means: Make payment to the account details and whatsapp proof of payment to 7738738. Once payment is confirmed, you'll get pin with which you can access the registration form.
+      The registration process is seamless with both offline and online payment integrated. If you pay online, you're guaranteed instance access to the registration form. <br>If you choose to pay offline through bank deposit or other means: Make payment to the account details and whatsapp proof of payment to 7738738. Once payment is confirmed, you'll get a pin with which you can access the registration form.
 
     </p>
   </div>
@@ -47,7 +47,7 @@
       </select>
       <div [class]="isOffline ? 'displayItem' : 'hideItem'">
         <label for="accessPin">Enter Access Pin</label>
-        <input type="text"  placeholder="confirmation pin given to you" ngModel name="accessPin" #accessPin = "ngModel">
+        <input type="text"  placeholder="confirmation pin given to you. This is a one time pin and becomes invalid when you complete the form" ngModel name="accessPin" #accessPin = "ngModel">
       </div>
 
       <div [class]="isOffline ? 'hideItem' : 'displayItem'">

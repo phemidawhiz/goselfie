@@ -1,3 +1,5 @@
+import { PaymentVerificationService } from './services/usage/verify.payment';
+import { PinVerificationService } from './services/usage/verify.pin';
 import { PinUsageService } from './services/usage/use.pin';
 import { TaskInfoService } from './services/usage/task.info';
 import { TaskSelfiesService } from './services/usage/task.selfies';
@@ -154,6 +156,8 @@ import { NoDataComponent } from './components/no-data/no-data.component';
     TaskSelfiesService,
     TaskInfoService,
     PinUsageService,
+    PinVerificationService,
+    PaymentVerificationService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

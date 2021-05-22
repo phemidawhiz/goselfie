@@ -1,3 +1,4 @@
+import { PinVerificationService } from './../services/usage/verify.pin';
 import { PinUsageService } from './../services/usage/use.pin';
 import { getAge } from './../common/utilities';
 import { RegService } from './../services/usage/reg.service';
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
   buttonText: string = "Register";
   submitValue: string = "Submit";
   methodButtonText: string = "Submit";
+  accessPin: number;
 
   errors: Array<string> = [];
 
@@ -31,7 +33,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private usePin: PinUsageService,
+    private usePin: PinVerificationService,
     private regService: RegService) { }
 
   payWithPaystack(name: string, email: string) {
@@ -52,9 +54,10 @@ export class RegisterComponent implements OnInit {
     this.methodButtonText = "Processing";
     this.submittingMethod = true;
     if(f.value.paymentMethods === "2") {
+      this.accessPin = f.value.accessPin;
       const __this = this;
       this.isOffline = true;
-      this.usePin.useAccessPin(f.value.accessPin)
+      this.usePin.verifyAccessPin(f.value.accessPin)
       .subscribe(response => {
         if(response.status) {
           __this.paymentIsMade = true;
@@ -95,7 +98,7 @@ export class RegisterComponent implements OnInit {
         f.value.mop = "paystack";
       console.log("Form fields: ", f.value);
       this.submitValue = "Processing...";
-      this.regService.register(f.value)
+      this.regService.register(f.value, this.accessPin)
       .subscribe(response => {
         const result = response;
         console.log(result);

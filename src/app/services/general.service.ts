@@ -32,6 +32,13 @@ export class GeneralService {
     );
   }
 
+  verifyAccessPin = (pin: number) => {
+    return this.http.get(`${this.url}?reqtype=verifypin&pin=${pin}`)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
   getTaskInfo = (id: string) => {
     return this.http.get(`${this.url}?taskid=${id}`)
     .pipe(retry(1),
@@ -39,8 +46,8 @@ export class GeneralService {
     );
   }
 
-  register(resource) {
-    return this.http.post(this.url, resource)
+  register(resource, accessPin) {
+    return this.http.post(`${this.url}?accesspin=${accessPin}`, resource)
     .pipe(retry(1),
       catchError(this.handleError)
     );
@@ -55,6 +62,13 @@ export class GeneralService {
 
   getMemberSelfiesFromUsername(username) {
     return this.http.get(`${this.url}?type=selfies&username=${username}`)
+    .pipe(retry(1),
+    catchError(this.handleError)
+    );
+  }
+
+  verifyPayment = (reference: string) => {
+    return this.http.get(`${this.url}?reference=${reference}`)
     .pipe(retry(1),
     catchError(this.handleError)
     );

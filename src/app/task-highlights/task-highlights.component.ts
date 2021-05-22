@@ -48,7 +48,6 @@ export class TaskHighlightsComponent implements OnInit {
         });
       });
 
-
     } else {
       this.title = "Tasks Highlight";
       this.description = "Click on a task of your choice to see participants and subsequently their detailed profile.";
