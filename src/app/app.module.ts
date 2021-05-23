@@ -1,3 +1,6 @@
+import { SelfieImageUploadService } from './services/usage/upload.selfie';
+import { TaskSelfieComponent } from './task-selfie/task-selfie.component';
+import { LastTaskService } from './services/usage/last.task';
 import { PaymentVerificationService } from './services/usage/verify.payment';
 import { PinVerificationService } from './services/usage/verify.pin';
 import { PinUsageService } from './services/usage/use.pin';
@@ -130,6 +133,11 @@ import { NoDataComponent } from './components/no-data/no-data.component';
         canActivate: [AuthGuard, UploadAuthGuardService]
       },
       {
+        path: 'upload/:id',
+        component: UploadPageComponent,
+        canActivate: [AuthGuard, UploadAuthGuardService]
+      },
+      {
         path: 'login',
         component: LoginComponent,
         canActivate: [LoginAuthGuard]
@@ -158,6 +166,8 @@ import { NoDataComponent } from './components/no-data/no-data.component';
     PinUsageService,
     PinVerificationService,
     PaymentVerificationService,
+    LastTaskService,
+    SelfieImageUploadService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

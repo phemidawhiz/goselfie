@@ -49,8 +49,21 @@ export class DataService {
     );
   }
 
-  uploadProfileImage(resource) {
+  getLastTaskInfo = () => {
+    return this.authHttp.get(this.url)
+    .pipe(retry(1),
+    catchError(this.handleError)
+    );
+  }
 
+  uploadProfileImage(resource) {
+    return this.authHttp.post(this.url, resource)
+    .pipe(retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  uploadSelfie(resource) {
     return this.authHttp.post(this.url, resource)
     .pipe(retry(1),
       catchError(this.handleError)
