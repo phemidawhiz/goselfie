@@ -161,6 +161,10 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(private service: ProfileInfoService, private route: ActivatedRoute, public authService: AuthService) { }
 
+  logout() {
+    this.authService.logout();
+  }
+
   ngOnInit() {
     /* const __this = this;
     this.service.getUserDetails()
@@ -168,6 +172,7 @@ export class ProfilePageComponent implements OnInit {
         __this.profileInfo = profileInfo.data;
         console.log("Tasks: ", __this.profileInfo);
       }); */
+
   }
 
 }

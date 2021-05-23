@@ -8,4 +8,6 @@
 
   <app-no-data *ngIf="selfies?.length === 0" [message]="profileInfo.username + ' is yet to take any selfie'"></app-no-data>
 
+  <div *ngIf="authService.isLoggedIn()" class="profileLogoutSection"><a (click)="logout()">Logout</a> | <a routerLink="/faq">FAQ</a></div>
+
 <app-footer></app-footer>
