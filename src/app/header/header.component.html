@@ -3,19 +3,25 @@
   <div>
     <logo></logo>
   </div>
-  <div>
+  <div class="noMobileDisplay">
     <ul>
       <li><a routerLink="/about">About Us</a></li>
       <li><a routerLink="/faq">FAQ</a></li>
       <li><a routerLink="/register">Register</a></li>
     </ul>
   </div>
-  <div>
+  <div class="noMobileDisplay">
     <linkbutton [linkUrl]="contactLink.linkUrl" [description]="contactLink.description"></linkbutton>
+  </div>
+  <div>
+
     <span>
       <img src="../../assets/icons/search.svg" alt="search" />
-      <a (click)="profileLoginToggle()"><img src="../../assets/icons/user.svg" alt="user" /></a>
+      <img (click)="profileLoginToggle()" src="../../assets/icons/user.svg" alt="user" />
+      <img src="../../assets/icons/mobilemenu.svg" alt="mobile menu" class="noDesktopDisplay" />
     </span>
 
   </div>
+
+
 </header>

@@ -127,7 +127,7 @@ export class ImageUploadComponent implements OnInit {
           this.title = taskInfo && taskInfo.data && taskInfo.data.title;
           this.notice = taskInfo && taskInfo.data && taskInfo.data.description;
         }
-        console.log("Tasks: ", taskInfo);
+        console.log("Taskinfo: ", taskInfo);
       });
     }
   }
