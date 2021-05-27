@@ -1,8 +1,10 @@
+import { SelfieImageUploadService } from './../services/usage/upload.selfie';
 import { ProfileImageUploadService } from './../services/usage/pim.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { RequestOptions } from '@angular/http';
+import { TaskInfoService } from 'app/services/usage/task.info';
 //import { fileToBase64, handleImageUpload } from 'app/common/utilities';
 
 @Component({
@@ -20,9 +22,13 @@ export class ImageUploadComponent implements OnInit {
   message: string = '';
   base64ImageString = '';
   processing: boolean;
+  isSelfie: boolean;
 
   constructor(private router: Router,
     private authService: AuthService,
+    private route: ActivatedRoute,
+    private taskService: TaskInfoService,
+    private selfieUploadService: SelfieImageUploadService,
     private imageUploadService: ProfileImageUploadService) { }
 
   preview(files) {
@@ -42,9 +48,43 @@ export class ImageUploadComponent implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       this.imgURL = reader.result;
-      //console.log(this.imgURL.substr(23));
-      console.log("user: ", this.authService.currentUser.data.username)
     }
+  }
+
+  uploadSelfie() {
+    //upload selfie
+    this.message = "";
+    this.processing = false;
+    const cred = {
+      username: this.authService.currentUser.data.username,
+      taskid: this.route.snapshot.paramMap.get('id'),
+      base64image: this.imgURL.substr(23),
+      token: localStorage.getItem('token')
+    }
+
+    if(cred.base64image !== "ad.svg") {
+      this.message = "";
+      this.processing = true;
+      this.selfieUploadService.uploadSelfie(cred)
+      .subscribe(response => {
+        const result = response;
+        console.log("Result: ", result);
+        if(result.status == 200) {
+          this.router.navigate(['/profile']);
+        } else if(result.status == 412) {
+          this.message = "Unable to complete upload: you have completed this task!";
+        } else if(result.status == 408) {
+          this.message = "Unable to upload selfie: This task is no longer valid";
+        } else {
+          this.message = "Unable to upload selfie: Internal server error";
+        }
+
+        this.processing = false;
+      });
+    } else {
+      this.message = "please choose an image to upload";
+    }
+
   }
 
   uploadProfileImage() {
@@ -52,20 +92,22 @@ export class ImageUploadComponent implements OnInit {
     this.processing = false;
     const cred = {
       username: this.authService.currentUser.data.username,
-      base64image: this.imgURL.substr(23)
+      base64image: this.imgURL.substr(23),
+      token: localStorage.getItem('token')
     }
 
     if(cred.base64image !== "ad.svg") {
       this.message = "";
-      let headers      = { 'Authorisation': localStorage.getItem('token') };
-      let options       = { headers: headers }; // Create a request option
-      //const headers = { 'Authorization': localStorage.getItem('token') };
       this.processing = true;
-      console.log("Credentials: ", cred, options);
       this.imageUploadService.uploadProfileImage(cred)
       .subscribe(response => {
         const result = response;
         console.log(result);
+        if(result && (result.status == 200)) {
+          this.router.navigate(['/profile']);
+        } else {
+          this.message = result && result.message;
+        }
 
         this.processing = false;
       });
@@ -76,6 +118,18 @@ export class ImageUploadComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.route.snapshot.paramMap.get('id')) {
+      this.isSelfie = true;
+      const __this = this;
+      this.taskService.getTaskInfo(this.route.snapshot.paramMap.get('id'))
+      .subscribe(taskInfo => {
+        if(taskInfo && taskInfo.status) {
+          this.title = taskInfo && taskInfo.data && taskInfo.data.title;
+          this.notice = taskInfo && taskInfo.data && taskInfo.data.description;
+        }
+        console.log("Taskinfo: ", taskInfo);
+      });
+    }
   }
 
 }

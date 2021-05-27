@@ -127,7 +127,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
 
-
     if(this.route.snapshot.paramMap.get('reference')) {
 
       console.log("Params ID: ", this.route.snapshot.paramMap.get('reference'));
@@ -137,7 +136,7 @@ export class RegisterComponent implements OnInit {
         console.log(result);
         if(result.status) {
           this.paymentIsMade = true;
-          this.pageMessage = "Your payment was successful, please fill the form \<br>below to complete your registration";
+          this.pageMessage = "Your payment was successful, please fill the form \<br>below to complete your registration. Please do not reload this page while filling the form";
           this.regFormTitle = "Personal Info";
         } else {
           this.errors.push("Unable to verify payment: ", result.message);
@@ -146,7 +145,6 @@ export class RegisterComponent implements OnInit {
         this.submitValue = "Submit";
       });
     }
-
 
   }
 

@@ -24,6 +24,16 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  openNav = () => {
+    console.log("got here")
+    document.getElementById("mySidepanel").style.width = "250px";
+  }
+
+  /* Set the width of the sidebar to 0 (hide it) */
+  closeNav = () => {
+    document.getElementById("mySidepanel").style.width = "0";
+  }
+
   ngOnInit() {
   }
 

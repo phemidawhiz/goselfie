@@ -161,13 +161,23 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(private service: ProfileInfoService, private route: ActivatedRoute, public authService: AuthService) { }
 
+  logout() {
+    this.authService.logout();
+  }
+
   ngOnInit() {
-    /* const __this = this;
+    const __this = this;
     this.service.getUserDetails()
       .subscribe(profileInfo => {
-        __this.profileInfo = profileInfo.data;
-        console.log("Tasks: ", __this.profileInfo);
-      }); */
+        if(profileInfo.status == 200){
+          //__this.profileInfo = profileInfo.data;
+          console.log("Profile info: ", profileInfo.body);
+        } else {
+          console.log("Unable to get profile info");
+        }
+
+      });
+
   }
 
 }

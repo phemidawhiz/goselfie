@@ -35,8 +35,6 @@ export class PublicViewComponent implements OnInit {
       console.log("Selfies: ", __this.selfies);
     });
 
-
-
   }
 
 }

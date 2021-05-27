@@ -7,14 +7,15 @@
   height: 586px;
   background-image: url("../../assets/images/girlselfie.png");
 
-}
-
-.overlay {
-  //background: rgba(9, 22, 56, 0.5);
-
-  opacity: 0.85;
-  /*transition: .5s ease;*/
-  background: rgba(9, 22, 56, 0.5);
-  padding: 17.85% 49%;
+  div {
+    max-width: 1440px;
+    height: auto;
+    margin: 0;
+    background: rgba(9, 22, 56, 0.5);
+    padding: 17.85% 49%;
+  }
 
 }
+
+
+

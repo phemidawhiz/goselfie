@@ -18,6 +18,11 @@ section {
     font-size: 34.85px;
     margin-bottom: 0;
     margin-top: 40px;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 72px, $color-red);
+      @include fontSize(900, 24.85px);
+    }
   }
 
   h2 {
@@ -25,14 +30,22 @@ section {
     @include fontSize(900, 64.85px);
     color: $color-black-2;
     margin: 0;
-
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 55px, $dark-blue);
+      @include fontSize(700, 44.85px);
+    }
   }
 
   p {
     @extend %AileronFont;
     @include fontSize(bold, 41.504px);
-    line-height: 55px !important;
+    line-height: 55px;
     margin: 5px 0px 0px 0px;
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 40px, $dark-blue);
+      @include fontSize(bold, 25.5px);
+      margin: 0;
+    }
   }
 }
 
@@ -44,10 +57,20 @@ section {
   max-height: 104px;
   margin-top: 35px;
   padding: 15px 20px;
+  @media #{$mobile-only} {
+    width: 280.8px;
+    padding: 10px 15px;
+  }
   span {
     @include fontSize(bold, 21.248px);
     line-height: 28px;
-    padding-right: 50px;
+    padding-right: 80px;
+
+    @media #{$mobile-only} {
+      @include fontSize(bold, 16.248px);
+      line-height: 28px;
+      padding-right: 15px;
+    }
   }
 }
 
@@ -57,12 +80,21 @@ section {
   background-repeat: no-repeat;
   background-position: right;
   padding-right: 30px;
+  @media #{$mobile-only} {
+    background-image: url("../../assets/images/naked_selfie_mobile.png");
+    width: 300 !important;
+    height: 350px !important;
+    margin: 10px -20px 0px;
+    background-size: contain;
+  }
   img {
     display: block;
     width: 750px;
     height: auto;
     margin-top: -150px;
-
+    @media #{$mobile-only} {
+      display: none;
+    }
   }
 
 

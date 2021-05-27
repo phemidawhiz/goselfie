@@ -1,0 +1,14 @@
+@import '../common/variables';
+@import '../common/extends';
+
+
+.profileLogoutSection {
+  a {
+    @include fontDetails('arial', 23px, $dark-blue, center);
+    @include fontSize(bold, 14px);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  text-align: center;
+  margin-bottom: 50px;
+}

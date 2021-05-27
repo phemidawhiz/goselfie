@@ -9,3 +9,10 @@ body {
   margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    align-content: center;
+    max-width: 414px;
+  }
+}
+

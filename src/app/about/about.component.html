@@ -1,4 +1,4 @@
-<section *ngIf="isImageLeft" [class]="isGreyBackground ? '' : 'isWhiteBackground'" >
+<section *ngIf="isImageLeft && !isHomePage" [class]="isGreyBackground ? '' : 'isWhiteBackground'" >
   <div>
     <img [src]="imageSource" alt="About Goselfie" />
   </div>
@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<section *ngIf="!isImageLeft" [class]="!isImageLeft ? 'imageRight' : ''">
+<section *ngIf="!isImageLeft && !isHomePage" [class]="!isImageLeft ? 'imageRight' : ''">
   <div>
     <h2>{{ title }}</h2>
 
@@ -24,6 +24,21 @@
 
   <div>
     <img [src]="imageSource" alt="Goselfie Mission" />
+  </div>
+</section>
+
+<section *ngIf="isHomePage" class="homePage">
+  <div>
+    <h2>{{ title }}</h2>
+
+    <p *ngFor="let body of content">
+     {{ body }}
+    </p>
+
+  </div>
+
+  <div class="mission">
+
   </div>
 </section>
 

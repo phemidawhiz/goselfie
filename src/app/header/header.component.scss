@@ -4,7 +4,7 @@
 
 header {
   display: grid;
-  grid-template-columns: 35% 30% 35%;
+  grid-template-columns: 35% 30% 15% 20%;
   padding-top: 45px;
   margin-bottom: 30px;
   @extend %alignmentPadding;
@@ -35,11 +35,44 @@ header {
   span {
     display: inline-block;
     margin-left: 50px;
+    @media #{$mobile-only} {
+      margin: 0px;
+      margin-top: 10px;
+      padding-left: 10%;
+    }
     img {
       padding: 0px 35px;
       cursor: pointer;
+      @media #{$mobile-only} {
+        padding: 0px 10px;
+        text-align: right;
+      }
     }
+
+  }
+
+  @media #{$mobile-only} {
+    max-width: $mobile-width;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 30px;
   }
 }
 
+.noMobileDisplay {
+  @extend %noMobileDisplay;
+  @media #{$mobile-only} {
+    display: none;
+  }
+}
+
+.noDesktopDisplay {
+  @extend %noDesktopDisplay;
+  @media #{$mobile-only} {
+    float: right;
+    margin-top: 0px;
+  }
+}
+
+/* NAVIGATION DRAWER */
 

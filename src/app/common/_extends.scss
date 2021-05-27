@@ -11,6 +11,22 @@
   src: url("../../assets/fonts/Merriweather/Merriweather-Black.ttf");
 }
 
+$mobile-width: 414px;
+$desktop-width: 1440px;
+
+%noMobileDisplay {
+  @media #{$mobile-only} {
+    display: none;
+  }
+}
+
+%noDesktopDisplay {
+  display: none;
+  @media #{$mobile-only} {
+    display: block;
+  }
+}
+
 %buttonStyle {
   background: $color-red;
   border-radius: 4px;
@@ -50,6 +66,10 @@
 
 %alignmentPadding {
   padding: 0px 70px;
+
+  @media #{$mobile-only} {
+    padding: 0px 20px;
+  }
 }
 
 %noticeBox {
@@ -118,6 +138,12 @@ input, textarea, select {
 
   ::placeholder{
     color: $light-grey;
+  }
+
+  &:hover {
+    border: 2px solid #BF271C;
+    box-sizing: border-box;
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
   }
 }
 

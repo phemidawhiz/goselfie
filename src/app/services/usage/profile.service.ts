@@ -11,6 +11,6 @@ import { AuthHttp } from 'angular2-jwt';
 export class ProfileInfoService extends DataService {
 
   constructor(authHttp: AuthHttp, authService: AuthService) {
-    super(`${environment.baseAPIDomain}/user?reqtype=info&username=${authService.currentUser.data.username}`, authHttp);
+    super(`${environment.baseAPIDomain}/user?reqtype=info&username=${authService.currentUser.data.username}&token=${localStorage.getItem('token')}`, authHttp);
   }
 }

@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LastTaskService } from 'app/services/usage/last.task';
 import { environment } from 'environments/environment';
 
 @Component({
@@ -6,7 +8,7 @@ import { environment } from 'environments/environment';
   templateUrl: './profile-info.component.html',
   styleUrls: ['./profile-info.component.scss']
 })
-export class ProfileInfoComponent  {
+export class ProfileInfoComponent implements OnInit  {
 
   baseDomain: string = environment.baseAPIDomain;
   @Input() isLoggedIn: boolean = false;
@@ -16,7 +18,21 @@ export class ProfileInfoComponent  {
   @Input() instagramUrl: string;
   @Input() facebookUrl: string;
   @Input() imageSource: string;
+  @Input() taskid: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private service: LastTaskService) { }
+
+  ngOnInit() {
+
+
+      // info id of last task created
+      let __this = this;
+    this.service.getLastTaskInfo()
+      .subscribe(info => {
+        __this.taskid = info.id;
+        console.log("info: ", info);
+      });
+
+  }
 
 }
