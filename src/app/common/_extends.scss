@@ -16,7 +16,7 @@ $desktop-width: 1440px;
 
 %noMobileDisplay {
   @media #{$mobile-only} {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -50,6 +50,11 @@ $desktop-width: 1440px;
   margin-top: 11% !important;
   margin: auto;
   transition: .5s ease;
+  @media #{$mobile-only} {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 5px;
+  }
 }
 
 %AileronFont {

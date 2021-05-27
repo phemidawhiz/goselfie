@@ -4,6 +4,11 @@
 %boxWidthHeight {
   width: 370px;
   height: 400px;
+
+  @media #{$mobile-only} {
+    width: 150.08px;
+    height: 163.22px;
+  }
 }
 
 section {
@@ -13,29 +18,45 @@ section {
   padding: 70px 70px 0px;
   background: rgba(243, 243, 250, 0.5);
 
+  @media #{$mobile-only} {
+    display: block;
+    padding: 10px 20px 0px;
+  }
+
   h2 {
     @extend %AileronFont;
     @include fontSize(bold, 51.88px);
     margin: 4% 0% 0%;
+    @media #{$mobile-only} {
+      @include fontSize(bold, 36px);
+      @include fontDetails('Aileron', 50px, $dark-blue);
+      margin: 1% 0% 0%;
+    }
   }
 
   p {
     @extend %commonFont;
     @include fontSize(normal, 21.25px);
     padding-bottom: 25px;
-  }
 
-  @media #{$mobile-only} {
-    display: block;
+    @media #{$mobile-only} {
+      @include fontSize(normal, 16px);
+      @include fontDetails('Open Sans', 18px, $dark-blue);
+      margin-bottom: 50px;
+    }
   }
 }
-
 
 .taskHighlight {
   padding: 26px 15px 0px;
   @extend %boxWidthHeight;
   margin-bottom: 23px;
-
+  @media #{$mobile-only} {
+    display: block;
+    width: 100%;
+    padding: 15px 10px 0px;
+    margin-bottom: 13px;
+  }
 }
 
 .highlightBox {
@@ -46,17 +67,31 @@ section {
   margin: 10px 0px 25px;
   padding: 5px;
   box-shadow: rgba(88, 88, 88, 0.1) 0px 2px 8px 0px;
-
+  @media #{$mobile-only} {
+    display: inline-block;
+    margin: 0px 0px 15px 4px;
+    padding: 0;
+  }
 
   h3 {
     @include fontSize(bold, 21.248px);
     @include fontDetails('Merriweather', 28px, $dark-blue, center);
+    @media #{$mobile-only} {
+      @include fontSize(bold, 15px);
+      @include fontDetails('Merriweather', 23px, $dark-blue, center);
+      margin-bottom: 0px;
+    }
   }
 
   h4 {
     @include fontSize(normal, 17px);
     @include fontDetails('Open Sans', 13px, $dark-blue, center);
     padding: 0 10px;
+    @media #{$mobile-only} {
+      @include fontSize(bold, 12px);
+      @include fontDetails('Open Sans', 10px, $dark-blue, center);
+      margin-top: 0px;
+    }
   }
 
   img {
@@ -68,10 +103,28 @@ section {
   text-align: center;
   background: rgba(243, 243, 250, 0.5);
   padding-bottom: 50px;
+  @media #{$mobile-only} {
+    text-align: center;
+  }
 
   img {
     cursor: pointer;
     padding: 0px 5px;
+    @media #{$mobile-only} {
+      height: 5px;
+      width: 5px;
+
+    }
   }
+}
+
+.noMobileDisplay {
+  @extend %noMobileDisplay;
+}
+
+.noDesktopDisplay {
+  @extend %noDesktopDisplay;
+  display: block;
+  padding: 40px 25px 20px;
 }
 
