@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
 
   @Input() title: string;
   @Input() isImageLeft: boolean;
+  @Input() isHomePage: boolean;
   @Input() content: Array<string>;
   @Input() imageSource: string;
   @Input() isGreyBackground?: boolean = true;
