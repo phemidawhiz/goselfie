@@ -8,6 +8,7 @@ section {
   @media #{$mobile-only} {
     display: block;
     padding: 20px;
+    margin-bottom: 50px;
   }
   padding: 70px;
   margin: 0;
@@ -15,8 +16,14 @@ section {
   img {
     max-width: 90%;
     height: auto;
-    float: right
+    float: right;
+    @media #{$mobile-only} {
+      display: block;
+      max-width: 100%;
+      margin-bottom: 10%;
+    }
   }
+
 
   h2 {
     @extend %AileronFont;
@@ -24,6 +31,12 @@ section {
     padding: 0% 10%;
     margin: 14% 0% 0%;
     line-height: 72px;
+
+    @media #{$mobile-only} {
+      @include fontSize(bold, 36px);
+      @include fontDetails('Aileron', 43px, $dark-blue);
+      padding: 0% 5%;
+    }
   }
 
   h3 {
@@ -32,6 +45,12 @@ section {
     line-height: 46px;
     padding: 0% 10%;
     margin: 0;
+
+    @media #{$mobile-only} {
+      @include fontSize(bold, 25px);
+      @include fontDetails('Aileron', 26px, $dark-blue);
+      padding: 0% 5%;
+    }
   }
 
   p {
@@ -40,7 +59,10 @@ section {
     padding: 0% 10%;
 
     @media #{$mobile-only} {
-      padding: 1%;
+      @include fontSize(normal, 16px);
+      @include fontDetails('Open Sans', 25px, $dark-blue);
+      padding: 0% 5%;
+      margin-bottom: 0;
     }
   }
 }
