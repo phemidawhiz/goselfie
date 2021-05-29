@@ -8,6 +8,21 @@
   color: $color-white;
 }
 
+%commonInput {
+  height:50px;
+  margin-top:5px;
+  margin-top:0px;
+  border:none;
+  color: $light-grey;
+  @include fontSize(normal, 15px);
+  border-bottom:1px solid rgba(225, 225, 225, 0.2);
+  background-color: $footer-black;
+
+  ::placeholder{
+    color: $placeholder-grey;
+  }
+}
+
 %navText {
   font-family: 'Open sans';
   color: $light-grey;
@@ -21,6 +36,10 @@
 footer {
   background-color: $footer-black;
   padding: 4% 7%;
+  @media #{$mobile-only} {
+    padding: 12% 5%;
+    margin-top: 50px;
+  }
 }
 
 .getStarted {
@@ -37,7 +56,6 @@ footer {
   span {
     @extend %commonText;
     float: right;
-
     padding: 0px 40px 4px 0px;
   }
 
@@ -52,9 +70,18 @@ footer {
   grid-template-columns: 38% 30% 16% 16%;
   margin-bottom: 80px;
 
+  @media #{$mobile-only} {
+    display: grid;
+    grid-template-columns: 40% 30% 30% !important;
+    padding-left: 0px;
+  }
+
   p {
     @extend %commonText;
     padding-right: 150px;
+    @media #{$mobile-only} {
+      padding-right: 15px;
+    }
   }
 
   div {
@@ -63,19 +90,9 @@ footer {
 
 
   input[type='email'] {
+    display: inline-block;
     width:50%;
-    height:50px;
-    margin-top:5px;
-    margin-top:0px;
-    border:none;
-    color: $light-grey;
-    @include fontSize(normal, 15px);
-    border-bottom:1px solid rgba(225, 225, 225, 0.1);
-    background-color: $footer-black;
-
-    ::placeholder{
-      color: $placeholder-grey;
-    }
+    @extend %commonInput;
   }
 
   input[type='email']:active:focus,
@@ -88,6 +105,9 @@ footer {
     list-style-type: none;
     li {
       padding: 10px 3px 10px 30px;
+      @media #{$mobile-only} {
+        padding-right: 10px 3px 10px 0px;
+      }
     }
     li a {
       @extend %navText;
@@ -117,10 +137,14 @@ footer {
   grid-template-columns: 35.3% 41.3% 28.3%;
   margin-bottom: 30px;
 
+  @media #{$mobile-only} {
+    display: block;
+  }
 
   a {
     @extend %navText;
     padding-right: 25px;
+
   }
 
   a:hover {
@@ -131,6 +155,14 @@ footer {
     padding: 0 10px;
     height: 18px;
     width: auto;
+
+    @media #{$mobile-only} {
+      display: inline-block;
+      padding: 0 10px;
+      height: 25px;
+      width: auto;
+      margin-right: 15px;
+    }
 
   }
 
@@ -146,4 +178,81 @@ footer {
     letter-spacing: -0.204545px !important;
   }
 
+}
+
+.desktopFooter {
+  @extend %noMobileDisplay;
+}
+
+.mobileFooter {
+  @extend %noDesktopDisplay;
+  hr {
+    width: 100%;
+    height: 0.5px;
+    background: $color-white;
+    border: 0.4px solid $color-grey;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    margin-top: 35px;
+  }
+}
+
+.logoMobile {
+  display: block;
+  padding: 25px 10px 10px 0px;
+
+}
+%commonFooterHeading {
+  @include fontDetails("Open Sans", 27px, $color-white);
+  @include fontSize(normal, 22px);
+}
+
+.getStartedMobile {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  h4 {
+    @extend %commonFooterHeading;
+  }
+  span {
+    display: inline-block;
+    margin: 45px 5px 10px 60px;
+  }
+}
+
+.subscribeMobile {
+  h2 {
+    @extend %commonFooterHeading;
+  }
+
+  input[type='email'] {
+    display: inline-block;
+    margin-bottom: 7px;
+    width:85%;
+    @extend %commonInput;
+  }
+
+  input[type='email']:active:focus,
+  input[type='email']:focus,
+  input[type='email']:hover{
+    outline : none;
+  }
+}
+
+.socialMobileLink {
+  display: block;
+  padding: 0 20px !important;
+  img {
+    @media #{$mobile-only} {
+      height: 12px !important;
+      width: auto;
+    }
+    a {
+      display: inline-block !important;
+    }
+  }
+
+}
+
+.policies {
+  margin: 40px 0;
 }

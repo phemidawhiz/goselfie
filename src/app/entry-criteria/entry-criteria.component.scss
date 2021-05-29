@@ -55,24 +55,10 @@
     opacity: 0.5;
     margin: 0px;
 
-    @media #{$mobile-only} {
-      @include fontSize(bold, 36px);
-      @include fontDetails('Aileron', 86px, $dark-blue);
-      display: inline-block;
-      margin: 0;
-      padding: 0 10px 0 0;
-    }
   }
 
   p {
-    @media #{$mobile-only} {
-      @include fontSize(normal, 14px);
-      @include fontDetails('Open Sans', 18px, $dark-blue);
 
-      display: inline;
-      margin: 0;
-      padding: 0;
-    }
     font-family: 'Open Sans';
     @include fontSize(normal, 17px);
     color: $dark-blue;

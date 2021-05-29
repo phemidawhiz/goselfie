@@ -3,7 +3,7 @@
   <h2>Criteria for entry</h2>
 
   <div class="criteria">
-    <div *ngFor="let criterion of entryCriteria">
+    <div *ngFor="let criterion of entryCriteria" [class]="criterion.id === '05' ? 'noBorder' : '' ">
       <h3>{{criterion.id}}</h3>
       <p>{{criterion.criterion}}</p>
     </div>
