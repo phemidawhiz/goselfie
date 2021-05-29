@@ -7,6 +7,11 @@ export interface ITask {
     filename: string;
 }
 
+export interface IEntryCriterion {
+  id: string;
+  criterion: string;
+}
+
 export interface ITaskPage {
   page: ITask[];
   id: number;

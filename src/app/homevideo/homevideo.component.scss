@@ -13,6 +13,28 @@
     margin: 0;
     background: rgba(9, 22, 56, 0.5);
     padding: 17.85% 49%;
+
+    @media #{$mobile-only} {
+      max-width: 414px;
+      height: 67%;
+      padding: 17.85% 49%;
+    }
+
+    img {
+      @media #{$mobile-only} {
+        width: 43px;
+        height: 44px;
+        margin-top: 100px;
+      }
+    }
+  }
+
+  @media #{$mobile-only} {
+    background-image: url("../../assets/images/home_video_bg_mobile.png");
+    max-width: 414px;
+    height: 387px !important;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 }

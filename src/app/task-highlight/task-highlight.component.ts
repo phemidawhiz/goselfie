@@ -12,7 +12,7 @@ import previousTasks from './tasks';
 export class TaskHighlightComponent implements OnInit {
 
   taskHighlightDetails: any = {
-    description: "View Task Highlight",
+    description: "View Highlight",
     linkUrl: "/tasks",
     tasks: previousTasks
   }
