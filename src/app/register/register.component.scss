@@ -7,9 +7,15 @@ section {
   grid-template-columns: 56% 41%;
   grid-gap: 3%;
   padding: 5% 10%;
+  @media #{$mobile-only} {
+    display: block !important;
+  }
 
   div {
     @extend %noticeBox;
+    @media #{$mobile-only} {
+      margin-bottom: 10%;
+    }
 
     h4, p {
       @include fontDetails('Open Sans', 25px, $dark-blue);

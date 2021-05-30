@@ -6,16 +6,33 @@ section {
   height: 397px;
   background-image: url('../../assets/images/page_header_background.png');
 
+  @media #{$mobile-only} {
+    background-image: url('../../assets/images/mobile_pageinfo_bg_image.png');
+  }
+
   div {
     max-width: 1440px;
     height: 397px;
     margin: 0;
     background: rgba(9, 22, 56, 0.5);
     padding: 130px 0px 20px 130px;
+
+    @media #{$mobile-only} {
+      background-image: url('../../assets/images/mobile_pageinfo_bg_image.png');
+      max-width: 414px;
+      height: 350px;
+      padding: 175px 0px 20px 30px;
+      background: rgba(9, 22, 56, 0.5);
+    }
   }
 
   h1 {
     @include fontSize(900, 64.85px);
     @include fontDetails('Aileron', 72px, $color-white);
+
+    @media #{$mobile-only} {
+      @include fontSize(900, 44.85px);
+      @include fontDetails('Aileron', 47px, $color-white);
+    }
   }
 }

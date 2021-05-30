@@ -22,6 +22,11 @@
     margin: 0px;
     @include fontDetails('Aileron', 72px, $color-red);
     @include fontSize(bold, 23.85px);
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 72px, $color-red);
+      @include fontSize(bold, 18px);
+    }
   }
 
   p {
@@ -29,6 +34,12 @@
     @include fontSize(normal, 17px);
     margin-top: 0px;
     padding-right: 55px;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 25px, $dark-blue);
+      @include fontSize(normal, 16px);
+      padding-right: 55px;
+    }
   }
 }
 
@@ -40,10 +51,23 @@
   h3 {
     @include fontDetails('Aileron', 72px, $color-black-2);
     @include fontSize(bold, 23.85px);
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 45px, $color-black-2);
+      @include fontSize(bold, 16px);
+
+    }
   }
 }
 
 span {
   padding-top: 25px;
   float: right;
+  img {
+    @media #{$mobile-only} {
+      width: 14px;
+      height: 7px;
+      margin-bottom: 10px;
+    }
+  }
 }

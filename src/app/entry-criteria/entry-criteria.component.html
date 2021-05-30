@@ -21,22 +21,16 @@
 <section *ngIf="!isCriteria" class="ethicsSection">
   <h2 >Goselfie ethics</h2>
   <div class="criteria ethics">
-    <div>
-      <h3>01</h3>
-      <p>You don't need to be photogenic to participate in Goselfie tasks.</p>
+    <div *ngFor="let ethic of ethics">
+      <h3>{{ethic.id}}</h3>
+      <p>{{ethic.criterion}}</p>
     </div>
-    <div>
-      <h3>02</h3>
-      <p>You don't need a high end smart phone to participate in Goselfie tasks.</p>
-    </div>
-    <div>
-      <h3>03</h3>
-      <p>You don't need an hour glass shape to participate in the Goselfie task.</p>
+  </div>
 
-    </div>
-    <div>
-      <h3>04</h3>
-      <p>You don't need to be a social media influencer to participate in the Goselfie tasks.</p>
+  <div class="criteriaMobile">
+    <div class="criterion" *ngFor="let criterion of ethics">
+      <div><h3>{{criterion.id}}</h3></div>
+      <div><p>{{criterion.criterion}}</p></div>
     </div>
   </div>
 </section>

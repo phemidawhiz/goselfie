@@ -37,8 +37,10 @@ header {
     margin-left: 50px;
     @media #{$mobile-only} {
       margin: 0px;
+      margin-left: 10px;
       margin-top: 10px;
-      padding-left: 10%;
+      padding-left: 15%;
+      padding-right: 0%;
     }
     img {
       padding: 0px 35px;
@@ -56,6 +58,7 @@ header {
     display: grid;
     grid-template-columns: 50% 50%;
     padding-top: 30px;
+    padding-right: 0px;
   }
 }
 
@@ -71,6 +74,39 @@ header {
   @media #{$mobile-only} {
     float: right;
     margin-top: 0px;
+    padding-right: 0px;
+    margin-right: 0;
+  }
+}
+
+.hideMenu {
+  display: none;
+}
+
+.showMenu {
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 5px auto 20px;
+    padding-left: 20px;
+  }
+
+  li {
+    @extend %commonFont;
+    display: inline;
+    padding-right: 20px;
+    a {
+      color: $color-black;
+      line-height: 34px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: $color-red;
+    }
   }
 }
 

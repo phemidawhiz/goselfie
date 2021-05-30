@@ -1,6 +1,7 @@
 
 import { pageTitles, pageInfo } from '../common/utilities';
 import { Component, OnInit } from '@angular/core';
+import { IEntryCriterion } from 'app/common/types';
 
 @Component({
   selector: 'app-about-page',
@@ -34,6 +35,49 @@ export class AboutPageComponent implements OnInit {
     title: "How it works",
     content: ["Entrants are required to register on the website with a certain amount of money where task will be given in form of pictures or selfie where creativity and adherence decides who the next star would be."]
   }
+
+  entryCriteria: Array<IEntryCriterion> = [
+    {
+      id: "01",
+      criterion: "Participation is open to both male and female aged 16 and above"
+    },
+    {
+      id: "02",
+      criterion: "All entrants must purchase the form via the dedecated website."
+    },
+    {
+      id: "03",
+      criterion: "Ask are to be submitted in form of pictures only (Jpeg or PNG not more than 1mb)."
+    },
+    {
+      id: "04",
+      criterion: "Contestant are to follow Goselfie on all social media platforms."
+    },
+    {
+      id: "05",
+      criterion: "Participation is open to everyone from any part of the country."
+    }
+  ]
+
+  ethics: Array<IEntryCriterion> = [
+      {
+        id: "01",
+        criterion: "You don't need to be photogenic to participate in Goselfie tasks."
+      },
+      {
+        id: "02",
+        criterion: "You don't need a high end smart phone to participate in Goselfie tasks."
+      },
+      {
+        id: "03",
+        criterion: "You don't need an hour glass shape to participate in the Goselfie task."
+      },
+      {
+        id: "04",
+        criterion: "You don't need to be a social media influencer to participate in the Goselfie tasks."
+      }
+    ]
+
 
   get pageTitle() {
     return pageTitles.aboutPage;

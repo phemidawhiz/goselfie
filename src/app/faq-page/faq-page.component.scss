@@ -6,6 +6,10 @@ section  {
   margin-right: 0px;
   padding: 50px 30px 80px 220px;
 
+  @media #{$mobile-only} {
+    padding: 5% 7%;
+  }
+
   p {
     @include fontDetails('Open Sans', 25px, $dark-blue);
     @include fontSize(normal, 17px);

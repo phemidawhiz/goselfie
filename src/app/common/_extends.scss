@@ -122,6 +122,11 @@ form {
   margin: 10px auto;
   padding: 0% 2%;
 
+  @media #{$mobile-only} {
+    margin: 10px auto;
+    padding-right: 15px;
+  }
+
   p {
     @include fontDetails('Open Sans', 25px, $dark-blue);
     @include fontSize(normal, 17px);
@@ -140,6 +145,11 @@ input, textarea, select {
   padding: 5px 15px;
   height: 48px;
   margin: 15px 0px 35px;
+
+  @media #{$mobile-only} {
+    margin: 15px 30px 35px;
+    width: 85%;
+  }
 
   ::placeholder{
     color: $light-grey;
@@ -164,6 +174,10 @@ textarea {
 label {
   @include fontDetails('Open Sans', 24px, $black-label);
   @include fontSize(600, 16px);
+
+  @media #{$mobile-only} {
+    padding-left: 30px;
+  }
 }
 
 button {
