@@ -8,16 +8,32 @@ section {
   grid-gap: 10%;
   background: rgba(243, 243, 250, 0.5);
   padding: 5% 10%;
+  @media #{$mobile-only} {
+    display: block;
+  }
+
   a {
     cursor: pointer;
 
   }
 
   .profileImage {
+
+    @media #{$mobile-only} {
+      padding: 20px 0px 20px 100px;
+    }
     img {
       float: right;
       max-width: 368px !important;
       max-height: 400px !important;
+
+      @media #{$mobile-only} {
+        display: inline-block;
+        max-width: 368px !important;
+        max-height: auto !important;
+        margin-left: 20%;
+        border-radius: 12px;
+      }
     }
 
     .memberDetails {
@@ -25,7 +41,7 @@ section {
         display: inline-block;
         width: 16px !important;
         height: 16px !important;
-
+        margin-bottom: 20px;
       }
       p {
         a {
@@ -43,6 +59,12 @@ section {
   h1 {
     @include fontDetails('Aileron', 28px, $dark-blue);
     @include fontSize(bold, 41.25px);
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 28px, $dark-blue);
+      @include fontSize(bold, 41.25px);
+      padding-top: 5%;
+    }
   }
 
   p {

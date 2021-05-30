@@ -225,7 +225,9 @@ footer {
   input[type='email'] {
     display: inline-block;
     margin-bottom: 7px;
-    width:85%;
+    width: 82%;
+    margin-left: 0px;
+    margin-right: 0px;
     @extend %commonInput;
     padding-left: 0 !important;
   }

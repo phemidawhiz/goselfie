@@ -53,16 +53,31 @@ section {
   max-width: 782px;
   margin: 15px auto 100px;
   text-align: center;
+
+  @media #{$mobile-only} {
+    margin: 15px 5% 100px;
+    padding: 35px 20px;
+  }
   h3 {
     @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
     margin: 0;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 40px, $dark-blue, center);
+      @include fontSize(bold, 36px);
+    }
   }
 
   p {
     @include fontDetails('Open Sans', 25px, $dark-blue, center);
     @include fontSize(normal, 17px);
     margin-bottom: 50px;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Open Sans', 24px, $dark-blue, center);
+      @include fontSize(normal, 16px);
+    }
   }
 }
 
