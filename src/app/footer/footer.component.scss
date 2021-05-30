@@ -28,6 +28,10 @@
   color: $light-grey;
   text-decoration: none;
   @include fontSize(normal, 15px);
+  @media #{$mobile-only} {
+    @include fontSize(normal, 13px);
+    line-height: 17px;
+  }
   line-height: 20px;
   letter-spacing: -0.204545px;
   cursor: pointer;
@@ -69,12 +73,6 @@ footer {
   display: grid;
   grid-template-columns: 38% 30% 16% 16%;
   margin-bottom: 80px;
-
-  @media #{$mobile-only} {
-    display: grid;
-    grid-template-columns: 40% 30% 30% !important;
-    padding-left: 0px;
-  }
 
   p {
     @extend %commonText;
@@ -229,6 +227,7 @@ footer {
     margin-bottom: 7px;
     width:85%;
     @extend %commonInput;
+    padding-left: 0 !important;
   }
 
   input[type='email']:active:focus,
@@ -255,4 +254,56 @@ footer {
 
 .policies {
   margin: 40px 0;
+}
+
+
+
+.linksAndEmailsMobile {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  margin-bottom: 40px;
+
+  p {
+    @extend %commonText;
+    padding-right: 150px;
+    @media #{$mobile-only} {
+      padding-right: 15px;
+    }
+  }
+
+  div {
+    padding-top: 30px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+
+      @media #{$mobile-only} {
+        padding: 10px 0px 10px 0px;
+      }
+
+    }
+    li a {
+      @extend %navText;
+    }
+
+    li a:hover {
+      color: $color-grey;
+    }
+  }
+
+  .active {
+    color: $color-orange !important;
+    font-size: 17px !important;
+    line-height: 22px;
+  }
+
+  .email {
+    font-size: 13px !important;
+    line-height: 220.1% !important;
+    letter-spacing: -0.204545px !important;
+  }
+
 }
