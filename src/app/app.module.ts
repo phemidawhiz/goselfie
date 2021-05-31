@@ -1,3 +1,4 @@
+import { UserSelfieService } from './services/usage/user.selfie';
 import { SelfieImageUploadService } from './services/usage/upload.selfie';
 import { TaskSelfieComponent } from './task-selfie/task-selfie.component';
 import { LastTaskService } from './services/usage/last.task';
@@ -168,6 +169,7 @@ import { NoDataComponent } from './components/no-data/no-data.component';
     PaymentVerificationService,
     LastTaskService,
     SelfieImageUploadService,
+    UserSelfieService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     BaseRequestOptions
   ],

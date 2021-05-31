@@ -29,8 +29,11 @@ export class ProfileInfoComponent implements OnInit  {
       let __this = this;
     this.service.getLastTaskInfo()
       .subscribe(info => {
-        __this.taskid = info.id;
-        console.log("info: ", info);
+        if(info.status === 200) {
+          __this.taskid = info.json().data.id;
+          console.log("info: ", info.json());
+        }
+
       });
 
   }
