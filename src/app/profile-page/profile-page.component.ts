@@ -2,7 +2,7 @@ import { environment } from 'environments/environment';
 import { IProfileInfo, ISelfie } from './../common/types';
 import { ProfileInfoService } from './../services/usage/profile.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { UserSelfieService } from 'app/services/usage/user.selfie';
 
@@ -18,29 +18,11 @@ export class ProfilePageComponent implements OnInit {
 
   defaultProfileImage: string = `profileimages/person_7.jpg`;
 
-  profileInfo: IProfileInfo = {
-    firstname: "ENIADE",
-    lastname: "OLANIYI",
-    phonenumber: "07064734198",
-    email: "eniadegold@gmail.com",
-    activated: "1",
-    datetime: "2020-10-31 09:27:13",
-    votecount: "0",
-    screened: "0",
-    mop: "paystack",
-    username: "Eniade Gold",
-    gender: "male",
-    about: "I am a product of God’s grace, I am an artiste, a cinematographer, a model, content creator and also a blogger, I was born in Ibadan , Oyo state, I would love to be a well known personality.",
-    age: "22",
-    profileimage: "profileimages/d478293B99415D1-67BB-48E5-A486-D1A6CAA9163F.jpeg",
-    twitter: null,
-    instagram: null,
-    facebook: null
-  };
+  profileInfo: IProfileInfo;
 
   selfies: Array<ISelfie> = []
 
-  constructor(private service: ProfileInfoService, private selfieService: UserSelfieService, private route: ActivatedRoute, public authService: AuthService) { }
+  constructor(private service: ProfileInfoService, private selfieService: UserSelfieService, private route: ActivatedRoute, public authService: AuthService, private router: Router) { }
 
   logout() {
     this.authService.logout();
@@ -53,6 +35,9 @@ export class ProfilePageComponent implements OnInit {
         if(profileInfo.status == 200){
           __this.profileInfo = profileInfo.json().data;
           console.log("Profile info: ", __this.profileInfo);
+          if(__this.profileInfo.profileimage === "none") {
+            this.router.navigate([ '/upload']);
+          }
         } else {
           console.log("Unable to get profile info");
         }
