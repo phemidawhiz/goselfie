@@ -9,21 +9,37 @@ section {
     padding: 70px 90px;
     max-width: 671px;
     margin: 100px auto ;
+    @media #{$mobile-only} {
+      margin: 100px 50px ;
+      padding: 40px 0px;
+    }
     h1 {
       @include fontDetails('Aileron', 69px, $dark-blue, center);
       @include fontSize(bold, 31.88px);
       margin: 0;
+      @media #{$mobile-only} {
+        text-align: left !important;
+        padding-left: 30px;
+      }
     }
 
     p {
       @include fontDetails('Open Sans', 25px, $dark-blue, center);
       @include fontSize(normal, 17px);
       margin-bottom: 50px;
+
+      @media #{$mobile-only} {
+        text-align: left !important;
+        padding-left: 30px;
+      }
     }
   }
 
   .cantLogin {
     margin: 0 0 70px;
+    @media #{$mobile-only} {
+      padding: 0px 40px;
+    }
     p {
       @include fontDetails('Open Sans', 18px, $dark-blue, center);
       @include fontSize(normal, 16px);

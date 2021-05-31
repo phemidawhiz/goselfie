@@ -7,6 +7,10 @@ $height: 229px;
 section {
   padding: 5% 10%;
 
+  @media #{$mobile-only} {
+    padding: 5% 5%;
+  }
+
   div {
     display: inline-block;
     max-width: $width;
@@ -14,9 +18,19 @@ section {
     margin: 4px 4px;
     padding: 0;
 
+    @media #{$mobile-only} {
+      width: 150px;
+      height: 150px;
+    }
+
     img {
       width: $width !important;
       height: $height !important;
+
+      @media #{$mobile-only} {
+        width: 100px;
+        height: 120px;
+      }
     }
   }
 }

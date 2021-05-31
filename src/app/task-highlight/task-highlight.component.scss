@@ -21,6 +21,8 @@ section {
   @media #{$mobile-only} {
     display: block;
     padding: 10px 20px 0px;
+    align-items: center;
+    padding-left: 10%;
   }
 
   h2 {
@@ -56,6 +58,7 @@ section {
     width: 100%;
     padding: 15px 10px 0px;
     margin-bottom: 13px;
+
   }
 }
 
@@ -125,6 +128,7 @@ section {
 .noDesktopDisplay {
   @extend %noDesktopDisplay;
   display: block;
+
   padding: 40px 25px 20px;
 }
 

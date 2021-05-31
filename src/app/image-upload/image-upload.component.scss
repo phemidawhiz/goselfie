@@ -4,12 +4,19 @@
 
 section {
   text-align: center;
+  @media #{$mobile-only} {
+    margin: 50px 35px;
+  }
 
   div {
     @extend %noticeBox;
     margin: 50px auto;
     padding: 0px 120px;
     max-width: 646px;
+
+    @media #{$mobile-only} {
+      padding: 0px 30px;
+    }
 
     button {
       margin-bottom: 30px;
@@ -20,7 +27,10 @@ section {
 
     @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
-
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 40px, $dark-blue, center);
+      @include fontSize(bold, 36px);
+    }
   }
 
   p, small {
@@ -45,9 +55,14 @@ section {
     input[type=file] {
       opacity: 0;
       max-width: 299px;
-      height: 300px;
+      height: 250px;
       position: absolute;
-      margin: -15% auto;
+      margin: -12% auto;
+      @media #{$mobile-only} {
+        max-width: 230px;
+        height: 120px;
+        margin: -24% auto;
+      }
     }
 
     button {

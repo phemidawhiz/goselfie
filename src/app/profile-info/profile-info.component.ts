@@ -23,14 +23,14 @@ export class ProfileInfoComponent implements OnInit  {
   constructor(private route: ActivatedRoute, private service: LastTaskService) { }
 
   ngOnInit() {
-
-
       // info id of last task created
       let __this = this;
     this.service.getLastTaskInfo()
       .subscribe(info => {
-        __this.taskid = info.id;
-        console.log("info: ", info);
+        if(info.status === 200) {
+          __this.taskid = info.json().data.id;
+        }
+
       });
 
   }

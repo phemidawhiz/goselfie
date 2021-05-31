@@ -6,7 +6,7 @@ section {
   grid-template-columns: 55% 40%;
   grid-column-gap: 2%;
   @media #{$mobile-only} {
-    display: none;
+    display: block;
     padding: 20px;
   }
   padding: 70px;
@@ -16,7 +16,12 @@ section {
   img {
     max-width: 90%;
     height: auto;
-    float: right
+    float: right;
+    @media #{$mobile-only} {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
   }
 
   h2 {
@@ -29,7 +34,7 @@ section {
       @include fontSize(bold, 36px);
       @include fontDetails('Aileron', 69px, $dark-blue);
       padding: 0% 5%;
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 

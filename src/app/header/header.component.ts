@@ -9,12 +9,20 @@ import { AuthService } from 'app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  showMenu: boolean;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   contactLink = {
     description: "Contact Us",
-    linkUrl: "/contact"
+    linkUrl: "/about"
   }
+
+  displayMenu = () => {
+    this.showMenu = !this.showMenu;
+  }
+
+
 
   profileLoginToggle() {
     if(this.authService.isLoggedIn()) {

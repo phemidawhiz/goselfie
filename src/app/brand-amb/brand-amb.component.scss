@@ -4,10 +4,19 @@
 $achievement-pane-width: 955px;
 
 section {
+
+  @media #{$mobile-only} {
+    padding: 30px;
+    margin-top: 0px;
+  }
   h3 {
     @include fontDetails('Aileron', 49px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
-
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 28px, $dark-blue);
+      @include fontSize(bold, 41.25px);
+      margin-top: 0px;
+    }
 
   }
 
@@ -16,14 +25,24 @@ section {
     @include fontSize(normal, 17px);
     max-width: $achievement-pane-width;
     margin: 0 auto 3%;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Open Sans', 24px, $dark-blue);
+      @include fontSize(normal, 16px);
+    }
   }
 
   .ambassadorImages {
     display: grid;
     grid-template-columns: 48% 50%;
     grid-gap: 2%;
+
     max-width: $achievement-pane-width;
     margin: 5% auto 10%;
+    @media #{$mobile-only} {
+      display: block;
+      max-width: 414px;
+    }
   }
 
 }
@@ -34,6 +53,9 @@ section {
   max-width: 488px;
   height: auto;
   margin-top: 5px;
+  @media #{$mobile-only} {
+    max-width: 345px;
+  }
 }
 
 .smallImages {
@@ -41,6 +63,10 @@ section {
   max-width: 226px;
   height: auto;
   margin: 5px;
+  @media #{$mobile-only} {
+    max-width: 164px;
+    margin-left: 6px;
+  }
 }
 
 .relateImage {

@@ -56,6 +56,13 @@ export class DataService {
     );
   }
 
+  getUserSelfies = () => {
+    return this.authHttp.get(this.url)
+    .pipe(retry(1),
+    catchError(this.handleError)
+    );
+  }
+
   uploadProfileImage(resource) {
     return this.authHttp.post(this.url, resource)
     .pipe(retry(1),

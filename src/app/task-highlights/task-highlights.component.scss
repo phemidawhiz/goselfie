@@ -6,10 +6,18 @@
   background: rgba(243, 243, 250, 0.5);
   padding: 30px 100px 25px 140px;
 
+  @media #{$mobile-only} {
+    padding: 30px 20px 25px 30px;
+  }
+
   h1 {
     @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
     margin-bottom: 0px;
+
+    @media #{$mobile-only} {
+      @include fontSize(bold, 36px);
+    }
   }
 
   p {
@@ -17,42 +25,74 @@
     @include fontSize(normal, 21.25px);
     padding: 0% 26% 2%;
 
+    @media #{$mobile-only} {
+      @include fontDetails('Open Sans', 26px, $dark-blue, center);
+      @include fontSize(normal, 18px);
+      padding: 0% 5% 2%;
+    }
+
     &.smallPadding {
       padding: 0% 10% 5%;
       display: grid;
       grid-template-columns: 36% 22% 42%;
 
+      @media #{$mobile-only} {
+        display: none;
+      }
+
       input, select {
         width: 323px;
+        @media #{$mobile-only} {
+          max-width: 250px;
+          display: inline-block;
+        }
       }
 
       input[type="button"] {
         @extend %buttonStyle;
         float: left;
         max-width: 160px;
+        @media #{$mobile-only} {
+          display: inline-block;
+        }
       }
     }
   }
 
   div {
     display: inline-block;
-    Width: 350px;
-    Height: 378px;
+    width: 350px;
+    height: 378px;
     border: 1px solid $light-grey;
     border-radius: 4px;
     background: $color-white;
     box-shadow: rgba(88, 88, 88, 0.1) 0px 2px 8px 0px;
     margin: 0px 25px 25px 0px;
 
+    @media #{$mobile-only} {
+      max-width: 160px;
+      height: 190px;
+      margin: 0px 15px 15px 0px;
+    }
+
     h3 {
       @include fontSize(bold, 21.248px);
       @include fontDetails('Merriweather', 28px, $dark-blue, center);
+
+      @media #{$mobile-only} {
+        @include fontSize(bold, 15.248px);
+        line-height: 15px;
+      }
     }
 
     h4 {
       @include fontSize(normal, 17px);
       @include fontDetails('Open Sans', 13px, $dark-blue, center);
       padding: 0 10px;
+      @media #{$mobile-only} {
+        @include fontSize(normal, 12px);
+        line-height: 11px;
+      }
     }
 
     img {

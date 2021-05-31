@@ -5,14 +5,30 @@ section {
   background-color: $light-grey;
   padding: 60px 370px;
 
+  @media #{$mobile-only} {
+    padding: 10px 30px 40px;
+
+  }
+
   h2 {
 
     @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
+
+    @media #{$mobile-only} {
+      @include fontSize(bold, 36px);
+      @include fontDetails('Aileron', 69px, $dark-blue, center);
+      margin-bottom: 0px;
+    }
   }
 
   p {
     @include fontSize(normal, 18px);
     @include fontDetails('Open Sans', 25px, $dark-blue, center);
+
+    @media #{$mobile-only} {
+      @include fontSize(normal, 18px);
+      @include fontDetails('Open Sans', 25px, $dark-blue, center);
+    }
   }
 }
