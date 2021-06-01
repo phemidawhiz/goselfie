@@ -241,7 +241,7 @@ footer {
 
 .socialMobileLink {
   display: block;
-  padding: 0 20px !important;
+  padding: 0 0px !important;
   img {
     @media #{$mobile-only} {
       height: 12px !important;

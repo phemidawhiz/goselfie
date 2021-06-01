@@ -9,14 +9,14 @@
 
   div {
     max-width: 1440px;
-    height: auto;
+    max-height: auto;
     margin: 0;
     background: rgba(9, 22, 56, 0.5);
     padding: 17.85% 49%;
 
     @media #{$mobile-only} {
       max-width: 414px;
-      height: 67%;
+      height: 62%;
       padding: 17.85% 49%;
     }
 

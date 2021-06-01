@@ -6,6 +6,10 @@ section {
   background: $light-grey;
   padding: 3% 5% 5% 6%;
 
+  @media #{$mobile-only} {
+    margin-top: 20%;
+  }
+
   h2 {
     @include fontDetails('Aileron', 69px, $dark-blue, center);
     @include fontSize(bold, 51.88px);
@@ -24,6 +28,7 @@ section {
 
   @media #{$mobile-only} {
     display: block;
+
   }
 
   div {
