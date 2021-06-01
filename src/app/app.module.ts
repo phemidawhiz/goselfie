@@ -29,7 +29,6 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
@@ -70,7 +69,6 @@ import { NoDataComponent } from './components/no-data/no-data.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
     AdminComponent,
     HomeComponent,
     NotFoundComponent,
