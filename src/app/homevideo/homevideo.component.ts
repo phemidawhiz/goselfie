@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomevideoComponent implements OnInit {
 
+  showVideo: boolean;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  playVideo = () => {
+    this.showVideo = true;
   }
 
 }

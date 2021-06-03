@@ -7,9 +7,9 @@
   height: 586px;
   background-image: url("../../assets/images/girlselfie.png");
 
-  div {
+  .overlay {
     max-width: 1440px;
-    max-height: auto;
+    height: auto;
     margin: 0;
     background: rgba(9, 22, 56, 0.5);
     padding: 17.85% 49%;
@@ -21,10 +21,12 @@
     }
 
     img {
+      cursor: pointer;
       @media #{$mobile-only} {
         width: 43px;
         height: 44px;
         margin-top: 100px;
+
       }
     }
   }
@@ -38,6 +40,25 @@
   }
 
 }
+
+.video {
+  max-width: 1440px;
+  margin: 0;
+  height: auto;
+
+  video {
+    height: auto;
+    width: 100%;
+  }
+
+  @media #{$mobile-only} {
+    max-width: 414px;
+    height: auto !important;
+  }
+
+}
+
+
 
 
 

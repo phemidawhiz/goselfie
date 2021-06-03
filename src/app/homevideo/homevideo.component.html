@@ -1,6 +1,14 @@
-<div class="container">
+<div class="container" *ngIf="!showVideo">
   <div class="overlay">
-    <img src="../../assets/icons/play.svg" alt="play" />
+    <img (click)="playVideo()" src="../../assets/icons/play.svg" alt="play" />
+
   </div>
 
+</div>
+
+<div *ngIf="showVideo" class="video">
+  <video controls autoplay>
+    <source src="../../assets/videos/goselfie.mp4" type="video/mp4">
+    Your browser does not support HTML video.
+  </video>
 </div>

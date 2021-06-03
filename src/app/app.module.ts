@@ -21,10 +21,10 @@ import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions, RequestOptions } from '@angular/http';
 import { RouterModule } from '@angular/router';
-//import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt';
+//import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -64,6 +64,13 @@ import { ProfileGuardService } from './services/profile-guard';
 import { PublicViewComponent } from './public-view/public-view.component';
 import { PublicSelfieService } from './services/usage/selfies';
 import { NoDataComponent } from './components/no-data/no-data.component';
+
+/* fix for jwt error that gave me sleepless night: - ERROR in Error encountered resolving symbol values statically. Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler (position 80:22 in the original .ts file), resolving symbol AUTH_PROVIDERS in...
+export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
+  return new AuthHttp( new AuthConfig({}), http, options);
+} */
+
+/* End of fix */
 
 @NgModule({
   declarations: [
@@ -146,6 +153,8 @@ import { NoDataComponent } from './components/no-data/no-data.component';
   ],
   providers: [
     AUTH_PROVIDERS,
+    //AuthHttp,
+    //AuthConfig,
     OrderService,
     AuthGuard,
     AdminAuthGuard,
