@@ -6,7 +6,7 @@ import { GeneralService } from '../general.service';
 @Injectable()
 export class PinVerificationService extends GeneralService {
 
-  constructor(http: HttpClient, ) {
+  constructor(http: HttpClient ) {
     super(`${environment.baseAPIDomain}/accesspin`, http);
   }
 }

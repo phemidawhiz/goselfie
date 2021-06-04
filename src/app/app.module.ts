@@ -65,10 +65,10 @@ import { PublicViewComponent } from './public-view/public-view.component';
 import { PublicSelfieService } from './services/usage/selfies';
 import { NoDataComponent } from './components/no-data/no-data.component';
 
-/* fix for jwt error that gave me sleepless night: - ERROR in Error encountered resolving symbol values statically. Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler (position 80:22 in the original .ts file), resolving symbol AUTH_PROVIDERS in...
+/* fix for jwt error that gave me sleepless night: - ERROR in Error encountered resolving symbol values statically. Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler (position 80:22 in the original .ts file), resolving symbol AUTH_PROVIDERS in...*/
 export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
   return new AuthHttp( new AuthConfig({}), http, options);
-} */
+}
 
 /* End of fix */
 
@@ -152,9 +152,14 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
     ])
   ],
   providers: [
-    AUTH_PROVIDERS,
+    //AUTH_PROVIDERS,
     //AuthHttp,
     //AuthConfig,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [ Http, RequestOptions, HttpClient ]
+    },
     OrderService,
     AuthGuard,
     AdminAuthGuard,

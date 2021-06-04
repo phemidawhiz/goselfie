@@ -8,7 +8,7 @@ import { GeneralService } from '../general.service';
 @Injectable()
 export class RegService extends GeneralService {
 
-  constructor(http: HttpClient, ) {
+  constructor(http: HttpClient ) {
     super(`${environment.baseAPIDomain}/register`, http);
   }
 }

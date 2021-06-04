@@ -4,7 +4,8 @@ import { AppError } from './../common/app-error';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, catchError, retry } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { retry } from 'rxjs/operators';
 
 @Injectable()
 export class GeneralService {

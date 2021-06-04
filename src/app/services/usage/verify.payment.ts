@@ -6,7 +6,7 @@ import { GeneralService } from '../general.service';
 @Injectable()
 export class PaymentVerificationService extends GeneralService {
 
-  constructor(http: HttpClient, ) {
+  constructor(http: HttpClient ) {
     super(`${environment.baseAPIDomain}/verifypayment`, http);
   }
 }

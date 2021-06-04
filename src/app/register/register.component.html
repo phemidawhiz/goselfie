@@ -45,8 +45,8 @@
       #mySelect
       (change)='onOptionsSelected(mySelect.value)' value="1">
       >
-        <option value="1" [selected]="true">Pay online with card</option>
-        <option value="2">Deposit or transfer</option>
+        <option value="1" [selected]="true">Secured online payment with Paystack</option>
+        <option value="2">Offline Deposit or transfer</option>
       </select>
       <div [class]="isOffline ? 'displayItem' : 'hideItem'">
         <label for="accessPin">Enter Access Pin</label>
@@ -119,7 +119,7 @@
     </div>
 
     <p>
-      If online payment fails or is cancelled. You need to make payment to the account details above and whatsapp proof of payment to xxxxxxx to get confirmation pin for offine payment.
+      If online payment fails or is cancelled. You need to make payment to the account details above and whatsapp proof of payment to <b>08148284576</b> to get confirmation pin for registration.
     </p>
   </form>
 </div>
