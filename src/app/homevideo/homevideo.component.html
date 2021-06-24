@@ -7,8 +7,8 @@
 </div>
 
 <div *ngIf="showVideo" class="video">
-  <video controls autoplay>
-    <source src="../../assets/videos/goselfie.mp4" type="video/mp4">
+  <video *ngFor="let source of videoNames" controls [autoplay]="source === 'goselfie.mp4'">
+    <source [src]="'../../assets/videos/' + source" type="video/mp4">
     Your browser does not support HTML video.
   </video>
 </div>

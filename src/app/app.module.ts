@@ -64,6 +64,8 @@ import { ProfileGuardService } from './services/profile-guard';
 import { PublicViewComponent } from './public-view/public-view.component';
 import { PublicSelfieService } from './services/usage/selfies';
 import { NoDataComponent } from './components/no-data/no-data.component';
+import { Location, LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { PastWinnersComponent } from './past-winners/past-winners.component';
 
 /* fix for jwt error that gave me sleepless night: - ERROR in Error encountered resolving symbol values statically. Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler (position 80:22 in the original .ts file), resolving symbol AUTH_PROVIDERS in...*/
 export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
@@ -106,7 +108,7 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
     ProfilePageComponent,
     PublicViewComponent,
     NoDataComponent,
-
+    PastWinnersComponent,
   ],
   imports: [
     BrowserModule,
@@ -160,6 +162,7 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
       useFactory: authHttpServiceFactory,
       deps: [ Http, RequestOptions, HttpClient ]
     },
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     OrderService,
     AuthGuard,
     AdminAuthGuard,

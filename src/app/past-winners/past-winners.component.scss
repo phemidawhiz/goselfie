@@ -1,0 +1,134 @@
+@import '../common/variables';
+@import '../common/extends';
+
+section {
+
+  background: $light-grey;
+  padding: 3% 5% 5% 6%;
+
+  @media #{$mobile-only} {
+    margin-top: 20%;
+  }
+
+  h2 {
+    @include fontDetails('Aileron', 69px, $dark-blue, center);
+    @include fontSize(bold, 51.88px);
+
+    @media #{$mobile-only} {
+      @include fontDetails('Aileron', 43px, $dark-blue, center);
+      @include fontSize(bold, 36px);
+    }
+  }
+}
+
+.instagramBtn {
+  display: inline-block;
+  margin-top: 10px;
+  width: 219px;
+  height: 48px;
+  background: #BF271C;
+  border-radius: 4px;
+  padding: 12px 6px 0px;
+  @include fontDetails('Open Sans', 28px, $color-white, center);
+  @include fontSize(bold, 23.25px);
+  img {
+    width: 20px;
+    height: auto;
+
+  }
+}
+
+.prizes {
+  display: grid;
+  grid-template-columns: 29% 29% 29%;
+  grid-column-gap: 5%;
+
+  @media #{$mobile-only} {
+    display: block;
+
+  }
+
+  div {
+    width: 350px;
+    height: 380px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    background: $color-white;
+    padding: 15px 20px;
+
+    @media #{$mobile-only} {
+      display: block;
+      background: $light-grey;
+      max-width: 350px;
+      height: auto;
+      padding: 15px 0px 15px 25px;
+    }
+
+    img {
+      z-index: 3;
+      //padding: 0 5% 0 15%;
+      margin-left: 21%;
+      margin-top: 8px;
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+
+      @media #{$mobile-only} {
+        width: 91px;
+        height: 120px;
+        margin-top: 10px;
+        padding-left: 0px;
+        text-align: left;
+      }
+    }
+
+    p {
+      width: 100%;
+      height: 240px;
+      background: $color-grey;
+      border-radius: 10px;
+      margin-top: -80px;
+      text-align: center;
+
+      @media #{$mobile-only} {
+        display: block;
+        max-width: 200px;
+        height: 60px;
+        margin-left: 15%;
+        margin-top: -29% !important;
+        padding-top: 10px;
+      }
+
+      span {
+        display: inline-block;
+        @media #{$mobile-only} {
+          display: inline;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.spanHead {
+  margin-top: 19%;
+  font-family: 'Aileron';
+  @include fontSize(900, 25px);
+  line-height: 42px;
+  @media #{$mobile-only} {
+    @include fontDetails('Aileron', 35px, $dark-blue, right);
+    @include fontSize(900, 26.5px);
+  }
+}
+
+.spanBody {
+  font-family: 'Aileron';
+  @include fontSize(900, 30px);
+  line-height: 42px;
+
+  @media #{$mobile-only} {
+    margin-top: 0;
+    @include fontDetails('Aileron', 0px, $dark-blue, right);
+    @include fontSize(bold, 16.25px);
+  }
+}

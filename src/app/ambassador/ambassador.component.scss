@@ -2,6 +2,7 @@
 @import '../common/extends';
 
 section {
+  //margin-top: 0; //to be removed later
   display: grid;
   grid-template-columns: 50% 40%;
   grid-column-gap: 3%;

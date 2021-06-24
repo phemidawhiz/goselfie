@@ -21,15 +21,15 @@ export class HomeComponent {
     },
     {
       id: "02",
-      criterion: "All entrants must purchase the form via the dedecated website."
+      criterion: "All entrants must purchase the form via the dedicated website."
     },
     {
       id: "03",
-      criterion: "Ask are to be submitted in form of pictures only (Jpeg or PNG not more than 1mb)."
+      criterion: "Tasks are to be submitted in form of pictures only (Jpeg or PNG not more than 1mb)."
     },
     {
       id: "04",
-      criterion: "Contestant are to follow Goselfie on all social media platforms."
+      criterion: "Contestants are to follow Goselfie on all social media platforms."
     },
     {
       id: "05",

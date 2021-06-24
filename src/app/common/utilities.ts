@@ -78,7 +78,7 @@ export const faqs: any = [
   {
     question: "7. When can I upload a Selfie?",
     answer: [
-      'After activation, wait for notification on new task. Information on how and when to upload a selfie shall be sent to your email, phone number as sms as well as communicated on all our social media pages.'
+      'After activation, wait for notification on new task. Information on how and when to upload a selfie shall be sent to your email, phone number as well as communicated on all our social media pages.'
     ]
   },
   {

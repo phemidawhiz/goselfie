@@ -129,7 +129,6 @@ export class RegisterComponent implements OnInit {
 
     if(this.route.snapshot.paramMap.get('reference')) {
 
-      console.log("Params ID: ", this.route.snapshot.paramMap.get('reference'));
       this.verifyPayment.verifyPayment(this.route.snapshot.paramMap.get('reference'))
       .subscribe(response => {
         const result = response;
