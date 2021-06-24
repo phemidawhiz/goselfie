@@ -11,10 +11,12 @@
 
 <app-header></app-header>
 <season-two></season-two>
+<app-next-big-thing></app-next-big-thing>
+<app-about [imageSource]="aboutDetails.imageSource" [content]="aboutDetails.content" [title]="aboutDetails.title" [isImageLeft]="aboutDetails.isImageLeft"></app-about>
 
-<app-about [imageSource]="aboutDetails.imageSource" [content]="aboutDetails.content" [title]="aboutDetails.title" [isImageLeft]="aboutDetails.isImageLeft" [isHomePage]="true"></app-about>
-<app-past-winners></app-past-winners>
 <homevideo></homevideo>
+
+<app-past-winners></app-past-winners>
 <task-highlight></task-highlight>
 <!-- <ambassador></ambassador> -->
 <app-prizes></app-prizes>

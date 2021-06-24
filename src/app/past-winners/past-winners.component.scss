@@ -6,9 +6,7 @@ section {
   background: $light-grey;
   padding: 3% 5% 5% 6%;
 
-  @media #{$mobile-only} {
-    margin-top: 20%;
-  }
+
 
   h2 {
     @include fontDetails('Aileron', 69px, $dark-blue, center);
@@ -28,13 +26,36 @@ section {
   height: 48px;
   background: #BF271C;
   border-radius: 4px;
-  padding: 12px 6px 0px;
-  @include fontDetails('Open Sans', 28px, $color-white, center);
-  @include fontSize(bold, 23.25px);
-  img {
-    width: 20px;
-    height: auto;
+  padding: 10px 6px 0px;
 
+  @media #{$mobile-only} {
+    padding: 7px 3px 20px;
+    height: 24px;
+    width: 180px;
+    margin-top: 20px;
+  }
+
+  a {
+    @include fontDetails('Open Sans', 28px, $color-white, center);
+    @include fontSize(bold, 23.25px);
+    text-decoration: none;
+
+    @media #{$mobile-only} {
+      @include fontDetails('Open Sans', 20px, $color-white, center);
+      @include fontSize(bold, 19.25px);
+    }
+  }
+
+}
+
+.imgInstagram {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 0px;
+
+  @media #{$mobile-only} {
+    width: 17px !important;
+    height: 17px !important;
   }
 }
 
@@ -58,10 +79,9 @@ section {
 
     @media #{$mobile-only} {
       display: block;
-      background: $light-grey;
-      max-width: 350px;
-      height: auto;
-      padding: 15px 0px 15px 25px;
+      max-width: 290px;
+      margin: 20px auto;
+      max-height: 335px;
     }
 
     img {
@@ -72,13 +92,9 @@ section {
       width: 200px;
       height: auto;
       border-radius: 50%;
-
       @media #{$mobile-only} {
-        width: 91px;
-        height: 120px;
-        margin-top: 10px;
-        padding-left: 0px;
-        text-align: left;
+        width: 160px;
+
       }
     }
 
@@ -90,45 +106,33 @@ section {
       margin-top: -80px;
       text-align: center;
 
-      @media #{$mobile-only} {
-        display: block;
-        max-width: 200px;
-        height: 60px;
-        margin-left: 15%;
-        margin-top: -29% !important;
-        padding-top: 10px;
-      }
-
       span {
         display: inline-block;
-        @media #{$mobile-only} {
-          display: inline;
-          padding-left: 20px;
-        }
+
       }
     }
   }
 }
 
 .spanHead {
-  margin-top: 19%;
+  margin-top: 25%;
   font-family: 'Aileron';
   @include fontSize(900, 25px);
   line-height: 42px;
   @media #{$mobile-only} {
-    @include fontDetails('Aileron', 35px, $dark-blue, right);
-    @include fontSize(900, 26.5px);
+    margin-top: 28%;
+    @include fontDetails('Aileron', 35px, $dark-blue);
+    @include fontSize(bolder, 18.5px);
   }
 }
 
 .spanBody {
+  margin-top: 0%;
   font-family: 'Aileron';
   @include fontSize(900, 30px);
-  line-height: 42px;
-
+  line-height: 25px;
   @media #{$mobile-only} {
-    margin-top: 0;
-    @include fontDetails('Aileron', 0px, $dark-blue, right);
-    @include fontSize(bold, 16.25px);
+    @include fontDetails('Aileron', 25px, $dark-blue);
+    @include fontSize(900, 23.5px);
   }
 }

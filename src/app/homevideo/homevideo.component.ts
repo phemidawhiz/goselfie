@@ -11,7 +11,7 @@ export class HomevideoComponent implements OnInit {
   constructor() { }
 
   videoNames: Array<string> = [
-    'goselfie.mp4',
+    'goselfie1.mp4',
     //'goselfie1.mp4',
     //'goselfie2.mp4',
     //'goselfie3.mp4'

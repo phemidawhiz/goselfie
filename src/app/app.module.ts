@@ -66,6 +66,7 @@ import { PublicSelfieService } from './services/usage/selfies';
 import { NoDataComponent } from './components/no-data/no-data.component';
 import { Location, LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { PastWinnersComponent } from './past-winners/past-winners.component';
+import { NextBigThingComponent } from './next-big-thing/next-big-thing.component';
 
 /* fix for jwt error that gave me sleepless night: - ERROR in Error encountered resolving symbol values statically. Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler (position 80:22 in the original .ts file), resolving symbol AUTH_PROVIDERS in...*/
 export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
@@ -109,6 +110,7 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
     PublicViewComponent,
     NoDataComponent,
     PastWinnersComponent,
+    NextBigThingComponent,
   ],
   imports: [
     BrowserModule,
