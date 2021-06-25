@@ -1,0 +1,33 @@
+
+@import '../common/_variables.scss';
+@import '../common/extends';
+
+h2 {
+  @include fontDetails('Aileron', 29px, $dark-blue, center);
+  @include fontSize(bold, 40.88px);
+}
+
+div {
+  max-width: 400px;
+  margin: 20px auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .arrows {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    @include fontDetails('Aileron', 29px, $color-grey, center);
+    @include fontSize(normal, 40.88px);
+
+    .pointer {
+      background-color: $light-grey;
+      width: 50px;
+      height: 40px;
+      padding: 5px auto;
+    }
+  }
+}
+
+
