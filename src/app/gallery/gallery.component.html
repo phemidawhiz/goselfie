@@ -1,10 +1,12 @@
 <h2>Gallery</h2>
-
+<div class="arrows">
+  <div class="pointer" (click)="decreaseCount()">&#60;</div>
+  <div></div>
+  <div class="pointer" (click)="increaseCount()">&#62;</div>
+</div>
 <div>
   <img [src]="'../../assets/images/gallery' + imageCount + '.jpg'" alt="gallery pictures" />
-  <div class="arrows">
-    <div class="pointer" (click)="decreaseCount()">&#60;</div>
-    <div></div>
-    <div class="pointer" (click)="increaseCount()">&#62;</div>
-  </div>
+
 </div>
+
+

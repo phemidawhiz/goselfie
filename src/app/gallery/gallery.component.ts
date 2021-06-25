@@ -12,11 +12,15 @@ export class GalleryComponent implements OnInit {
   imageCount: number = 1;
 
   increaseCount() {
-    this.imageCount++;
+    if(this.imageCount < 11)
+      this.imageCount++;
+
   }
 
   decreaseCount() {
-    this.imageCount--;
+    if(this.imageCount > 1)
+      this.imageCount--;
+
   }
 
   ngOnInit() {

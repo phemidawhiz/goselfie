@@ -5,28 +5,52 @@
 h2 {
   @include fontDetails('Aileron', 29px, $dark-blue, center);
   @include fontSize(bold, 40.88px);
+
+  @media #{$mobile-only} {
+    @include fontDetails('Aileron', 20px, $dark-blue, center);
+    @include fontSize(bold, 38.88px);
+
+  }
 }
 
 div {
-  max-width: 400px;
+  width: 50%;
   margin: 20px auto;
+  position: relative;
   img {
     width: 100%;
     height: auto;
+
   }
 
-  .arrows {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    @include fontDetails('Aileron', 29px, $color-grey, center);
-    @include fontSize(normal, 40.88px);
+  @media #{$mobile-only} {
+    width: 100%;
 
-    .pointer {
-      background-color: $light-grey;
-      width: 50px;
-      height: 40px;
-      padding: 5px auto;
-    }
+  }
+}
+
+.arrows {
+  width: 400px;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  @include fontDetails('Aileron', 29px, $color-black-2, center);
+  @include fontSize(normal, 40.88px);
+  position: absolute;
+  z-index: 9;
+  margin: 17% 0 0 36%;
+  cursor: pointer;
+
+  @media #{$mobile-only} {
+    margin: 50% 10% 0 0;
+
+  }
+
+  .pointer {
+    background-color: $light-grey-2;
+    opacity: 0.5;
+    width: 50px;
+    height: 40px;
+    padding: 10px auto 0;
   }
 }
 
