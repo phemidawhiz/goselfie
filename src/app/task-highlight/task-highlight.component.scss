@@ -2,7 +2,7 @@
 @import '../common/extends';
 
 %boxWidthHeight {
-  width: 370px;
+  max-width: 370px;
   height: 400px;
 
   @media #{$mobile-only} {
