@@ -1,12 +1,12 @@
 <app-header></app-header>
 
-  <app-page-info [title]="'Profile'" [content]="[profileInfo.firstname + ' ' + profileInfo.lastname, 'Date of birth: ' + profileInfo.age, 'Joined: ' + profileInfo.datetime]"></app-page-info>
+  <app-page-info [title]="'Profile'" [content]="[profileInfo?.firstname + ' ' + profileInfo?.lastname, 'Date of birth: ' + profileInfo?.age, 'Joined: ' + profileInfo?.datetime]"></app-page-info>
 
-  <app-profile-info [username]="profileInfo.username" [about]="profileInfo.about" [imageSource]="profileInfo.profileimage || defaultProfileImage" [twitterUrl]="profileInfo.twitter" [facebookUrl]="profileInfo.facebook" [instagramUrl]="profileInfo.instagram" [isLoggedIn]="authService.isLoggedIn()"></app-profile-info>
+  <app-profile-info [username]="profileInfo?.username" [about]="profileInfo?.about" [imageSource]="profileInfo?.profileimage || defaultProfileImage" [twitterUrl]="profileInfo?.twitter" [facebookUrl]="profileInfo?.facebook" [instagramUrl]="profileInfo?.instagram" [isLoggedIn]="authService.isLoggedIn()"></app-profile-info>
 
   <app-selfies [images]="selfies"></app-selfies>
 
-  <app-no-data *ngIf="selfies?.length === 0" [message]="profileInfo.username + ' is yet to take any selfie'"></app-no-data>
+  <app-no-data *ngIf="selfies?.length === 0" [message]="profileInfo?.username + ' is yet to take any selfie'"></app-no-data>
 
   <div *ngIf="authService.isLoggedIn()" class="profileLogoutSection"><a (click)="logout()">Logout</a> | <a routerLink="/faq">FAQ</a></div>
 

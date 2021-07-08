@@ -34,7 +34,7 @@ export class ProfilePageComponent implements OnInit {
       .subscribe(profileInfo => {
         if(profileInfo.status == 200){
           __this.profileInfo = profileInfo.json().data;
-          console.log("Profile info: ", __this.profileInfo);
+
           if(__this.profileInfo.profileimage === "none") {
             this.router.navigate([ '/upload']);
           }
@@ -48,7 +48,7 @@ export class ProfilePageComponent implements OnInit {
       .subscribe(selfies => {
         if(selfies.status == 200){
           __this.selfies = selfies.json().data;
-          console.log("selfies: ", __this.selfies);
+
         } else {
           console.log("Unable to get selfies");
         }

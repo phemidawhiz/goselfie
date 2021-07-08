@@ -11,11 +11,17 @@ export class LinkButtonComponent {
   @Input() description: string;
   @Input() linkUrl: string;
   @Input() bottomRadius: boolean = true;
+  @Input() normalLink: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   navigate() {
-    this.router.navigate([this.linkUrl])
+
+    if(this.normalLink) {
+      window.location.assign(this.linkUrl);
+    } else {
+      this.router.navigate([this.linkUrl])
+    }
   }
 
 }

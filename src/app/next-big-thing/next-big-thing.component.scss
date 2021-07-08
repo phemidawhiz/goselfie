@@ -27,8 +27,8 @@ section {
         color: $color-red;
       }
       @media #{$mobile-only} {
-        @include fontDetails('Aileron', 20px, $dark-blue);
-        @include fontSize(bolder, 35.85px);
+        @include fontDetails('Aileron', 15px, $dark-blue);
+        @include fontSize(bolder, 25.85px);
         padding-left: 8%;
       }
 

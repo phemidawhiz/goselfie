@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
 
   payWithPaystack(name: string, email: string) {
 
-    window.location.assign(`${environment.baseDomain}/payment.html?fn=${name}&email=${email}`);
+    window.location.assign(`${environment.baseDomain}/payment/payment.html?fn=${name}&email=${email}`);
   }
 
   onOptionsSelected(value: string){

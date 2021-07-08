@@ -68,7 +68,7 @@ export class ImageUploadComponent implements OnInit {
       this.selfieUploadService.uploadSelfie(cred)
       .subscribe(response => {
         const result = response;
-        console.log("Result: ", result);
+        console.log("Result: ", result.status);
         if(result.status == 200) {
           this.router.navigate(['/profile']);
         } else if(result.status == 412) {

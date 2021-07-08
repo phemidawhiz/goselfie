@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseDomain: 'https://goselfie.com.ng',
-  baseAPIDomain: 'https://goselfie.com.ng/backend',
+  baseDomain: 'http://localhost:4200',//'https://goselfie.com.ng',
+  baseAPIDomain: 'http://localhost/selfie/backend',//'https://goselfie.com.ng/backend',
   paystackKey: 'pk_test_a8595cceeb360b595d7dcd940b43c2d96b0e8dc1'
 };

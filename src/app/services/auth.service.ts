@@ -40,7 +40,7 @@ export class AuthService extends DataService {
     }
 
     const userData = new JwtHelper().decodeToken(token);
-    console.log("userData: ", userData);
+
     return userData;
   }
 }

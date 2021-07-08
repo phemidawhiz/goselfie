@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   contactLink = {
     description: "Contact Us",
-    linkUrl: "/about"
+    linkUrl: "https://api.whatsapp.com/send?phone=2348148284576"
   }
 
   displayMenu = () => {

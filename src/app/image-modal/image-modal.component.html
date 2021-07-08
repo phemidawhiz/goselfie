@@ -1,0 +1,12 @@
+
+<div class="container" id="trigger">
+    <a [href]="'#open' + imageId"><img [src]="imagePath" [alt]="altText"></a>
+</div>
+
+
+<div [id]="'open' + imageId" class="modal-window">
+  <div>
+    <a href="#trigger" title="Close" class="modal-close">Close</a>
+    <img class="modalImage" [src]="imagePath" [alt]="altText">
+  </div>
+</div>

@@ -1,5 +1,6 @@
 <section>
   <div *ngFor="let image of images">
-    <img [src]="baseDomain + image.filename" alt="Goselfie Task Selfie" />
+    <!-- <img [src]="baseDomain + image.filename" alt="Goselfie Task Selfie" /> -->
+    <app-image-modal [imagePath]="baseDomain + image.filename" [altText]="image.tasktitle" [imageId]="image.taskid"></app-image-modal>
   </div>
 </section>
