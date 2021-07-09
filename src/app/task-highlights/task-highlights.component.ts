@@ -33,7 +33,6 @@ export class TaskHighlightsComponent implements OnInit {
     if(this.route.snapshot.paramMap.get('id')) {
       this.taskId = this.route.snapshot.paramMap.get('id');
 
-
      // get task information
      this.taskInfoService.getTaskInfo(this.taskId)
       .subscribe(info => {

@@ -66,8 +66,8 @@ section {
     @include fontSize(bold, 41.25px);
 
     @media #{$mobile-only} {
-      @include fontDetails('Aileron', 28px, $dark-blue);
-      @include fontSize(bold, 41.25px);
+      @include fontDetails('Aileron', 20px, $dark-blue);
+      @include fontSize(bold, 35.25px);
       padding-top: 5%;
     }
   }

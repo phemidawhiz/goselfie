@@ -80,8 +80,8 @@
       @include fontDetails('Merriweather', 28px, $dark-blue, center);
 
       @media #{$mobile-only} {
-        @include fontSize(bold, 15.248px);
-        line-height: 15px;
+        @include fontSize(bold, 14.248px);
+        line-height: 14px;
       }
     }
 
@@ -90,8 +90,8 @@
       @include fontDetails('Open Sans', 13px, $dark-blue, center);
       padding: 0 10px;
       @media #{$mobile-only} {
-        @include fontSize(normal, 12px);
-        line-height: 11px;
+        @include fontSize(normal, 11px);
+        line-height: 10px;
       }
     }
 
