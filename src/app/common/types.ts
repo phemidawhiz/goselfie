@@ -7,6 +7,11 @@ export interface ITask {
     filename: string;
 }
 
+export interface IHomepageGalleryImage {
+  filename: string;
+  caption: string;
+}
+
 export interface IEntryCriterion {
   id: string;
   criterion: string;

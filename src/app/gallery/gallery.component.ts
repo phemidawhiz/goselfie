@@ -1,3 +1,4 @@
+import { IHomepageGalleryImage } from './../common/types';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,9 @@ export class GalleryComponent implements OnInit {
   constructor() { }
 
   imageCount: number = 1;
+  imageArray: Array<IHomepageGalleryImage> = [
+    {filename: 'gallery1.jpg', caption: ''}
+  ];
 
   increaseCount() {
     if(this.imageCount < 11)
