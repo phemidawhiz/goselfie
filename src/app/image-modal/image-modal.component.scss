@@ -113,5 +113,5 @@ small {
   @include fontDetails('Aileron', 29px, $color-white, center);
   @include fontSize(normal, 13.88px);
   margin-top: 0px;
-  background-color: $color-black-2;
+  background-color: $color-red;
 }

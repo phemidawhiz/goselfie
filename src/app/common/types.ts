@@ -50,8 +50,8 @@ export interface IProfileInfo {
 
 export interface ISelfie {
   filename: string;
-  datetime: string;
-  taskid: string;
-  taskdesc: string;
+  datetime?: string;
+  taskid?: string;
+  taskdesc?: string;
   tasktitle: string;
 }

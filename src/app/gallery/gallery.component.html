@@ -1,5 +1,7 @@
-<section class="mobileGallery">
-  <h2>Gallery</h2>
+<h2>Gallery</h2>
+
+<!-- <section class="mobileGallery">
+
   <div class="arrows">
     <div class="pointer" (click)="decreaseCount()">&#60;</div>
     <div></div>
@@ -8,15 +10,13 @@
   <div>
     <img [src]="'../../assets/images/gallery' + imageCount + '.jpg'" alt="gallery pictures" />
   </div>
-</section>
+</section> -->
 
 <section class="desktopGallery">
-  <h2>Gallery</h2>
-  <div class="grid-gallery active">
-    <span *ngFor="let image of imageArray">
-      <img [src]="'../../assets/images/' + image.filename " alt="gallery pictures" />
-    </span>
-  </div>
+    <div *ngFor="let image of imageArray; let i = index">
+      <!-- <img [src]="baseDomain + image.filename" alt="Goselfie Task Selfie" /> -->
+      <app-image-modal [imagePath]="'../../assets/images/' + image.filename" [altText]="image.tasktitle" [imageId]="i"></app-image-modal>
+    </div>
 </section>
 
 
