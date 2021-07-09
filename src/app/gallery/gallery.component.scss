@@ -18,8 +18,9 @@ $height: 229px;
     //display: none;
   //}
 
-  padding: 5% 4%;
-
+  background-color: $light-grey;
+  padding: 5% 1% 5% 9%;
+  margin: auto ;
   div {
     display: inline-block;
     max-width: $width;

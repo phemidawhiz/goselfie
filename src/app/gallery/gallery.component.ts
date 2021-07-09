@@ -12,17 +12,17 @@ export class GalleryComponent implements OnInit {
 
   imageCount: number = 1;
   imageArray: Array<ISelfie> = [
-    {filename: 'gallery1.jpg', tasktitle: 'Some caption'},
-    {filename: 'gallery2.jpg', tasktitle: ''},
-    {filename: 'gallery3.jpg', tasktitle: ''},
-    {filename: 'gallery4.jpg', tasktitle: ''},
-    {filename: 'gallery5.jpg', tasktitle: ''},
-    {filename: 'gallery6.jpg', tasktitle: ''},
-    {filename: 'gallery7.jpg', tasktitle: ''},
-    {filename: 'gallery8.jpg', tasktitle: ''},
-    {filename: 'gallery9.jpg', tasktitle: ''},
-    {filename: 'gallery10.jpg', tasktitle: ''},
-    {filename: 'gallery11.jpg', tasktitle: ''},
+    {filename: 'gallery1.jpg', tasktitle: 'Bright BBN'},
+    {filename: 'gallery2.jpg', tasktitle: 'Mr Funny'},
+    {filename: 'gallery3.jpg', tasktitle: 'Eko Hotel'},
+    {filename: 'gallery4.jpg', tasktitle: 'Eko Hotel'},
+    {filename: 'gallery5.jpg', tasktitle: 'Eko Hotel'},
+    {filename: 'gallery6.jpg', tasktitle: 'Eko Hotel'},
+    {filename: 'gallery7.jpg', tasktitle: 'Gentuu'},
+    {filename: 'gallery8.jpg', tasktitle: 'Ayomidate'},
+    {filename: 'gallery9.jpg', tasktitle: 'Bright BBN'},
+    {filename: 'gallery10.jpg', tasktitle: 'Destiny Etiko'},
+    {filename: 'gallery11.jpg', tasktitle: 'Madiba'},
   ];
 
   increaseCount() {

@@ -42,10 +42,11 @@ $height: 210px;
 }
 
 .modal-close {
-  color: $color-white;
+  color: $color-black-2;
+  background-color: $color-white;
   font-family: 'Aileron';
-  line-height: 50px;
-  font-size: 80%;
+  line-height: 20px;
+  font-size: 15px;
   font-weight: bold;
   position: absolute;
   right: 0;
