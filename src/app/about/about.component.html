@@ -1,6 +1,6 @@
 <section *ngIf="isImageLeft && !isHomePage" [class]="isGreyBackground ? '' : 'isWhiteBackground'" >
   <div>
-    <img [src]="imageSource" alt="About Goselfie" />
+    <img [src]="imageSource" alt="About Goselfie" loading="lazy" />
   </div>
   <div>
     <h2>{{ title }}</h2>
@@ -23,7 +23,7 @@
   </div>
 
   <div>
-    <img [src]="imageSource" alt="Goselfie Mission" />
+    <img [src]="imageSource" alt="Goselfie Mission" loading="lazy" />
   </div>
 </section>
 

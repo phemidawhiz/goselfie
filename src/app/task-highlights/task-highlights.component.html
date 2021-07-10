@@ -18,7 +18,7 @@
 
     <section *ngIf="taskId === ''">
       <div *ngFor="let task of tasks">
-        <a [routerLink]="'/tasks/'+task.taskid"><img [src]="getTaskImageUrl(task?.filename)" [alt]="task.title"></a>
+        <a [routerLink]="'/tasks/'+task.taskid"><img [src]="getTaskImageUrl(task?.filename)" [alt]="task.title" loading="lazy"></a>
         <h3>{{ task?.title | titlecase }}</h3>
         <h4>{{ task?.description.substr(0, 30) + '...' | titlecase }}</h4>
       </div>
@@ -26,7 +26,7 @@
 
     <section *ngIf="taskId !== ''">
       <div *ngFor="let selfie of taskSelfies">
-        <a [routerLink]="'/public/'+selfie.username"><img [src]="getSelfieImageUrl(selfie?.filename)" [alt]="selfie.username"></a>
+        <a [routerLink]="'/public/'+selfie.username"><img [src]="getSelfieImageUrl(selfie?.filename)" [alt]="selfie.username" loading="lazy"></a>
         <h3>{{ selfie.username }}</h3>
         <h4>{{ selfie.datetime }}</h4>
       </div>

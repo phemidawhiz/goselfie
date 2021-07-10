@@ -71,7 +71,6 @@ a {
   img {
     width: $width;
     height: $height;
-
     @media #{$mobile-only} {
       width: 103px !important;
       height: 103px !important;
