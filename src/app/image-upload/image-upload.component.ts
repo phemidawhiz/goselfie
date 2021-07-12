@@ -33,7 +33,7 @@ export class ImageUploadComponent implements OnInit {
 
   preview(files) {
     //handleImageUpload(files);
-    //console.log(fileToBase64(files[0]));
+
     if (files.length === 0)
       return;
 
@@ -49,6 +49,8 @@ export class ImageUploadComponent implements OnInit {
     reader.onload = (_event) => {
       this.imgURL = reader.result;
     }
+
+    this.message = '';
   }
 
   uploadSelfie() {
@@ -68,21 +70,32 @@ export class ImageUploadComponent implements OnInit {
       this.selfieUploadService.uploadSelfie(cred)
       .subscribe(response => {
         const result = response;
-        console.log("Result: ", result.status);
+
         if(result.status == 200) {
           this.router.navigate(['/profile']);
-        } else if(result.status == 412) {
+        } else if(result.status === 412) {
+
           this.message = "Unable to complete upload: you have completed this task!";
-        } else if(result.status == 408) {
+        } else if(result.status === 408) {
           this.message = "Unable to upload selfie: This task is no longer valid";
         } else {
           this.message = "Unable to upload selfie: Internal server error";
         }
 
         this.processing = false;
-      });
+      },
+      error => {
+        this.message = error && error.originalError.message;
+        this.processing = false;
+      },
+      () => {
+        this.message = 'Unable to complete upload. ';
+        this.processing = false;
+      }
+      );
     } else {
       this.message = "please choose an image to upload";
+      this.processing = false;
     }
 
   }
@@ -99,20 +112,36 @@ export class ImageUploadComponent implements OnInit {
     if(cred.base64image !== "ad.svg") {
       this.message = "";
       this.processing = true;
-      this.imageUploadService.uploadProfileImage(cred)
-      .subscribe(response => {
-        const result = response;
-        console.log(result);
-        if(result && (result.status == 200)) {
-          this.router.navigate(['/profile']);
-        } else {
-          this.message = result && result.message;
-        }
+      try {
+        this.imageUploadService.uploadProfileImage(cred)
+        .subscribe(response => {
+          const result = response;
+          console.log("Result: ", result);
+          if(result && (result.status == 200)) {
+            this.router.navigate(['/profile']);
+          } else {
+            this.message = result && result.message;
+          }
 
+          this.processing = false;
+        },
+        error => {
+          this.message = error && error.originalError.message;
+          this.processing = false;
+        },
+        () => {
+          this.message = 'Unable to complete upload. ';
+          this.processing = false;
+        }
+        );
+      } catch (Error) {
+        this.message = `Unable to complete upload: ${Error} `;
         this.processing = false;
-      });
+      }
+
     } else {
       this.message = "please choose an image to upload";
+      this.processing = false;
     }
 
   }
@@ -127,7 +156,7 @@ export class ImageUploadComponent implements OnInit {
           this.title = taskInfo && taskInfo.data && taskInfo.data.title;
           this.notice = taskInfo && taskInfo.data && taskInfo.data.description;
         }
-        console.log("Taskinfo: ", taskInfo);
+
       });
     }
   }

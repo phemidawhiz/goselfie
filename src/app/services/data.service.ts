@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { AppError } from '../common/app-error';
+import { HttpInterceptor, HttpEvent, HttpResponse, HttpRequest, HttpHandler } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
@@ -63,7 +64,7 @@ export class DataService {
     );
   }
 
-  uploadProfileImage(resource) {
+  uploadProfileImage = (resource) => {
     return this.authHttp.post(this.url, resource)
     .pipe(retry(1),
       catchError(this.handleError)
@@ -85,6 +86,6 @@ export class DataService {
     if (error.status === 404) {
       return Observable.throw(new NotFoundError());
     }
-    return Observable.throw(new AppError(error))
+    return Observable.throw(new AppError(error.json()))
   }
 }

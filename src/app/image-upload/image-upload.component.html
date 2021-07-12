@@ -9,7 +9,7 @@
       <input type="file" accept=".jpeg,.jpg,.png" #file type="file" (change)="preview(file.files)" />
 
     </div>
-    <div *ngIf="message !== ''" class="errors"><p>{{message}}</p></div>
+    <div *ngIf="message !== ''" class="errors"><p style="color: red;">{{message}}</p></div>
     <button *ngIf="!processing" (click)="!isSelfie ? uploadProfileImage() : uploadSelfie()">Upload</button>
 
     <small *ngIf="processing">Processing...</small>
