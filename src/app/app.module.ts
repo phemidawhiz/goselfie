@@ -29,7 +29,6 @@ import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig } from 'angular2-jwt'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { LoginAuthGuard } from './services/login-guard.service';
@@ -81,7 +80,6 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent,
     HomeComponent,
     NotFoundComponent,
     NoAccessComponent,
@@ -135,11 +133,6 @@ export const authHttpServiceFactory = (http: Http, options: RequestOptions) => {
         path: 'profile',
         component: ProfilePageComponent,
         canActivate: [AuthGuard, ProfileGuardService]
-      },
-      {
-        path: 'admin',
-        component: AdminComponent,
-        canActivate: [AuthGuard, AdminAuthGuard]
       },
       {
         path: 'upload',

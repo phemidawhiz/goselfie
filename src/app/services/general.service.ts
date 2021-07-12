@@ -82,6 +82,6 @@ export class GeneralService {
     if (error.status === 404)
       return Observable.throw(new NotFoundError());
 
-    return Observable.throw(new AppError(error));
+    return Observable.throw(new AppError(error.json()));
   }
 }

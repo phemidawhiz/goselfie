@@ -5,7 +5,7 @@
 .profileLogoutSection {
   a {
     @include fontDetails('arial', 23px, $dark-blue, center);
-    @include fontSize(bold, 14px);
+    @include fontSize(normal, 14px);
     text-decoration: none;
     cursor: pointer;
   }
