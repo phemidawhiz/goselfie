@@ -8,6 +8,8 @@ section {
 
   @media #{$mobile-only} {
     margin-top: 20%;
+    width: 94%;
+    padding: 3% 0% 5% 5%;
   }
 
   h2 {
@@ -28,7 +30,7 @@ section {
 
   @media #{$mobile-only} {
     display: block;
-
+    width: 94%;
   }
 
   div {
@@ -40,6 +42,7 @@ section {
     padding: 15px 20px;
 
     @media #{$mobile-only} {
+      width: 94%;
       display: block;
       background: $light-grey;
       max-width: 350px;

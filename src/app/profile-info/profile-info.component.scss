@@ -8,9 +8,9 @@ section {
   grid-gap: 10%;
   background: rgba(243, 243, 250, 0.5);
   padding: 5% 10%;
-
   @media #{$mobile-only} {
     display: block;
+
   }
 
   a {
@@ -30,7 +30,6 @@ section {
       max-width: 368px !important;
       max-height: 400px !important;
 
-
       @media #{$mobile-only} {
         display: inline-block;
         max-width: 368px !important;
@@ -42,11 +41,13 @@ section {
     }
 
     .memberDetails {
+
       img {
         display: inline-block;
         width: 16px !important;
         height: 16px !important;
         margin-bottom: 20px;
+
       }
       p {
         a {
@@ -62,12 +63,12 @@ section {
 
 
   h1 {
-    @include fontDetails('Aileron', 28px, $dark-blue);
+    @include fontDetails('Aileron', 35px, $dark-blue);
     @include fontSize(bold, 41.25px);
 
     @media #{$mobile-only} {
-      @include fontDetails('Aileron', 20px, $dark-blue);
-      @include fontSize(bold, 35.25px);
+      @include fontDetails('Aileron', 32px, $dark-blue);
+      @include fontSize(bold, 28.25px);
       padding-top: 5%;
     }
   }

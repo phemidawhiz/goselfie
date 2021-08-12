@@ -14,8 +14,10 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   contactLink = {
-    description: "Contact Us",
-    linkUrl: "https://api.whatsapp.com/send?phone=2348148284576"
+    description: 'Contsact Us',
+    linkUrl: '/login'
+    // tslint:disable-next-line:comment-format
+    //linkUrl: 'https://api.whatsapp.com/send?phone=2348148284576'
   }
 
   displayMenu = () => {
@@ -33,7 +35,6 @@ export class HeaderComponent implements OnInit {
   }
 
   openNav = () => {
-    console.log("got here")
     document.getElementById("mySidepanel").style.width = "250px";
   }
 
